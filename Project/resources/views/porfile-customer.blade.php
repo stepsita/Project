@@ -2,7 +2,7 @@
 
 
 @section('content')
-<section class="container-card-usu">
+<section class="container-card-pys">
         <div class="container-columnas">
         
             <div class="col3">
@@ -136,10 +136,6 @@
                     </div>
                     
                     <div class="contenedor-user">
-                        <div class="flex-item">
-                            <label class="label-p" for="plan">Tipo de servicio</label>
-                            <input class="pys" type="text" placeholder="Tipo de plan" style="padding-left:10px; padding-right: 10px;" value="Llamadas">
-                        </div>
                         <div class="flex-item">
                             <label class="label-p" for="servicio">Cantidad</label>
                             <input class="pys" type="text" placeholder="Tipo de servicio"  style="padding-left:10px; padding-right: 10px;" value="200 min">

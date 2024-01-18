@@ -1032,7 +1032,6 @@ form .fields .input-fields{ /* cont de los input y labels individualmente*/
   border-radius: 0.5em;
   background: rgb(7,31,116);
 background: linear-gradient(0deg, rgba(7,31,116,1) 4%, rgb(18, 40, 149) 97%);
-  border-bottom: 10px solid #150755
 }
 #color1{
   background: linear-gradient(0deg, rgb(18, 26, 98) 4%, rgb(44, 94, 210) 97%);
@@ -1393,7 +1392,7 @@ form .txt_field{
   justify-content: center;
   justify-self: center;
   width: 70%;
-  height: 120vh;
+  height: 150vh;
   background-color: #f5f4f4;
   margin-top: 32px;
   margin-left: 220px;
@@ -1406,7 +1405,7 @@ form .txt_field{
   justify-content: center;
   justify-self: center;
   width: 70%;
-  height: 110vh;
+  height: 105vh;
   background-color: #f5f4f4;
   margin-top: 32px;
   margin-left: 220px;

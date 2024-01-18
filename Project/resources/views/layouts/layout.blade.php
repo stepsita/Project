@@ -32,13 +32,6 @@
                 <div class="menu-bar">
                     <div class="menu">
                         <ul class="menu-links">
-
-                            <li class="nav-link">
-                                <a href="/login">
-                                    <i class=" icon"><img src="icon/usuario.PNG" style="width: 23px;" alt=""></i> <!-- Paginas del Operador-->
-                                    <span class="text nav-text">Inicio sesión</span>
-                                </a>
-                            </li>
                             <li class="nav-link">
                             <a href="/catalogue">
                                 <i class=" icon"><img src="icon/archive-regular-24.png" alt=""></i>
@@ -66,25 +59,25 @@
                             </a>
                         </li>
 
+                        <li class="nav-link">
+                            <a href="/form-worker-add">
+                                <i class="icon"><img src="icon/agus.PNG" style="width: 32px;" alt=""></i>
+                                <span class="text nav-text">Agregar Operador</span>
+                            </a>
+                        </li>
+
                             <li class="nav-link">
                                 <a href="/find-worker">
                                     <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
                                     <span class="text nav-text">Buscar Operador</span>
                                 </a>
                             </li>
-                        
-                        <li class="nav-link">
-                        <a href="/form-worker-add">
-                            <i class="icon"><img src="icon/agus.PNG" style="width: 32px;" alt=""></i>
-                            <span class="text nav-text">Agregar Operador</span>
-                        </a>
-                    </li>
                             
                     </div>
 
                     <div class="botton-content">
                         <li class="">
-                            <a href="#">
+                            <a href="/login">
                                 <i class="icon"><img src="icon/log-out-regular-24.png" alt=""></i>
                                 <span class="text nav-text">Salir</span>
                             </a>
