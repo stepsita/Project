@@ -3,7 +3,7 @@
 @endsection
 
 @section('content')
-<section class="container-card-pys">
+<section style="height: 90vh; margin-left:263px;" class="container-card-pys">
         <div class="container-columnas">
         
             <div class="col3">
@@ -78,7 +78,7 @@
     </section><br>
 
     
-    <section class="container-card-pys">
+    <section style="height: 88vh; margin-left:263px;" class="container-card-pys">
             <div class="col3">
                 <h2 class="titulo-v">Planes y servicios de la línea</h2>
                 <hr class="featurette-divider-mp">

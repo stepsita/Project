@@ -9,8 +9,7 @@
 <br>
          <div class="container-form" id="container-pregunta" >
              <header>Recupera tu contraseña</header>
- 
-             <form action="#">
+             <form action="/home">
                  <div class="form firts"> 
                      <div class="details personal">
                          <span class="title">¿Cúal es el nombre completo de tu mamá?</span>
@@ -19,16 +18,13 @@
                              <div class="input-fields">
                                  <label for="">Respuesta</label>
                                  <input type="text" id="agrandar-input" placeholder="Escribe la respuesta" required>
-                             </div>
-                             
+                             </div>                            
                          </div>
-                         
-                         <div class="cont-botton" style="align-items: center; justify-content: center;">
-                            <button class="next">
-                                 <span class="btnText" style="font-size: 0.96em;">Siguiente</span>
-                                 <i class="uil uil-navigator"></i>
-                             </button>
-                         </div> 
+                         <div style=" display:flex; align-items: center; justify-content: center;";>                           
+                                <button style="margin-top: 13px;" class="boton-i" >
+                                        Enviar
+                                </button>
+                         </div>
                      </div>
                  </div>      
              </form>

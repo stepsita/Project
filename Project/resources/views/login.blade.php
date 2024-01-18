@@ -14,7 +14,6 @@
       </div>
       
       <hr class="featurette-divider">
-      
 
       <form method="post">
         <div class="txt_field">

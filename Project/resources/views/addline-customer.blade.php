@@ -3,9 +3,9 @@
 @endsection
 
 @section('content')
-<div class="container-form" >
+<div  style="margin-left:330px;" class="container-form" >
             <header>Agregar nueva línea</header>
-            <form action="#">
+            <form action="/find-customer">
                 <div class="form firts"> <!--Primer form-->
                    
 

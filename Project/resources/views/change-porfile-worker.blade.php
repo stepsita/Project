@@ -3,7 +3,7 @@
 @endsection
 
 @section('content')
-<section class="container-card-ope">
+<section style=" margin-left:265px;" class="container-card-ope">
         <div class="container-columnas">
         
             <div class="col3">

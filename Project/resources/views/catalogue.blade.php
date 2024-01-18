@@ -22,8 +22,7 @@
                     <button class="Boton" style="align-content: space-between;"> 
                         <a href="/form-servicios"> Agregar servicio</a> 
                     </button>
-                </section>
-                     
+                </section>    
                 <div class="datos"> <br>
                     <table>
                         <tr>
@@ -74,7 +73,6 @@
                             <td style="width: 80px;"> <img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </td>
                 </tr>
             </table>
-
             <hr>
             <table>
                 <tr>
@@ -87,7 +85,6 @@
                             <td style="width: 80px;"> <img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </td>
                 </tr>
             </table>
-
                 </div>
             </div>
         </div>

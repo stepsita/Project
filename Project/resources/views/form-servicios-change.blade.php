@@ -5,10 +5,10 @@
 @section('content')
 <!--Servicios-->
 <br>
-            <div class="container-form" id="container-servicios" >
+            <div style="margin-left: 480px;" class="container-form" id="container-servicios" >
              <header>Servicios</header>
  
-             <form action="#">
+             <form action="/catalogue">
                  <div class="form firts"> 
                      <div class="details personal">
                          <span class="title"> Detalles del servicio</span>
