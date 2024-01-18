@@ -3,7 +3,7 @@
 @endsection
 
 @section('content')
-<div class="container-barner"> <!-- Container barner info personal--> 
+    <div class="container-barner"> <!-- Container barner info personal--> 
         <div class="info-barner">
             <div class="cont-barner" style="padding-left: 5%;">
                 <h1> Nombre de Usuario</h1>

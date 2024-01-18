@@ -3,7 +3,7 @@
 @endsection
 
 @section('content')
-<section class="container-card-cat">
+<section style=" margin-left:263px;" class="container-card-cat">
             <div class="col3">
                 
                 <h2 class="bc-titulo">Busqueda de operadores</h2>

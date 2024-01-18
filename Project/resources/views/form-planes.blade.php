@@ -4,10 +4,10 @@
 
 @section('content')
   
-<div class="container-form" id="container-planes">
+<div style="margin-left: 330px;" class="container-form" id="container-planes">
             <header>Planes</header>
 
-            <form action="#">
+            <form action="/catalogue">
                 <div class="form firts" > <!--Primer form-->
                     <div class="details personal" >
                         <span class="title"> Detalles del plan</span>

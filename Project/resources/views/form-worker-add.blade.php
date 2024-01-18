@@ -3,10 +3,10 @@
 @endsection
 
 @section('content')
-    <div class="container-form">
+    <div style=" margin-left:330px;" class="container-form">
             <header>Registro</header>
 
-            <form action="#">
+            <form action="/find-worker">
                 <div class="form firts"> <!--Primer form-->
                     <div class="details personal">
                         <span class="title"> Detalles personales</span>
