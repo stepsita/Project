@@ -24,7 +24,7 @@
 
 body{
     min-height: 100vh;
-    background:#e8e9e8
+    background:#e8e9e8;
     
 }
 ::selection{
@@ -1054,10 +1054,10 @@ form .fields .input-fields{ /* cont de los input y labels individualmente*/
 background: linear-gradient(0deg, rgba(7,31,116,1) 4%, rgb(18, 40, 149) 97%);
 }
 #color1{
-  background: linear-gradient(0deg, rgb(18, 26, 98) 4%, rgb(44, 94, 210) 97%);
+  background: linear-gradient(0deg, rgb(54, 63, 144) 4%, rgb(75, 115, 209) 97%);
 }
 #color2{
-  background: linear-gradient(0deg, rgb(76, 16, 118) 4%, rgb(149, 18, 114) 97%);
+  background: linear-gradient(0deg, rgb(116, 54, 160) 4%, rgb(174, 65, 145) 97%);
 }
 .cont-in i{
   text-align: center;
@@ -1126,7 +1126,7 @@ span.text{
   width: 100%;
   height: 250px;
   position: static;
-  background-color: #e8e9e8;
+  
 }
 .info-barner{
   width: 80%;
@@ -1139,13 +1139,13 @@ span.text{
 .cont-barner{
   width: 50%;
   height: 220px;
-  background-color: #aa98d1;
+  background-color: #7d2c9a;
   padding: 3%;
   position: static;
 }
 .cont-barner h1{
   font-size: 25px;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .cont-barner p{
   font-size: 15px;
@@ -1167,7 +1167,7 @@ span.text{
   padding: 3%;
   display: flex;
   justify-content: space-around;
-  box-shadow: rgba(0,0,0,0.1);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 7px;
 }
 .circular-pro{
@@ -1175,12 +1175,22 @@ span.text{
   height: 160px;
   width: 160px;
   border-radius: 50%;
-  background-color: #1524ad;
-  background: conic-gradient(#1524ad 109.6deg, #f7f7f7 0deg);
+ 
+  
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+#c1{
+  background: conic-gradient(#8644c4 109.6deg, #f7f7f7 0deg);
+}
+#c2{
+ 
+  background: conic-gradient(#65d67f 209.6deg, #f7f7f7 0deg);
+}
+#c3{
+  background: conic-gradient(#5a54d5 309.6deg, #f7f7f7 0deg);
 }
 .circular-pro::before{
   content: "";
@@ -1219,11 +1229,22 @@ span.text{
   width: 400px;
   height: 200px;
   background-color: rgb(184, 197, 238);
-  
   border-radius: 20px;
   margin: 5%;
-  margin-left: 11%;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-left: 12%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card-vacia{
+  width: 400px;
+  height: 200px;
+  background-color: rgb(61, 83, 182);
+  text-align: center;
+  align-items: center;
+  border-radius: 20px;
+  margin: 5%;
+  margin-left: 12%;
+  padding: 4%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .card-p1{
   width: 400px;
@@ -1252,11 +1273,22 @@ span.text{
   margin-top: -9px;
   margin-left: 9%;
 }
+
 .card-p1 h1{
   font-size: 20px;
   color: white;
 }
 .card-p1 p{
+  font-size: 40px;
+  color: white;
+  font-weight: 1;
+}
+
+.card-vacia h1{
+  font-size: 20px;
+  color: white;
+}
+.card-vacia p{
   font-size: 40px;
   color: white;
   font-weight: 1;
@@ -1267,7 +1299,7 @@ span.text{
   height: 240px;
   width: 240px;
   border-radius: 50%;
-  background: conic-gradient(#098300 180deg, #ededed 0deg);
+  background: conic-gradient(hsl(116, 43%, 50%) 180deg, #ededed 0deg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1278,10 +1310,10 @@ span.text{
 .circular-progress::before{
   content:"" ;
   position: absolute;
-  height: 200px;
-  width: 200px;
+  height: 190px;
+  width: 190px;
   border-radius:50% ;
-  background-color: #e8e9e8;
+  background-color: #eaeaea;
   box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
   inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
   -0.5px -0.5px 0px rgba(255, 255, 255, 1),
@@ -1293,7 +1325,7 @@ span.text{
   position: absolute;
   font-size: 50px;
   font-weight: 600;
-  color: #000000;
+  color: #391172;
   text-align: center;
 }
 .progress-value h1{
