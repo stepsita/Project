@@ -3,7 +3,7 @@
 @endsection
 
 @section('content')
-    <div class="container-barner"> <!-- Container barner info personal--> 
+    <div class="container-barner" style="background-image: url(https://img.freepik.com/foto-gratis/composicion-concepto-redes-sociales_23-2150169152.jpg?w=360&t=st=1705590132~exp=1705590732~hmac=96904584cbf7f99c9c046027cfdc0eef8dd0060df0182d4f318865c761eae958);"> <!-- Container barner info personal--> 
         <div class="info-barner">
             <div class="cont-barner" style="padding-left: 5%;">
                 <h1> Nombre de Usuario</h1>
@@ -19,19 +19,19 @@
         </div>
     </div>
     <div class="cont-circular">
-        <div class="circular-pro">
-            <h1 class="progre-value"> 
+        <div class="circular-pro" id="c1">
+            <h1 class="progre-value" > 
                 30.54 <p>Gigas </p>
             </h1>
             <br>
         </div>
-        <div class="circular-pro" style="background: conic-gradient(#15ad4a 209.6deg, #f7f7f7 0deg);">
+        <div class="circular-pro" id="c2">
             <h1 class="progre-value"> 
                 30.54 <p>Mensajes </p>
             </h1>
             <br>
         </div>
-        <div class="circular-pro" style="background: conic-gradient(#ede104 309.6deg, #f7f7f7 0deg);">
+        <div class="circular-pro" id="c3">
             <h1 class="progre-value"> 
                 30.54 <p>Minutos </p>
             </h1>
@@ -39,25 +39,21 @@
         </div>
     </div>
     
-    <div class="container-barner" style="background-color: #e8e9e8">
+    <div class="container-barner"   style="background-color: #e8e9e8;">
 
     </div>
     <div class="contenedor-card" >
-        <div class="card-p">
-            <div class="card-p1">
-                <h1> Monto Total </h1>
-                <p>
-                    Bs. 300
-                </p>
-            </div>
+        <div class="card-vacia">
+            <h1> Monto Total </h1>
+            <p>
+                Bs. 300
+            </p>
         </div>
-        <div class="card-p">
-            <div class="card-p1">
-                <h1> Recargas</h1>
-                <p>
-                    4
-                </p>
-            </div>
+        <div class="card-vacia">
+            <h1> Recargas</h1>
+            <p>
+                4
+            </p>
         </div>
     </div>
     <div class="contenedor-card" style="margin-top:10px;">
