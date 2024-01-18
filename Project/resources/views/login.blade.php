@@ -1,5 +1,8 @@
 @extends('layouts.layout')
-
+@section('sidebar')
+@endsection
+@section('header')
+@endsection
 
 @section('content')
     <!-- Formulario -->
