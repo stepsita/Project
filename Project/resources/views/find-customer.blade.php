@@ -19,8 +19,8 @@
                     <table>
                         <tr>
                             <td rowspan="2"><img src="img/user.png" height="40px" width="40px"></td>
-                            <td >Andres</td>
-                            <td>Franco</td>
+                            <td>Luis</td>
+                            <td>Enrique</td>
                             <td>Lineas</td>
                             <td rowspan="2"> </td>
                             <td rowspan="2"> <a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a></td>
