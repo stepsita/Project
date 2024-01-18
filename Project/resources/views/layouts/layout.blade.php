@@ -94,6 +94,13 @@
                 </div>
             </section>
         @show
+        @section('header-i') 
+            <section class="membrete-i">
+                <div class="text">
+                    Steyla
+                </div>
+            </section>
+        @show
 
         @yield('content')
 
@@ -118,7 +125,7 @@
                     <div class="col">
                         <h3>Empresa</h3>
                         <ul>
-                            <li><a href="login.html">Inicio de Sesión</a></li>
+                            <li><a href="/login">Inicio de Sesión</a></li>
                             <li><a href="busqueda-clientes.html">Búsqueda</a></li>
                             <li><a href="estadisticas.html">Estadísticas</a></li>
                         </ul>

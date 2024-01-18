@@ -1,5 +1,6 @@
 @extends('layouts.layout')
-
+@section('header-i')
+@endsection
 
 @section('content')
 <div class="container-form">

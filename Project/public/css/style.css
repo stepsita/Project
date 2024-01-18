@@ -193,6 +193,26 @@ body{
     position: relative;
     transition: var(--tran-05);
 }
+.membrete-i{
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  left: 250px;
+  height: 10vh;
+  width: 100%;
+  background-color: var(--primary-color);
+  transition: var(--tran-05);
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 2px 0px, 
+              rgba(17, 17, 26, 0.1) 0px 3px 8px;
+}
+.membrete-i .text {
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+  padding: 12px 60px ;
+  padding-top: 10px;
+  
+}
 .membrete{
     position: sticky;
     z-index: 50;
@@ -1399,13 +1419,37 @@ form .txt_field{
   border-radius: 5px;
   box-shadow: 2px 2px 20px rgba(70, 70, 70, 0.473) ;
 }
-
+.container-card-cat{
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  width: 70%;
+  height: auto;
+  background-color: #f5f4f4;
+  margin-top: 32px;
+  margin-left: 220px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px rgba(70, 70, 70, 0.473) ;
+}
 .container-card-pys{
   display: flex;
   justify-content: center;
   justify-self: center;
   width: 70%;
   height: 105vh;
+  background-color: #f5f4f4;
+  margin-top: 32px;
+  margin-left: 220px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px rgba(70, 70, 70, 0.473) ;
+}
+
+.container-card-ope{
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  width: 70%;
+  height: 119vh;
   background-color: #f5f4f4;
   margin-top: 32px;
   margin-left: 220px;

@@ -1,7 +1,9 @@
 @extends('layouts.layout')
+@section('header-i')
+@endsection
 
 @section('content')
-<section class="container-card-usu">
+<section class="container-card-cat">
             <div class="col3">
                 <h2 class="bc-titulo">Planes y servicios</h2>
                 <div class="buscar">
@@ -89,5 +91,5 @@
                 </div>
             </div>
         </div>
-    </section><br>
+    </section><br><br>
 @endsection

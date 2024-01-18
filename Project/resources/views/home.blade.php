@@ -1,4 +1,6 @@
 @extends('layouts.layout')
+@section('header-i')
+@endsection
 
 @section('content')
      <!-- Estructura de la pagina-->
