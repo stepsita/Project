@@ -1,5 +1,8 @@
 @extends('layouts.layout')
-
+@section('sidebar')
+@endsection
+@section('header')
+@endsection
 
 @section('content')
 <!--Servicios-->
@@ -21,7 +24,7 @@
                          </div>
                          
                          <div class="cont-botton" style="align-items: center; justify-content: center;">
-                             <button class="next">
+                            <button class="next">
                                  <span class="btnText" style="font-size: 0.96em;">Siguiente</span>
                                  <i class="uil uil-navigator"></i>
                              </button>

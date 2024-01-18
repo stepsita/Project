@@ -1,8 +1,9 @@
 @extends('layouts.layout')
-
+@section('header-i')
+@endsection
 
 @section('content')
-<section class="container-card-usu">
+<section class="container-card-cat">
             <div class="col3">
                 
                 <h2 class="bc-titulo">Busqueda de operadores</h2>

@@ -1,8 +1,9 @@
 @extends('layouts.layout')
-
+@section('header-i')
+@endsection
 
 @section('content')
-<section class="container-card-usu">
+<section class="container-card-pys">
         <div class="container-columnas">
         
             <div class="col3">

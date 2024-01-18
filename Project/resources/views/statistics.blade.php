@@ -1,5 +1,6 @@
 @extends('layouts.layout')
-
+@section('header-i')
+@endsection
 
 @section('content')
 <section class="main swiper mySwiper" style="margin-left: 5%;">

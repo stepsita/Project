@@ -1,5 +1,6 @@
 @extends('layouts.layout')
-
+@section('header-i')
+@endsection
 
 @section('content')
 <section class="container-card-usu">
