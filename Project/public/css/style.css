@@ -661,7 +661,7 @@ h5{
     padding: 3%;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(255, 255, 255);
+    background-color: none;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
   .container-form header{
@@ -684,7 +684,7 @@ h5{
     position: static;
     margin-top: 10px;
     /*height: 400px;*/
-    background-color: #ffffff;
+    background-color:#ffffff00;
   }
  .container-form form .details{
     margin-top: 13px;
@@ -695,27 +695,30 @@ h5{
     font-weight: 500;
     margin: 2px 0px 10px 0px;
     color: #0e0813;
+    background-color:#ffffff00;
   }
 .container-form form .fields{ /*contenedor de los inputs y labels en grupo de 6*/
     display: flex ;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #ffffff;
+    background-color:#ffffff00;
 }
 form .fields .input-fields{ /* cont de los input y labels individualmente*/
     display: flex;
     width: calc(100%/3- 15px);
-    background-color: rgb(255, 255, 255);
+    background-color: none;
     flex-direction: column;
     margin: 4px 0;
-    background-color: #ffffff;
+    background-color:#ffffff00;
 }  
 .input-fields label{
     font-size: 12px;
     font-weight: 600;
     color: #3d3d3d;
     margin-top: 1px;
+    background-color: none;
 }
 
 .input-fields h2{ /* texto del codigo y numero asignado*/
@@ -741,9 +744,11 @@ form .fields .input-fields{ /* cont de los input y labels individualmente*/
     margin: 8px 0;
     font-size: 14px;
     font-weight: 400;
+    background-color:#ffffff00;
 }
 .input-fields input:focus{
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    background-color:#ffffff00;
 }
 .cont-botton{ /*contenedor de los botones*/
     display: flex ;
@@ -751,7 +756,6 @@ form .fields .input-fields{ /* cont de los input y labels individualmente*/
     justify-content: space-between;
     flex-wrap: wrap;
     justify-content: center;
-    
 }
 .container-form form .next, .back {/*boton del fomr: next*/
     display: flex;
@@ -1986,9 +1990,14 @@ ul li a{
   padding: 30px;
   align-items: center;
   justify-content: center;
+  text-align: left;
   margin-bottom: 7%;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container-form header{
+  text-align: left;
+  margin-left: -91%;
 }
 
 #container-usuarios{
