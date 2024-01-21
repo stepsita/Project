@@ -66,7 +66,7 @@
                 <div class="column"><a href="/form-planes-change"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
                 <div class="column"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"></div>
             </div>
-        
+        <hr>
             <div class="row">
                 <div class="column">Datos extras</div>
                 <div class="column">25 GB</div>
