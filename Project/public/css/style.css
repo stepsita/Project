@@ -384,7 +384,6 @@ a.button:hover {
     display: flex;
     height: 60px;
     width: 100%;
-    
     align-items: center;
     background-color: transparent;
 }
@@ -659,9 +658,9 @@ h5{
     width: 100%;
     /*height: 610px;*/
     border-radius: 6px;
-    padding: 30px;
-    margin: 80px 100px 100px 260px;
-
+    padding: 3%;
+    align-items: center;
+    justify-content: space-around;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
@@ -881,8 +880,9 @@ form .fields .input-fields{ /* cont de los input y labels individualmente*/
   height: 210;
   max-width: 500px;
   background-color: #fff;
+  align-items: center;
+  justify-content:center;
   display: grid;
-  margin-left: 34%;
   margin-top: 4%;
 }
 #container-pregunta form{
@@ -1864,8 +1864,9 @@ table{
 .botones{
   display: flex;
   flex-direction: row;
-  gap: 70%;
-  margin-left: 3%;
+  justify-content: center;
+  justify-self: center;
+  gap: 60%;
   margin-bottom: 1.5%;
 }
 
@@ -1975,13 +1976,17 @@ ul li a{
 
 
 .container-form{
-  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
   position: static; /*CONTENEDOR DEL FORM*/
   width: 100%;
   /*height: 610px;*/
   border-radius: 6px;
   padding: 30px;
-  margin: 80px 100px 100px 260px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7%;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
