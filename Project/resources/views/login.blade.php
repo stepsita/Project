@@ -5,14 +5,14 @@
 @endsection
 
 @section('content')
+  <section class="flex">
     <!-- Formulario -->
     <div class="center">
       
       <h5>Inicio de sesión</h5>
-      <div class="id-usuario" >
-        <img class="selected" class="img-user" id="myImage2" src="img/admin.png" >      
+      <div class="id-usuario">
+        <img class="selected" alt="45px" width="45px" src="img/admin.png" >      
       </div>
-      
       <hr class="featurette-divider">
 
       <form method="post">
@@ -36,4 +36,5 @@
         </a>
       </div>
     </div>
+  </section>
 @endsection

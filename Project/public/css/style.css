@@ -592,34 +592,44 @@ a.button:hover {
   margin-bottom: -20px;
 }
 .id-usuario{
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 45px;
-  display: flex;
   justify-content: center;
-  gap: 25px;
+  align-items: center;
 }
 .img-user{
-  padding: 20px;
-  width: 45px;
-  height: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
 }
 
 
 
 /*CARD CENTRAL*/
+.flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .center{
-  margin-top: 70px;
-  margin-left: 530px;
-  margin-bottom: 60px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
   position:static;
-  width: 400px;
-  height: 460px;
+  max-width: 400px;
+  min-width: 340px;
+  height: 450px;
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
 }
 h5{
-  margin-top: -2rem;
+  margin-top: -20px;
   text-align: center;
   padding: 40px 0;
   font-size: 28px;
