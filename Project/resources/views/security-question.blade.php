@@ -6,11 +6,11 @@
 
 @section('content')
 <!--Servicios-->
-<br>
+<br>    
+    <section class="flex">
          <div class="container-form" id="container-pregunta" >
              <header>Recupera tu contraseña</header>
              <form action="/home">
-                 <div class="form firts"> 
                      <div class="details personal">
                          <span class="title">¿Cúal es el nombre completo de tu mamá?</span>
                      
@@ -25,8 +25,8 @@
                                         Enviar
                                 </button>
                          </div>
-                     </div>
                  </div>      
              </form>
          </div>
+    </section>
 @endsection
