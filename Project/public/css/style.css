@@ -1500,11 +1500,28 @@ form .txt_field{
   flex-wrap: nowrap;
   flex-flow: row nowrap;
   width: 100%;
+  
 }
 
 .column {
   flex-basis: 10%;
   width: 20%;
+  
+}
+
+.columnf {
+  flex-basis: 8%;
+  width: 10%;
+  margin-bottom: 1px;
+}
+
+.table hr{
+  width: 87%;
+  height: 2px;
+  margin-right: 9%;
+  margin-left: 3%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .container-card-pys{
@@ -1583,10 +1600,11 @@ gap:10px;
 }
 
 .titulo2{
-font-size: 17px;
-margin-left: 7px;
+font-size: 19px;
+margin-left: 5%;
 color: rgb(95, 12, 128);
 font-weight: 500;
+margin-bottom: 2%;
 }
 .titulo-v{
 margin-top: 40px;
