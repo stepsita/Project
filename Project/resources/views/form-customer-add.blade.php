@@ -3,9 +3,11 @@
 @endsection
 
 @section('content')
-<div style="margin-left: 328px;"  class="container-form">
+    
+    <section style="margin-top: 5%; margin-left:6%;" class="flex">
+        
+        <div class="container-form">
             <header>Registro</header>
-
             <form action="/find-customer">
                 <div class="form firts"> <!--Primer form-->
                     <div class="details personal">
@@ -115,4 +117,5 @@
                 </div>      
             </form>
         </div>
+    </section>
 @endsection
