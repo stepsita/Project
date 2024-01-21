@@ -193,12 +193,13 @@ body{
     position: relative;
     transition: var(--tran-05);
 }
+/* membrete steyla */
 .membrete-i{
   position: sticky;
   z-index: 50;
   top: 0;
   left: 250px;
-  height: 10vh;
+  height: 10%;
   width: 100%;
   background-color: var(--primary-color);
   transition: var(--tran-05);
@@ -206,7 +207,7 @@ body{
               rgba(17, 17, 26, 0.1) 0px 3px 8px;
 }
 .membrete-i .text {
-  font-size: 30px;
+  font-size: 190%;
   font-weight: 500;
   color: white;
   padding: 12px 60px ;
@@ -242,6 +243,7 @@ body{
     height: 10vh;
     width: calc(100% - 78px);
 }
+
 /*** SLIDER ****************/
 /************************/
 .main {
@@ -1879,7 +1881,7 @@ hr{
 
 .footer{
     width: 100%;
-    height: 200px;
+    height: 50%;
     position: static;
     bottom: 0;
     color: #ffffff;
