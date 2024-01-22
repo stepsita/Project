@@ -3,7 +3,8 @@
 @endsection
 
 @section('content')
-<section class="container-card-cat">
+    <section class="flex">
+        <section class="container-card-cat">
             <div class="col3">
                 <h2 class="bc-titulo">Busqueda de clientes</h2>
                 <div class="buscar">
@@ -16,68 +17,75 @@
                 
                 <h2 class="titulo2">Clientes</h2>
                 <div class="datos">
-
-                    <table>
-                        <tr>
-                            <td rowspan="2"><img src="img/user.png" height="40px" width="40px"></td>
-                            <td>Luis</td>
-                            <td>Enrique</td>
-                            <td>Lineas</td>
-                            <td rowspan="2"> </td>
-                            <td rowspan="2"> <a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a></td>
-                            <td rowspan="2"> <a href="/personal-statistics"> <img class="estadistica" class="boton" src="icon/grafico-de-barras.png" height="30px" width="30px"> </a></td>
-                            <td rowspan="2"> <a href="/change-porfile-customer"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </td>
-                            <td rowspan="2"> <a href="addline-customer"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a> </td>
-                            <td rowspan="2"> <img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </td>
-                        </tr>
-                        <tr>
-                            <td>311778014</td>
-                            <td></td>
-                            <td>04165373841</td>
-                        </tr>
-                    </table>
+                
+        <div class="table">
+            <div class="row">
+                <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
+                <div class="columnf">Luis</div>
+                <div class="columnf">Enrique</div>
+                <div class="columnf">04165373841</div>
+                <div class="columnf"> </div>
+                <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/personal-statistics"> <img class="estadistica" class="boton" src="icon/grafico-de-barras.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/change-porfile-customer"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="addline-customer"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a>  </a> </div>
+                <div class="columnf"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </div>
+            </div>
             <hr>
-                    <table>
-                        <tr>
-                            <td rowspan="2"><img src="img/user.png" height="40px" width="40px"></td>
-                            <td >Andres</td>
-                            <td>Medina</td>
-                            <td>Lineas</td>
-                            <td rowspan="2"> </td>
-                            <td rowspan="2"> <a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a></td>
-                            <td rowspan="2"> <a href="/personal-statistics"> <img class="estadistica" class="boton" src="icon/grafico-de-barras.png" height="30px" width="30px"> </a></td>
-                            <td rowspan="2"> <a href="/change-porfile-customer"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </td>
-                            <td rowspan="2"> <a href="addline-customer"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a> </td>
-                            <td rowspan="2"> <img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </td>
-                        </tr>
-                        <tr>
-                            <td>31777346</td>
-                            <td></td>
-                            <td>04164630501</td>
-                        </tr>
-                    </table>
+            <div class="row">
+                <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
+                <div class="columnf">Andres</div>
+                <div class="columnf">Medina</div>
+                <div class="columnf">04165373841</div>
+                <div class="columnf"> </div>
+                <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/personal-statistics"> <img class="estadistica" class="boton" src="icon/grafico-de-barras.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/change-porfile-customer"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="addline-customer"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a>  </a> </div>
+                <div class="columnf"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </div>
+            </div>
             <hr>
-                    <table>
-                        <tr>
-                            <td rowspan="2"><img src="img/user.png" height="40px" width="40px"></td>
-                            <td >Andres</td>
-                            <td>Medina</td>
-                            <td>Lineas</td>
-                            <td rowspan="2"> </td>
-                            <td rowspan="2"> <a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a></td>
-                            <td rowspan="2"> <a href="/personal-statistics"> <img class="estadistica" class="boton" src="icon/grafico-de-barras.png" height="30px" width="30px"> </a></td>
-                            <td rowspan="2"> <a href="/change-porfile-customer"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </td>
-                            <td rowspan="2"> <a href="addline-customer"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a> </td>
-                            <td rowspan="2"> <img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </td>
-                        </tr>
-                        <tr>
-                            <td>31777346</td>
-                            <td></td>
-                            <td>04164596875</td>
-                        </tr>
-                    </table>
-                </div>
+            <div class="row">
+                <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
+                <div class="columnf">Lidia</div>
+                <div class="columnf">Suarez</div>
+                <div class="columnf">04125304841</div>
+                <div class="columnf"> </div>
+                <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/personal-statistics"> <img class="estadistica" class="boton" src="icon/grafico-de-barras.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/change-porfile-customer"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="addline-customer"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a>  </a> </div>
+                <div class="columnf"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
+                <div class="columnf">Lidia</div>
+                <div class="columnf">Suarez</div>
+                <div class="columnf">04125304841</div>
+                <div class="columnf"> </div>
+                <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/personal-statistics"> <img class="estadistica" class="boton" src="icon/grafico-de-barras.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/change-porfile-customer"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="addline-customer"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a>  </a> </div>
+                <div class="columnf"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
+                <div class="columnf">Lidia</div>
+                <div class="columnf">Suarez</div>
+                <div class="columnf">04125304841</div>
+                <div class="columnf"> </div>
+                <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/personal-statistics"> <img class="estadistica" class="boton" src="icon/grafico-de-barras.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="/change-porfile-customer"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
+                <div class="columnf"><a href="addline-customer"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a>  </a> </div>
+                <div class="columnf"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </div>
             </div>
         </div>
-    </section><br>
+
+    </div>
+        </section><br>
+    </section>
 @endsection

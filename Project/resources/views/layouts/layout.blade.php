@@ -8,8 +8,9 @@
         <title> Index steyla </title>
 
         <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+        <link rel="icon" href="{{ asset('/img/cellphone.png')}}">
           <!-- Link Swiper's CSS -->
-          <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css')}}" />
 
         <!-- Link de pagina de iconos-->
         <link href="{{ asset('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css')}}" rel='stylesheet'>
