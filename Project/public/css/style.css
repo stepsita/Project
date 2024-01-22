@@ -199,7 +199,7 @@ body{
   z-index: 50;
   top: 0;
   left: 250px;
-  height: 10%;
+  height: 20%;
   width: 100%;
   background-color: var(--primary-color);
   transition: var(--tran-05);
@@ -243,6 +243,24 @@ body{
     left: 78px;
     height: 10vh;
     width: calc(100% - 78px);
+}
+@media screen and (max-width: 1200px) {
+  .membrete{
+    height: 9vh;
+  }
+  .sidebar.close ~ .membrete{
+    height: 9vh;
+    
+  }
+}
+@media screen and (min-width: 1024px) {
+  .membrete{
+    height: 9vh;
+  }
+  .sidebar.close ~ .membrete{
+    height: 9vh;
+    
+  }
 }
 
 /*** SLIDER ****************/
@@ -615,6 +633,7 @@ a.button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .center{
@@ -658,9 +677,9 @@ h5{
 /*****************************************************/
   .container-form{
     max-width: 900px;
-    position: static; /*CONTENEDOR DEL FORM*/
+    position: relative; /*CONTENEDOR DEL FORM*/
     width: 100%;
-    /*height: 610px;*/
+    
     border-radius: 6px;
     padding: 3%;
     align-items: center;
