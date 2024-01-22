@@ -7,7 +7,7 @@
     <section style="margin-top: 5%; margin-left:6%;" class="flex">
         
         <div class="container-form">
-            <header>Registro</header>
+            <header style="margin-left: -91%; margin-top:1%;" >Registro</header>
             <form action="/find-customer">
                 <div class="form firts"> <!--Primer form-->
                     <div class="details personal">

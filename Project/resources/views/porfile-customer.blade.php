@@ -3,13 +3,14 @@
 @endsection
 
 @section('content')
-<section style="height: 90vh; margin-left:263px;" class="container-card-pys">
+<section class="flex">
+    <section class="container-card-pys">
         <div class="container-columnas">
         
             <div class="col3">
                 <h2 class="titulo-v">Visualizar</h2>
                 <hr class="featurette-divider-mp">
-                <h2 class="titulo2">Datos personales</h2>
+                <h2 style="margin-left: 1%; margin-bottom:-0.5%" class="titulo2">Datos personales</h2>
 
                 <div class="datos">
                     <div class="contenedor-user">
@@ -58,7 +59,7 @@
                     </div>
                 </div>
 
-                <h2 class="titulo2">Datos de la línea</h2>
+                <h2 style="margin-left: 1%; margin-bottom:-0.5%; margin-top:-2.5%;" class="titulo2">Datos de la línea</h2>
                 <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="codigo">Código</label>
@@ -78,15 +79,14 @@
     </section><br>
 
     
-    <section style="height: 88vh; margin-left:263px;" class="container-card-pys">
+    <section class="container-card-pys">
             <div class="col3">
-                <h2 class="titulo-v">Planes y servicios de la línea</h2>
+                <h2 style="margin-left: 1%; margin-top:3%" class="titulo-v">Planes y servicios de la línea</h2>
                 <hr class="featurette-divider-mp">
                 
-                <h2 class="titulo2">Plan adquirido</h2>
+                <h2 style="margin-left: 1%; margin-bottom:-0.5%" class="titulo2">Plan adquirido</h2>
 
                 <div class="datos">
-
                     <div class="contenedor-user">
                         <div class="flex-item">
                             <label class="label-p" for="name">Nombre del plan</label>
@@ -119,7 +119,7 @@
 
                 </div>
 
-                    <h2 class="titulo2">Servicio adquirido</h2>
+                    <h2 style="margin-left: 1%; margin-bottom:-0.5%; margin-top:-2.5%;" class="titulo2">Servicio adquirido</h2>
                     <div class="contenedor-user">
                         <div class="flex-item">
                             <label class="label-p" for="estado">Estado</label>
@@ -149,4 +149,5 @@
             </div>
         </div>
     </section><br><br>
+</section>
 @endsection

@@ -3,13 +3,14 @@
 @endsection
 
 @section('content')
-<section style=" margin-left:265px;" class="container-card-pys">
+<section class="flex">
+    <section style="height:100vh;" class="container-card-pys">
         <div class="container-columnas">
         
             <div class="col3">
                 <h2 class="titulo-v">Operador</h2>
                 <hr class="featurette-divider-mp">
-                <h2 class="titulo2">Datos personales</h2>
+                <h2 style="margin-left:1.5%;" class="titulo2">Datos personales</h2>
                 <div class="datos">
 
                     <div class="contenedor-user">
@@ -52,7 +53,7 @@
                     </div>
                 </div>
 
-                <h2 class="titulo2">Datos de ingreso al sistema</h2>
+                <h2 style="margin-left:1.5%;" class="titulo2">Datos de ingreso al sistema</h2>
                 <div class="contenedor-op">
                     <div class="flex-item">
                         <label class="label-p" for="codigo">Usuario</label>
@@ -66,4 +67,5 @@
             </div>
         </div>
     </section><br>
+</section>
 @endsection

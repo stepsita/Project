@@ -3,18 +3,15 @@
 @endsection
 
 @section('content')
-<section style="height: 135vh;  margin-left:263px;" class="container-card-usu">
+<section class="flex">
+    <section style="margin-left: 3%; " class="container-card-usu">
         <div class="container-columnas">
         
             <div class="col3">
                 <h2 class="titulo">Modificar</h2>
                 <hr class="featurette-divider-mp">
-                
-                <span>Datos personales</span>
-
-                
+                <span style="margin-left: 1%;" >Datos personales</span>
                 <div class="datos">
-
                     <div class="contenedor-user">
                         <div class="flex-item">
                             <label class="label-p" for="name">Nombre</label>
@@ -62,7 +59,7 @@
 
                 </div>
 
-                <span>Datos de la línea</span>
+                <span style="margin-left: 1%;">Datos de la línea</span>
                 <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="codigo">Código</label>
@@ -90,8 +87,8 @@
                         </select>
                     </div>
                 </div>
-                <h2 class="titulo">Planes y servicios de la línea</h2>
-                <hr class="featurette-divider-mp">
+                <h2 style="margin-left: 1%;" class="titulo">Planes y servicios de la línea</h2>
+                <hr style="margin-left: 1%;" class="featurette-divider-mp">
                 <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="plan">Plan</label>
@@ -124,4 +121,5 @@
         </div>
     </section><br>
     <br><br>
+</section>
 @endsection
