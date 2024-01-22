@@ -3,13 +3,13 @@
 @endsection
 
 @section('content')
-<section style=" margin-left:265px;" class="container-card-ope">
+<section class="flex">
+    <section style="margin-left: 4%;" class="container-card-ope">
         <div class="container-columnas">
-        
             <div class="col3">
                 <h2 class="titulo-v">Operador</h2>
                 <hr class="featurette-divider-mp">
-                <h2 class="titulo2">Datos personales</h2>
+                <h2 style="margin-left: 1%; margin-bottom:0.5%;" class="titulo2">Datos personales</h2>
                 <div class="datos">
 
                     <div class="contenedor-user">
@@ -41,30 +41,35 @@
                             <input  class="pys" type="text" placeholder="Ingrese la urbanización" style="padding-left:10px; padding-right: 10px;" value="Libertador">
                         </div>
                     </div>
-                    <div class="contenedor-user">
-                        <div class="flex-item">
-                            <label class="label-p" for="name">Pregunta de seguridad</label>
+
+                    
+                        <div class="contenedor-user">
+                            <div class="flex-item">
+                                <label class="label-p" for="name">Pregunta de seguridad</label>
+                                
+                                    <h2 style="font-size: 15px; color: rgb(5, 103, 70); margin-top: 1%;">¿Cúal es el nombre completo de tu mamá?</h2>
+                                
+                                <input  style="width: 550px;" class="pys" type="text" placeholder="Ingrese la respuesta" style="padding-left:10px; padding-right: 10px;" value="name">
+                            </div>
                             
-                                <h2 style="font-size: 15px; color: rgb(5, 103, 70); margin-top: 1%;">¿Cúal es el nombre completo de tu mamá?</h2>
-                            
-                            <input  style="width: 550px;" class="pys" type="text" placeholder="Ingrese la respuesta" style="padding-left:10px; padding-right: 10px;" value="name">
                         </div>
-                        
-                    </div>
 
+                        <h2 style="margin-left: 1%; margin-bottom:0.5%;" class="titulo2">Datos de ingreso al sistema</h2>
+                        <div class="contenedor-op">
+                            <div class="flex-item">
+                                <label class="label-p" for="codigo">Usuario</label>
+                                <input class="pys" type="text"  placeholder="Usuario"  style="padding-left:10px; padding-right: 10px;" value="SR1309">
+                            </div>
+                            <div class="flex-item">
+                                <label class="label-p" for="numero">Clave asignada</label>
+                                <input class="pys" type="text" placeholder="Contraseña" style="padding-left:10px; padding-right: 10px;" value="4630501">
+                            </div>
+                        </div>
                 </div>
 
-                <h2 class="titulo2">Datos de ingreso al sistema</h2>
-                <div class="contenedor-op">
-                    <div class="flex-item">
-                        <label class="label-p" for="codigo">Usuario</label>
-                        <input class="pys" type="text"  placeholder="Usuario"  style="padding-left:10px; padding-right: 10px;" value="SR1309">
-                    </div>
-                    <div class="flex-item">
-                        <label class="label-p" for="numero">Clave asignada</label>
-                        <input class="pys" type="text" placeholder="Contraseña" style="padding-left:10px; padding-right: 10px;" value="4630501">
-                    </div>
-                </div>
+                    
+
+                
                 <div class="contenedor-userb">
                     <div class="flex-item">
                         <button type="submit" class="cancelar" class="input-mp">Cancelar cambios</button>
@@ -77,4 +82,5 @@
             </div>
         </div>
     </section><br><br>
+</section>
 @endsection

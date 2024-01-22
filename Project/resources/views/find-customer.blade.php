@@ -23,7 +23,6 @@
                 <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
                 <div class="columnf">Luis</div>
                 <div class="columnf">Enrique</div>
-                <div class="columnf">311778014</div>
                 <div class="columnf">04165373841</div>
                 <div class="columnf"> </div>
                 <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
@@ -37,7 +36,6 @@
                 <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
                 <div class="columnf">Andres</div>
                 <div class="columnf">Medina</div>
-                <div class="columnf">311778014</div>
                 <div class="columnf">04165373841</div>
                 <div class="columnf"> </div>
                 <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
@@ -51,7 +49,6 @@
                 <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
                 <div class="columnf">Lidia</div>
                 <div class="columnf">Suarez</div>
-                <div class="columnf">111778014</div>
                 <div class="columnf">04125304841</div>
                 <div class="columnf"> </div>
                 <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
@@ -65,7 +62,6 @@
                 <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
                 <div class="columnf">Lidia</div>
                 <div class="columnf">Suarez</div>
-                <div class="columnf">111778014</div>
                 <div class="columnf">04125304841</div>
                 <div class="columnf"> </div>
                 <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
@@ -79,7 +75,6 @@
                 <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
                 <div class="columnf">Lidia</div>
                 <div class="columnf">Suarez</div>
-                <div class="columnf">111778014</div>
                 <div class="columnf">04125304841</div>
                 <div class="columnf"> </div>
                 <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>

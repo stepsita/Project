@@ -3,16 +3,14 @@
 @endsection
 
 @section('content')
-<div  style="margin-left:330px;" class="container-form" >
-            <header>Agregar nueva línea</header>
+    <section style="margin-top: 5%; margin-left:2%;" class="flex">
+        <div style="max-width: 650px;" class="container-form" >
+            <header style="margin-left: -65%;">Agregar nueva línea</header>
             <form action="/find-customer">
                 <div class="form firts"> <!--Primer form-->
                    
-
                     <div class="details personal">
-                        
-                        <span class="title" style="margin-top: 2%; "> Detalles de la línea</span>
-                    
+                        <span class="title" style="margin-top: 2%; "> Detalles de la línea</span>                 
                         <div class="fields" id="data_line"style="margin-right: 15%;"> <!--hay que modificar esto en java. Debido a que hay que ver 
                                                                                             lo de como va a traer la info cuando sean varias lineas por cliente-->
                             <div class="input-fields" >
@@ -22,8 +20,7 @@
                             <div class="input-fields">
                                 <label for="">Número asignado</label>
                                 <h2>6086582</h2>
-                            </div>
-                            
+                            </div>                         
 
                             <div class="input-fields">
                             <label for="">Plan</label>
@@ -63,4 +60,5 @@
                 </div>      
             </form>
         </div>
+    </section>
 @endsection

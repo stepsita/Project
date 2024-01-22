@@ -670,7 +670,8 @@ h5{
     font-size: 20px;
     position: static;
     font-weight: 600;
-    color: #2f179c;;
+    color: #2f179c;
+    text-align: left;
   }
   .container-form header::before{
     content: "";
@@ -1459,10 +1460,9 @@ form .txt_field{
   justify-content: center;
   justify-self: center;
   width: 70%;
-  height: 150vh;
+  height: 140vh;
   background-color: rgb(255, 255, 255);
   margin-top: 32px;
-  margin-left: 220px;
   border-radius: 5px;
   box-shadow: 2px 2px 20px rgba(70, 70, 70, 0.473) ;
 }
@@ -1478,6 +1478,7 @@ form .txt_field{
   margin-top: 4%;
   margin-left: 5%;
   margin-right: -2%;
+  margin-bottom: 2%;
   border-radius: 5px;
   box-shadow: 2px 2px 20px rgba(70, 70, 70, 0.473) ;
 }
@@ -1492,7 +1493,7 @@ form .txt_field{
   width: 107%;
   height: 100%;
   padding: 0%;
-  margin: 0%;
+  margin-bottom: 2%;
 }
 
 .row {
@@ -1529,10 +1530,10 @@ form .txt_field{
   justify-content: center;
   justify-self: center;
   width: 70%;
-  height: 105vh;
+  height: 120%;
   background-color: rgb(255, 255, 255);
   margin-top: 32px;
-  margin-left: 220px;
+  margin-left: 6%;
   border-radius: 5px;
   box-shadow: 2px 2px 20px rgba(70, 70, 70, 0.473) ;
 }
@@ -1542,10 +1543,9 @@ form .txt_field{
   justify-content: center;
   justify-self: center;
   width: 70%;
-  height: 119vh;
+  height: 105vh;
   background-color: rgb(255, 255, 255);
   margin-top: 32px;
-  margin-left: 220px;
   border-radius: 5px;
   box-shadow: 2px 2px 20px rgba(70, 70, 70, 0.473) ;
 }
@@ -1592,7 +1592,7 @@ gap:10px;
 
 /*TITULOS*/
 .titulo{
-  margin-top: 20px;
+  margin-top: 1%;
   margin-left: 7px;
   font-size: 22px;
   margin-bottom: 5px;
@@ -1607,7 +1607,7 @@ font-weight: 500;
 margin-bottom: 2%;
 }
 .titulo-v{
-margin-top: 40px;
+margin-top: .5%;
   margin-left: 7px;
   font-size: 22px;
   margin-bottom: 5px;
@@ -1685,6 +1685,7 @@ margin-bottom: 13px;
   flex: 1;
   gap: -5px ;
   color: #2b2828;
+  background-color: #ffffff00;
 }
 
 .flex-item-user {
@@ -1714,6 +1715,7 @@ margin-bottom: 13px;
   font-weight: 500;
   color: #707070;
   margin-top: 1px;
+  background-color: #ffffff00;
 }
 
 .input-p{
@@ -1733,10 +1735,11 @@ margin-bottom: 13px;
     color: #333;
     padding: 0 15px;
     height: 42px;
-    width: 250px;
+    width: 230px;
     margin: 8px 0;
     font-size: 14px;
     font-weight: 400;
+    background-color: #ffffff00;
 }
 
 select{
@@ -2017,7 +2020,7 @@ ul li a{
 }
 .container-form header{
   text-align: left;
-  margin-left: -91%;
+  
 }
 
 #container-usuarios{
