@@ -244,21 +244,21 @@ body{
     height: 10vh;
     width: calc(100% - 78px);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1157px) {
   .membrete{
-    height: 9vh;
+    height: 6vh;
   }
   .sidebar.close ~ .membrete{
-    height: 9vh;
+    height: 6vh;
     
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1600px) {
   .membrete{
-    height: 9vh;
+    height: 5vh;
   }
   .sidebar.close ~ .membrete{
-    height: 9vh;
+    height: 5vh;
     
   }
 }
@@ -1198,7 +1198,8 @@ span.text{
   width: 70%;
   height: 250px;
   background-color: #f4f7f4;
- position: absolute;
+ 
+  position: absolute;
   top: 250px; 
   margin-left: 18%;
   padding: 3%;
@@ -1250,26 +1251,17 @@ span.text{
   color: #3d279f;
   text-align: center;
 }
-@media  screen and (max-width:1209px){
-  .cont-circular{
-    width: 76%;
-    height: 29%;
-    margin-left: 15%;
-    align-items: center;
-  }
+@media screen and (max-width: 1157px) {
   .circular-pro{
-    height: 90%;
-    width: 18%;
+    height: 93%;
+    width: 17%;
   }
   .circular-pro::before{
-    height:75%;
-    width: 75%;
+    height: 80%;
+    width: 80%;
   }
-  .progre-value{
-    font-size: 14px;
-  }
-  .circular-pro p{
-    font-size: 13px;
+  .card-vacia{
+    margin-top: 5%;
   }
 }
 /* cards de datos*/
