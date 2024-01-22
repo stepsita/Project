@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="contenedor-card" style="margin-top:10px;">
-        <div class="card-p" style="height: 250px;" id="card-claro">
+        <div class="card-p"  id="card-claro">
             <div class="card-p1" style="padding-top: 5%;" id="card-oscuro">
                 <h1> Renta del plan </h1>
                 <p>
@@ -68,7 +68,7 @@
             <h1 style="color: rgb(3, 95, 26);"> Plan actual:</h1>
             <p style="color: rgb(1, 46, 12);"> Plan intermedio</p>
         </div>
-        <div class="card-p" style="height: 250px;" id="card-claro">
+        <div class="card-p"  id="card-claro">
             <div class="card-p1" style="padding-top: 5%;" id="card-oscuro">
                 <h1> Renta Total</h1>
             <p>

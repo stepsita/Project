@@ -1175,7 +1175,7 @@ span.text{
   background-color: #f4f7f4;
  position: absolute;
   top: 250px; 
-  margin-left: 270px;
+  margin-left: 18%;
   padding: 3%;
   display: flex;
   justify-content: space-around;
@@ -1184,11 +1184,9 @@ span.text{
 }
 .circular-pro{
   position: relative;
-  height: 160px;
-  width: 160px;
+  height: 92%;
+  width: 16%;
   border-radius: 50%;
- 
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1207,8 +1205,8 @@ span.text{
 .circular-pro::before{
   content: "";
   position: absolute;
-  height: 120px;
-  width: 120px;
+  height: 80%;
+  width: 80%;
   border-radius: 50%;
   background-color: #f9f7f7;
   box-shadow: inset 0px 3px 6px 2px rgba(0,0,0,0.1);
@@ -1227,6 +1225,28 @@ span.text{
   color: #3d279f;
   text-align: center;
 }
+@media  screen and (max-width:1209px){
+  .cont-circular{
+    width: 76%;
+    height: 29%;
+    margin-left: 15%;
+    align-items: center;
+  }
+  .circular-pro{
+    height: 90%;
+    width: 18%;
+  }
+  .circular-pro::before{
+    height:75%;
+    width: 75%;
+  }
+  .progre-value{
+    font-size: 14px;
+  }
+  .circular-pro p{
+    font-size: 13px;
+  }
+}
 /* cards de datos*/
 .contenedor-card{ /*contenedor*/
   width: 100%;
@@ -1239,7 +1259,7 @@ span.text{
 }
 .card-p{
   width: 400px;
-  height: 200px;
+  height: 250px;
   background-color: rgb(184, 197, 238);
   border-radius: 20px;
   margin: 5%;
