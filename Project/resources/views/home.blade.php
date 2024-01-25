@@ -47,60 +47,41 @@
         </section>
 
         <br> <hr class="featurette-divider">
-        <div class="container-texto" >
+       
+        
+        <div class="row1-container" >
+          <div class="box box-down cyan">
+            <h2>Búsqueda</h2>
+            <p>• Usuario</p>
+            <p>• Operador</p>
+            <img src="img/search.png" width="25%" height="25%">
+          </div>
          
-            <h1 >Planes steyla</h1><br>
-            <p >Disponibles para líneas móviles e internet móvil, ideales para mantener conectados a los miembros de tu familia, así como a los empleados de tu empresa, emprendimiento o negocio.</p>
-            <div class="container-number">
-              <h1> +200</h1> <img src="img/economico.png" width="70px" height="70px">
-             
-            </div>
-            <div class="text-number">
-              <h4> Vendidos</h4>
-            </div>
+
+          <div class="box red">
+            <h2>Catálogo</h2>
+            <p>Planes y Servicios de Steyla, con todas las especifícaciones</p>
+            <img src="img/bullet.png" width="23%" height="23%">
+          </div>
+        
+          <div class="box box-down blue">
+            <h2>Agregar</h2>
+            <p>• Usuario</p>
+            <p>• Operador</p>
+            <img src="img/agregar-usuario.png" width="25%" height="25%">
+          </div>
+          
+        </div>
+        <div class="row2-container">
+          <div class="box orange">
+            <h2>Estadísticas</h2>
+            <p>• Personales</p>
+            <p>• Generales</p>
+            <img src="img/statistics.png" width="25%" height="25%">
+          </div>
+         
         </div>
        
-        <h1>100</h1>
-        <main >
-            <div class="container">
-              <div class="col">
-                <div class="card">
-                    <div class="content">
-                      <div class="title">Básico</div>
-                      <div class="price">$5.99</div>
-                      <div class="description">200 minutos</div>
-                      <div class="description">400 SMS</div>
-                      <div class="description">4 GB</div>
-                    </div>
-                   
-                      
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                    <div class="content">
-                        <div class="title">Intermedio</div>
-                        <div class="price">$8.99</div>
-                        <div class="description">400 minutos</div>
-                        <div class="description">800 SMS</div>
-                        <div class="description">10 GB</div>
-                    </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                    <div class="content">
-                        <div class="title">Premium</div>
-                        <div class="price">$10.99</div>
-                        <div class="description">600 minutos</div>
-                        <div class="description">1.200 SMS</div>
-                        <div class="description">25 GB</div>
-                    </div>
-                </div>
-              </div>
-            </div> <br>
-        </main>
-        
             <hr class="featurette-divider"> <br>
         
             <div class="container-texto">
@@ -113,42 +94,7 @@
                 <div class="text-number" style="margin-bottom: 10px;">
                   <h4> Vendidos</h4>
                 </div>
-              </div>
-            <div class="container">
-                <div class="col">
-                  <div class="card-s">
-                    <div class="content">
-                        <div class="title-s">Llamadas extras</div>
-                        <div class="price-s">$3.99</div>
-                        <div class="description">200 minutos</div>
-                        <div class="description">Llamadas de larga distancia internacional</div>
-                    </div>
-                    
-                </div>
-              </div>
-                <div class="col">
-                    <div class="card-s">
-                      <div class="content">
-                          <div class="title-s">Mensajes extras</div>
-                          <div class="price-s">$2.99</div>
-                          <div class="description">800 SMS</div>
-                          <div class="description">Mensajes de larga distancia internacional</div>
-                      </div>
-                  </div>
-                </div>
-                
-              
-
-                <div class="col">
-                    <div class="card-s">
-                      <div class="content">
-                          <div class="title-s">Datos extras</div>
-                          <div class="price-s">$4.99</div>
-                          <div class="description">Limite de 25 GB</div>
-                          <div class="description">Cancela sólo lo que consumes en megabytes</div>
-                      </div>
-                  </div>
-                </div>
             </div>
+           
             <br><br><br>
 @endsection
