@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OperadorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,7 @@ Route::get('form-customer-add', function () {
 Route::get('form-worker-add', function () {
     return view('form-worker-add');
 });
+Route::resource('operador',OperadorController::class);
 
 Route::get('form-customer-modify', function () {
     return view('form-customer-modify');
