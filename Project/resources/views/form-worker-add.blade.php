@@ -7,54 +7,63 @@
         <div class="container-form">
             <header style="margin-left: -90%;" >Registro</header>
 
-            <form action="/find-worker">
+            <form action="/operador" method="POST">
                 <div class="form firts"> <!--Primer form-->
                     <div class="details personal">
                         <span class="title"> Detalles personales</span>
                     
                         <div class="fields">
                             <div class="input-fields">
-                                <label for="">Nombre</label>
-                                <input type="text" placeholder="Nombre" required>
+                                <label for="name">Nombre</label>
+                                <input type="text" name='nombre' placeholder="Nombre" required>
                             </div>
                             <div class="input-fields">
-                                <label for="">Apellido</label>
-                                <input type="text" placeholder="Apellido" required>
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name='apellido' placeholder="Apellido" required>
                             </div>
                             <div class="input-fields">
-                                <label for="">Fecha nacimiento</label>
-                                <input type="date" placeholder="Fecha de nacimiento" required>
+                                <label for="fecha_nac">Fecha nacimiento</label>
+                                <input type="date" name='fecha_nac'  placeholder="Fecha de nacimiento" required>
                             </div>
 
                             <div class="input-fields">
-                                <label for="">CI</label>
-                                <input type="number" placeholder="Cédula de identidad" required>
+                                <label for="cedula">CI</label>
+                                <input type="number" name='cedula' placeholder="Cédula de identidad" required>
                             </div>
 
                             <div class="input-fields" >
-                                <label for="">Usuario</label>
-                                <h2> nombreci</h2>
+                                <label for="usuario">Usuario</label>
+                                <input type="text" name='usuario' placeholder="Usuario" required>
                             </div>
+
+                            <?php
+                                $comb = "abc0123456789";
+                                $shfl = str_shuffle($comb);
+                                $pwd = substr($shfl,0,4);
+                            ?>
+
                             <div class="input-fields">
                                 <label for="">Clave asignada</label>
-                                <h2>nombreci*</h2>
+                                <h2><?php echo $pwd;?></h2>
+                                <input type="hidden" name='clave' value=<?php $pwd;?>  required>
                             </div>
+                            
                             <div class="fields" style="justify-content: space-around; width: 550px;">
                                 <div class="input-fields">
-                                    <label for="">Estado</label>
-                                    <select name="ciudades" required>
-                                        <option value="valencia">Aragua</option>
-                                        <option value="valencia">Barquisimento</option>
-                                        <option value="caracas">Caracas</option>
-                                        <option value="valencia">Mérida</option>
-                                        <option value="valencia">Valencia</option>
-                                        <option value="valencia">Zulia</option>
+                                    <label for="estado">Estado</label>
+                                    <select name="estado" required>
+                                        <option value="Aragua">Aragua</option>
+                                        <option value="Barquisimento">Barquisimento</option>
+                                        <option value="Maracas">Caracas</option>
+                                        <option value="Merida">Mérida</option>
+                                        <option value="Valencia">Valencia</option>
+                                        <option value="Zulia">Zulia</option>
                                     </select>
                                 </div>
 
                                 <div class="input-fields">
-                                    <label for="">Municipio</label>
-                                    <input type="text" placeholder="Ingresa el municipio" required>
+                                    <label for="municipio">Municipio</label>
+                                    <input type="text" name="municipio" placeholder="Ingresa el municipio" required>
                                 </div>
                             </div>
                            
@@ -67,8 +76,8 @@
                         <span class="title" style="margin-top: 2%; text-align: center;"> ¿Cúal es el nombre completo de tu mamá?</span>
                         <div class="fields" style="align-items: center; justify-content: center;">
                             <div class="input-fields"  >
-                                <label for="">Respuesta</label>
-                                <input type="text" id="agrandar-input" placeholder="Escribe la respuesta" required style="align-items: center; justify-content: center;">
+                                <label for="respuesta">Respuesta</label>
+                                <input type="text" name="respuesta" id="agrandar-input" placeholder="Escribe la respuesta" required style="align-items: center; justify-content: center;">
                             </div>
                             
                         </div>
@@ -76,7 +85,7 @@
                        
                     </div>
                     <div class="cont-botton">
-                        <button class="next">
+                        <button class="next" type=submit>
                             <span class="btnText">Registrar</span>
                             <i class="uil uil-navigator"></i>
                         </button>
