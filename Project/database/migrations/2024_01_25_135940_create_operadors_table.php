@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('operadors', function (Blueprint $table) {
             $table->id();
-            $table->integer('cedula');
             $table->string('nombre');
             $table->string('apellido');
             $table->date('fecha_nac');
+            $table->integer('cedula');
             $table->string('estado');
             $table->string('municipio');
-            $table->string('usuario');
-            $table->string('clave');
-            $table->string('respuestas');
+            $table->string('usuario')->unique();
+            $table->string('clave')->unique();
+            $table->string('respuesta');
             $table->timestamps();
         });
     }

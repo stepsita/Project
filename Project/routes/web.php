@@ -54,6 +54,8 @@ Route::get('form-worker-add', function () {
     return view('form-worker-add');
 });
 Route::resource('operador',OperadorController::class);
+//Route::resource('/find-worker', [App\Http\Controllers\OperadorController::class, 'find-worker'])->name('find-worker');
+
 
 Route::get('form-customer-modify', function () {
     return view('form-customer-modify');

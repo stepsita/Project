@@ -37,6 +37,7 @@ class OperadorController extends Controller
             'cedula'=> $request['cedula'],
             'usuario'=> $request['usuario'],
             'clave'=> $request['clave'],
+            'estado'=> $request['estado'],
             'municipio'=> $request['municipio'],
             'respuesta'=> $request['respuesta']
         ]);
