@@ -7,24 +7,31 @@ use Illuminate\Database\Eloquent\Model;
 
 class operador extends Model
 {
-    /*
     use HasFactory;
-    //colocar y definir variables y proteger
+    /**
+     * The attributes that are mass assignable.
+     *
      * @var array<int, string>
-     
+     */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'nombre',
+        'apellido',
+        'fecha_nac',
+        'cedula',
+        'usuario',
+        'clave',
+        'estado',
+        'municipio',
+        'respuesta',
     ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
-     
+     */
     protected $hidden = [
-        'password',
+        'clave',
         'remember_token',
     ];
 
@@ -32,9 +39,9 @@ class operador extends Model
      * The attributes that should be cast.
      *
      * @var array<string, string>
-     
+     */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'usuario_verified_at' => 'datetime',
         'password' => 'hashed',
-    ];*/
+    ];
 }

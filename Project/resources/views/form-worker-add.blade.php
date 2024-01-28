@@ -8,13 +8,14 @@
             <header style="margin-left: -90%;" >Registro</header>
 
             <form action="/operador" method="POST">
+                @csrf
                 <div class="form firts"> <!--Primer form-->
                     <div class="details personal">
                         <span class="title"> Detalles personales</span>
                     
                         <div class="fields">
                             <div class="input-fields">
-                                <label for="name">Nombre</label>
+                                <label for="nombre">Nombre</label>
                                 <input type="text" name='nombre' placeholder="Nombre" required>
                             </div>
                             <div class="input-fields">
@@ -23,7 +24,7 @@
                             </div>
                             <div class="input-fields">
                                 <label for="fecha_nac">Fecha nacimiento</label>
-                                <input type="date" name='fecha_nac'  placeholder="Fecha de nacimiento" required>
+                                <input type="date" max="2005-12-31" name='fecha_nac'  placeholder="Fecha de nacimiento" required>
                             </div>
 
                             <div class="input-fields">
@@ -45,18 +46,38 @@
                             <div class="input-fields">
                                 <label for="">Clave asignada</label>
                                 <h2><?php echo $pwd;?></h2>
-                                <input type="hidden" name='clave' value=<?php $pwd;?>  required>
+                                <input type="hidden" name='clave' value={{$pwd}}  required>
                             </div>
                             
                             <div class="fields" style="justify-content: space-around; width: 550px;">
                                 <div class="input-fields">
                                     <label for="estado">Estado</label>
                                     <select name="estado" required>
+                                        <option value="Amazonas">Amazonas</option>
+                                        <option value="Anzoategui">Anzoátegui</option>
+                                        <option value="Apure">Apure</option>
                                         <option value="Aragua">Aragua</option>
-                                        <option value="Barquisimento">Barquisimento</option>
-                                        <option value="Maracas">Caracas</option>
+                                        <option value="Aragua">Aragua</option>
+                                        <option value="Barinas">Barinas</option>
+                                        <option value="Bolivar">Bolívar</option>
+                                        <option value="Carabobo">Carabobo</option>
+                                        <option value="Cojedes">Cojedes</option>
+                                        <option value="Delta Amacuro">Delta Amacuro</option>
+                                        <option value="Dependencias Federales">Dependencias Federales</option>
+                                        <option value="Distrito Federal">Distrito Federal</option>
+                                        <option value="Falcon">Falcón</option>
+                                        <option value="Guarico">Guárico</option>
+                                        <option value="Lara">Lara</option>
                                         <option value="Merida">Mérida</option>
-                                        <option value="Valencia">Valencia</option>
+                                        <option value="Miranda">Miranda</option>
+                                        <option value="Monagas">Monagas</option>
+                                        <option value="Nueva Esparta">Nueva Esparta</option>
+                                        <option value="Portuguesa">Portuguesa</option>
+                                        <option value="Sucre">Sucre</option>
+                                        <option value="Tachira">Táchira</option>
+                                        <option value="Trujillo">Trujillo</option>
+                                        <option value="Vargas">Vargas</option>
+                                        <option value="Yaracuy">Yaracuy</option>
                                         <option value="Zulia">Zulia</option>
                                     </select>
                                 </div>
