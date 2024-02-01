@@ -17,12 +17,13 @@
                 
                 <h2 class="titulo2">Clientes</h2>
                 <div class="datos">
-                
+        
+        @foreach($datos as $dat)
         <div class="table">
             <div class="row">
                 <div class="columnf"><img src="img/user.png" height="40px" width="40px"></div>
-                <div class="columnf">Luis</div>
-                <div class="columnf">Enrique</div>
+                <div class="columnf">{{$dat['nombre']}}</div>
+                <div class="columnf">{{$dat['apellido']}}</div>
                 <div class="columnf">04165373841</div>
                 <div class="columnf"> </div>
                 <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
@@ -88,4 +89,5 @@
     </div>
         </section><br>
     </section>
+    @endforeach
 @endsection

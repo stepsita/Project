@@ -42,6 +42,6 @@ class operador extends Model
      */
     protected $casts = [
         'usuario_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'clave' => 'hashed',
     ];
 }

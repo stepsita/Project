@@ -16,25 +16,31 @@
                         <div class="fields">
                             <div class="input-fields">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" name='nombre' placeholder="Nombre" required>
+                                <input type="text" name='nombre' placeholder="Nombre" value="{{ old('nombre')}}" required>
                             </div>
                             <div class="input-fields">
                                 <label for="apellido">Apellido</label>
-                                <input type="text" name='apellido' placeholder="Apellido" required>
+                                <input type="text" name='apellido' placeholder="Apellido" value="{{ old('apellido')}}" required>
                             </div>
                             <div class="input-fields">
                                 <label for="fecha_nac">Fecha nacimiento</label>
-                                <input type="date" max="2005-12-31" name='fecha_nac'  placeholder="Fecha de nacimiento" required>
+                                <input type="date" max="2005-12-31" name='fecha_nac'  placeholder="Fecha de nacimiento" value="{{ old('fecha_nac')}}"required>
                             </div>
 
                             <div class="input-fields">
                                 <label for="cedula">CI</label>
-                                <input type="number" name='cedula' placeholder="Cédula de identidad" required>
+                                <input type="number" name='cedula' placeholder="Cédula de identidad" value="{{ old('cedula')}}" required>
+                                @error('cedula')
+                                    <small style="color: red">{{$message}}</small>
+                                @enderror
                             </div>
 
                             <div class="input-fields" >
                                 <label for="usuario">Usuario</label>
-                                <input type="text" name='usuario' placeholder="Usuario" required>
+                                <input type="text" name='usuario' placeholder="Usuario"value="{{ old('usuario')}}"  required>
+                                @error('usuario')
+                                    <small style="color: red">{{$message}}</small>
+                                @enderror
                             </div>
 
                             <?php
@@ -46,13 +52,13 @@
                             <div class="input-fields">
                                 <label for="">Clave asignada</label>
                                 <h2><?php echo $pwd;?></h2>
-                                <input type="hidden" name='clave' value={{$pwd}}  required>
+                                <input type="hidden" name='clave' value="{{$pwd}}" required>
                             </div>
                             
                             <div class="fields" style="justify-content: space-around; width: 550px;">
                                 <div class="input-fields">
                                     <label for="estado">Estado</label>
-                                    <select name="estado" required>
+                                    <select name="estado" value="{{ old('estado')}}" required>
                                         <option value="Amazonas">Amazonas</option>
                                         <option value="Anzoategui">Anzoátegui</option>
                                         <option value="Apure">Apure</option>
@@ -64,7 +70,7 @@
                                         <option value="Cojedes">Cojedes</option>
                                         <option value="Delta Amacuro">Delta Amacuro</option>
                                         <option value="Dependencias Federales">Dependencias Federales</option>
-                                        <option value="Distrito Federal">Distrito Federal</option>
+                                        <option value="Distrito Capital">Distrito Capital</option>
                                         <option value="Falcon">Falcón</option>
                                         <option value="Guarico">Guárico</option>
                                         <option value="Lara">Lara</option>
@@ -84,7 +90,7 @@
 
                                 <div class="input-fields">
                                     <label for="municipio">Municipio</label>
-                                    <input type="text" name="municipio" placeholder="Ingresa el municipio" required>
+                                    <input type="text" name="municipio" placeholder="Ingresa el municipio" value="{{ old('municipio')}}" required>
                                 </div>
                             </div>
                            
@@ -98,7 +104,7 @@
                         <div class="fields" style="align-items: center; justify-content: center;">
                             <div class="input-fields"  >
                                 <label for="respuesta">Respuesta</label>
-                                <input type="text" name="respuesta" id="agrandar-input" placeholder="Escribe la respuesta" required style="align-items: center; justify-content: center;">
+                                <input type="text" name="respuesta" id="agrandar-input" placeholder="Escribe la respuesta" value="{{ old('respuesta')}}" required style="align-items: center; justify-content: center;">
                             </div>
                             
                         </div>
