@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\operador;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class OperadorController extends Controller
 {
@@ -48,7 +50,7 @@ class OperadorController extends Controller
             'fecha_nac'=> $request['fecha_nac'],
             'cedula'=> $request['cedula'],
             'usuario'=> $request['usuario'],
-            'clave'=> $request['clave'],
+            'clave'=> Hash::make($request['clave']),
             'estado'=> $request['estado'],
             'municipio'=> $request['municipio'],
             'respuesta'=> $request['respuesta'],
@@ -56,13 +58,14 @@ class OperadorController extends Controller
         $data['datos_operadores']=operador::get();
         return view ('find-worker', $data);
     }
-
-    /**
+   
+    /*
      * Display the specified resource.
      */
-    public function show(operador $operador)
+    public function show($id)
     {
-        //
+        $operador['operador1'] = operador::find($id);
+        return view ('porfile-worker', $operador);
     }
 
     /**
@@ -88,4 +91,5 @@ class OperadorController extends Controller
     {
         //
     }
+
 }
