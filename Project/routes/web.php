@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OperadorController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PlaneController;
+use App\Http\Controllers\ServicioController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,14 +38,18 @@ Route::get('catalogue', function () {
 Route::get('form-planes', function () {
     return view('form-planes');
 });
+Route::resource('plane',PlaneController::class);
+//Route::post('form-planes', [PlaneController::class, 'store'])->name('plane.store');
 
 Route::get('form-planes-change', function () {
     return view('form-planes-change');
 });
 
 Route::get('form-servicios', function () {
-    return view('form-servicios-change');
+    return view('form-servicios');
 });
+Route::resource('servicio',ServicioController::class);
+
 
 Route::get('form-servicios-change', function () {
     return view('form-servicios-change');
@@ -54,7 +63,6 @@ Route::get('form-worker-add', function () {
     return view('form-worker-add');
 });
 Route::resource('operador',OperadorController::class);
-//Route::resource('/find-worker', [App\Http\Controllers\OperadorController::class, 'find-worker'])->name('find-worker');
 
 
 Route::get('form-customer-modify', function () {
@@ -104,3 +112,5 @@ Route::get('porfile-customer', function () {
 Route::get('addline-customer', function () {
     return view('addline-customer');
 });
+
+Route::resource('find-customer', ClienteController::class);

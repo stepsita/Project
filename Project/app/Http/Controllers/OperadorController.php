@@ -29,6 +29,17 @@ class OperadorController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate ([
+            'nombre'=> ['required', 'string'],
+            'apellido'=> ['required', 'string'],
+            'fecha_nac'=> ['required', 'date'],
+            'cedula'=> ['required', 'string', 'unique:operadors', 'max:8'],
+            'usuario'=> ['required', 'string', 'unique:operadors'],
+            'clave'=> ['required', 'string','unique:operadors'],
+            'estado'=> ['required', 'string'],
+            'municipio'=> ['required', 'string'],
+            'respuesta'=> ['required', 'string'],
+        ]);
         //agregar informacion a la base de datos
         operador::create([
             'nombre'=> $request['nombre'],
@@ -39,8 +50,9 @@ class OperadorController extends Controller
             'clave'=> $request['clave'],
             'estado'=> $request['estado'],
             'municipio'=> $request['municipio'],
-            'respuesta'=> $request['respuesta']
+            'respuesta'=> $request['respuesta'],
         ]);
+        return view ('find-worker');
     }
 
     /**

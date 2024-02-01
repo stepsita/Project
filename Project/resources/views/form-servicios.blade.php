@@ -7,7 +7,8 @@
 <br>
             <div style="margin-left: 390px;" class="container-form" id="container-servicios" >
                 <header>Servicios</header>
-             <form action="/catalogue">
+             <form action="/servicio"  method="POST">
+                @csrf
                  <div class="form firts"> 
                      <div class="details personal">
                          <span class="title"> Detalles del servicio</span>
@@ -15,11 +16,17 @@
                          <div class="fields" >
                              <div class="input-fields">
                                  <label for="">Nombre</label>
-                                 <input type="text" placeholder="Nombre" required>
+                                 <input type="text" placeholder="Nombre" name='nombre' value="{{ old('nombre')}}" required>
+                                 @error('nombre')
+                                    <small style="color: red">{{$message}}</small>
+                                @enderror
                              </div>
                              <div class="input-fields">
                                  <label for="">Precio</label>
-                                 <input type="number" placeholder="Precio" required>
+                                 <input type="number" placeholder="Precio"  name='precio' value="{{ old('precio')}}"required>
+                                 @error('precio')
+                                    <small style="color: red">{{$message}}</small>
+                                @enderror
                              </div>
                          </div>
                          <div class="fields" >
@@ -31,13 +38,16 @@
                                 
                                  <div style="flex-direction: row;">
                                      
-                                     <select name="tipo" required id="#style-exception" style="width: 80px;">
+                                     <select name="tipo" value="{{ old('tipo')}}"required id="#style-exception" style="width: 80px;">
                                          <option value="min">MIN</option>
                                          <option value="sms">SMS</option>
                                          <option value="gb">GB</option>
                                      </select>
                                      
-                                     <input type="number" placeholder="Cantidad" required style="width: 170px;">
+                                     <input type="number" placeholder="Cantidad" name='cantidad' value="{{ old('cantidad')}}" required style="width: 170px;">
+                                     @error('cantidad')
+                                        <small style="color: red">{{$message}}</small>
+                                    @enderror
                                  </div>
                              </div>
                              <div class="input-fields" >
@@ -46,11 +56,11 @@
  
                              <div class="input-fields">
                                  <label for="">Descripción</label>
-                                 <input type="text" placeholder="Descripción del servicio" required>
+                                 <input type="text" placeholder="Descripción del servicio" name='descripcion' value="{{ old('descripcion')}}" required>
                              </div>
                          </div>
                          <div class="cont-botton" style="align-items: center; justify-content: center;">
-                             <button class="next">
+                             <button class="next" type=submit>
                                  <span class="btnText" style="font-size: 0.96em;">Agregar</span>
                                  <i class="uil uil-navigator"></i>
                              </button>
