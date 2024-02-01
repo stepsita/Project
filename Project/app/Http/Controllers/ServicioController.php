@@ -20,7 +20,7 @@ class ServicioController extends Controller
      */
     public function create()
     {
-        //
+        return view ('form-servicios');
     }
 
     /**
@@ -43,7 +43,8 @@ class ServicioController extends Controller
             'cantidad'=> $request['cantidad'],
             'precio'=> $request['precio'],
         ]);
-        return view ('catalogue');
+        $data['datos_servicios']=servicio::get();
+        return view ('catalogue', $data);
     }
 
     /**

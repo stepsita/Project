@@ -7,7 +7,7 @@
 <br>
             <div style="margin-left: 390px;" class="container-form" id="container-servicios" >
                 <header>Servicios</header>
-             <form action="/servicio"  method="POST">
+             <form action="{{url('servicio')}}"  method="POST">
                 @csrf
                  <div class="form firts"> 
                      <div class="details personal">

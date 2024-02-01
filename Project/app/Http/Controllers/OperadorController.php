@@ -12,7 +12,8 @@ class OperadorController extends Controller
      */
     public function index()
     {
-        //
+        $data['datos_operadores']=operador::get();
+        return view ('find-worker', $data);
         
     }
 
@@ -52,7 +53,8 @@ class OperadorController extends Controller
             'municipio'=> $request['municipio'],
             'respuesta'=> $request['respuesta'],
         ]);
-        return view ('find-worker');
+        $data['datos_operadores']=operador::get();
+        return view ('find-worker', $data);
     }
 
     /**

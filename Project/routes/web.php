@@ -113,4 +113,4 @@ Route::get('addline-customer', function () {
     return view('addline-customer');
 });
 
-Route::resource('find-customer', ClienteController::class);
+Route::resource('cliente', ClienteController::class);
