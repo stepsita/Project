@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('estado_linea');
             $table->date('fecha');
             $table->timestamps();
-            $table->foreign('cedula')->references('cedula')->on('clientes');
+            $table->foreign('cedula')->references('clientes')->on('cedula');
 
         });
     }

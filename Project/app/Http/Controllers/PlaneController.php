@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\plane;
+use App\Models\servicio;
 use Illuminate\Http\Request;
 
 class PlaneController extends Controller
@@ -12,7 +13,10 @@ class PlaneController extends Controller
      */
     public function index()
     {
-        //
+        $data['datos_planes']=plane::get();
+        $data['datos_servicios']=servicio::get();
+
+        return view ('catalogue', $data);
     }
 
     /**
@@ -20,7 +24,7 @@ class PlaneController extends Controller
      */
     public function create()
     {
-        //
+        return view ('form-planes');
     }
 
     /**
@@ -45,7 +49,8 @@ class PlaneController extends Controller
             'sms'=> $request['sms'],
             'gb'=> $request['gb'],
         ]);
-        return view ('catalogue');
+        $data['datos_planes']=plane::get();
+        return view ('catalogue', $data);
     }
 
     /**

@@ -34,7 +34,7 @@
                     <div class="menu">
                         <ul class="menu-links">
                             <li class="nav-link">
-                            <a href="/catalogue">
+                            <a href="/plane">
                                 <i class=" icon"><img src="icon/archive-regular-24.png" alt=""></i>
                                 <span class="text nav-text">Catálogo</span>
                             </a>
@@ -68,7 +68,7 @@
                         </li>
 
                             <li class="nav-link">
-                                <a href="/find-worker">
+                                <a href="/operador">
                                     <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
                                     <span class="text nav-text">Buscar Operador</span>
                                 </a>
