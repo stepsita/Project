@@ -28,6 +28,7 @@
 
         <div class="table">
             @foreach($datos_planes as $dat)
+            <h2 class="bc-titulo">Planes y servicios</h2>
             <div class="row">
                 <div class="column">{{$dat['nombre'];}}</div>
                 <div class="column">{{$dat['min'];}}</div>
@@ -40,7 +41,7 @@
         <hr>
             @endforeach
             <br>
-            <p>Servicios</p>
+            <h2 class="bc-titulo">Servicios</h2>
             <br>
             @foreach($datos_servicios as $dat)
             <div class="row">

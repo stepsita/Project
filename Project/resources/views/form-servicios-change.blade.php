@@ -5,7 +5,7 @@
 @section('content')
 <!--Servicios-->
 <br>
-            <div style="margin-left: 480px;" class="container-form" id="container-servicios" >
+            <div style="margin-left: 440px;" class="container-form" id="container-servicios" >
              <header>Servicios</header>
  
              <form action="/catalogue">
@@ -41,9 +41,7 @@
                                      <input type="number" placeholder="Cantidad" required style="width: 170px;">
                                  </div>
                              </div>
-                             <div class="input-fields" >
-                                 
-                             </div>
+                          
  
                              <div class="input-fields">
                                  <label for="">Descripción</label>

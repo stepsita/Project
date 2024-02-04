@@ -29,36 +29,32 @@
                                 @enderror
                              </div>
                          </div>
-                         <div class="fields" >
-                             <div class="input-fields" >
+                        <div class="fields" >
+                            <div class="input-fields" >
                                  <div style="flex-direction: row;">
                                      <label for="" style="margin-right: 58px;">Tipo</label>
                                      <label for="">Cantidad</label>
                                  </div>
                                 
-                                 <div style="flex-direction: row;">
-                                     
+                                 <div style="flex-direction: row; width: 70%;">
                                      <select name="tipo" value="{{ old('tipo')}}"required id="#style-exception" style="width: 80px;">
                                          <option value="min">MIN</option>
                                          <option value="sms">SMS</option>
                                          <option value="gb">GB</option>
                                      </select>
                                      
-                                     <input type="number" placeholder="Cantidad" name='cantidad' value="{{ old('cantidad')}}" required style="width: 170px;">
+                                     <input type="number" placeholder="Cantidad" name='cantidad' value="{{ old('cantidad')}}" required style="width: 48%;">
                                      @error('cantidad')
                                         <small style="color: red">{{$message}}</small>
                                     @enderror
                                  </div>
-                             </div>
-                             <div class="input-fields" >
-                                 
-                             </div>
+                            </div>
  
                              <div class="input-fields">
                                  <label for="">Descripción</label>
                                  <input type="text" placeholder="Descripción del servicio" name='descripcion' value="{{ old('descripcion')}}" required>
                              </div>
-                         </div>
+                        </div>
                          <div class="cont-botton" style="align-items: center; justify-content: center;">
                              <button class="next" type=submit>
                                  <span class="btnText" style="font-size: 0.96em;">Agregar</span>
