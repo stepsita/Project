@@ -264,15 +264,52 @@ body{
     
   }
 }
-@media screen and (min-width: 1600px) {
+@media screen and (max-width: 1168px) {
   .membrete{
-    height: 5vh;
+    height: 6vh;
   }
   .sidebar.close ~ .membrete{
-    height: 5vh;
+    height: 6vh;
     
   }
 }
+@media screen and (min-width: 1447px) {
+  .membrete{
+    height: 6vh;
+  }
+  .sidebar.close ~ .membrete{
+    height: 6vh;
+    
+  }
+}
+@media screen and (min-width: 1200px) {
+  .membrete{
+    height: 6vh;
+  }
+  .sidebar.close ~ .membrete{
+    height: 6vh;
+    
+  }
+}
+@media screen and (min-width: 1600px) {
+  .membrete{
+    height: 6vh;
+  }
+  .sidebar.close ~ .membrete{
+    height: 6vh;
+    
+  }
+}
+@media screen and (min-width: 1100px) {
+  .membrete{
+    height: 6vh;
+  }
+  .sidebar.close ~ .membrete{
+    height: 6vh;
+    
+  }
+}
+
 
 /*** SLIDER ****************/
 /************************/
