@@ -3,7 +3,8 @@
 @endsection
 
 @section('content')
-        <div style="margin-left: 330px;" class="container-form" id="container-planes">
+    <section style="margin-top: 5%; margin-left:2%;" class="flex">
+        <div  class="container-form" id="container-planes">
             <header>Planes</header>
 
             <form action="/catalogue">
@@ -50,4 +51,5 @@
                 </div>      
             </form>
         </div>
+    </section>
 @endsection
