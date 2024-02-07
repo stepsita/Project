@@ -15,26 +15,31 @@
       </div>
       <hr class="featurette-divider">
 
-      <form method="post">
+      <form action="/login_user" method="POST">
+        @csrf
         <div class="txt_field">
-          <input type="text" required>
+          <input type="text" name="usuario" required>
           <span></span>
           <label>Usuario</label>
         </div>
+        @error('usuario')
+          <small style="color: red">{{$message}}</small>
+        @enderror
         <div class="txt_field">
-          <input type="password" required>
+          <input type="password" name="clave" required>
           <span></span>
           <label>Clave</label>
         </div>
+        @error('clave')
+          <small style="color: red">{{$message}}</small>
+        @enderror
         <div class="pass"><a href="/security-question">¿Olvido su contraseña? </a></div>
-      </form>
       <div style="align-items: center; justify-content: center; align-content: center; width: 100%; display: flex; flex-direction: row; ">
-        <a href="/home">
-          <button class="boton-i">
+          <button class="boton-i" type="submit">
               Iniciar
             </button>
-        </a>
       </div>
+    </form>
     </div>
   </section>
 @endsection

@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\operador;
+use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 
-class OperadorController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data['datos_operadores']=operador::get();
+        $data['datos_operadores']=user::get();
         return view ('find-worker', $data);
-        
     }
 
     /**
@@ -32,46 +32,61 @@ class OperadorController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate ([
+
+       $request->validate ([
             'nombre'=> ['required', 'string'],
             'apellido'=> ['required', 'string'],
             'fecha_nac'=> ['required', 'date'],
-            'cedula'=> ['required', 'string', 'unique:operadors', 'max:8'],
-            'usuario'=> ['required', 'string', 'unique:operadors'],
-            'clave'=> ['required', 'string','unique:operadors'],
+            'cedula'=> ['required', 'string', 'unique:users', 'max:8'],
+            'usuario'=> ['required', 'string', 'unique:users'],
+            'clave'=> ['required', 'string','unique:users'],
             'estado'=> ['required', 'string'],
             'municipio'=> ['required', 'string'],
             'respuesta'=> ['required', 'string'],
+            'tipo_user'=> ['required', 'string'],
         ]);
         //agregar informacion a la base de datos
-        operador::create([
+        user::create([
             'nombre'=> $request['nombre'],
             'apellido'=> $request['apellido'],
             'fecha_nac'=> $request['fecha_nac'],
             'cedula'=> $request['cedula'],
             'usuario'=> $request['usuario'],
-            'clave'=> Hash::make($request['clave']),
+            'clave'=> $request['clave'],
             'estado'=> $request['estado'],
             'municipio'=> $request['municipio'],
             'respuesta'=> $request['respuesta'],
+            'tipo_user'=> $request['tipo_user'],
         ]);
-        $data['datos_operadores']=operador::get();
+        $data['datos_operadores']=user::get();
         return view ('find-worker', $data);
+
     }
-   
-    /*
+
+    public function login($request)
+    {
+       $userInfo = user::where('usuario', $request['usuario'])->first();
+
+       if($userInfo) {
+        if(strcmp($request['clave'], $userInfo->clave) == 0 ) {
+            return view('home',['userInfo' => $userInfo]);
+        }
+       }
+
+    }
+    /**
      * Display the specified resource.
      */
     public function show($id)
     {
-        $operador['operador1'] = operador::find($id);
-        return view ('porfile-worker', $operador);
+        $data['operador1'] = user::find($id);
+        return view ('porfile-worker', $data);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(operador $operador)
+    public function edit(user $user)
     {
         //
     }
@@ -79,7 +94,7 @@ class OperadorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, operador $operador)
+    public function update(Request $request, user $user)
     {
         //
     }
@@ -87,9 +102,8 @@ class OperadorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(operador $operador)
+    public function destroy(user $user)
     {
         //
     }
-
 }

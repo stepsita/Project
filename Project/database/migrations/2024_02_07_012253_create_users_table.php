@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('operadors', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
             $table->string('apellido');
@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('estado');
             $table->string('municipio');
             $table->string('usuario')->unique();
-            $table->string('clave')->unique();
+            $table->string('clave');
             $table->string('respuesta');
+            $table->integer('tipo_user');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('operadors');
+        Schema::dropIfExists('users');
     }
 };

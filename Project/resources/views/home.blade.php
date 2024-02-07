@@ -47,7 +47,6 @@
         </section>
 
         <br> <hr class="featurette-divider">
-       
         
         <div class="row1-container" >
           <div class="box box-down cyan">
@@ -85,7 +84,7 @@
             <hr class="featurette-divider"> <br>
         
             <div class="container-texto">
-                <h1 >Servicios steyla</h1><br>
+                <h1 >Servicios steyla {{$userInfo['nombre'];}}</h1><br>
                 <p >Disponibles para líneas móviles e internet móvil, ideales para mantener conectados a los miembros de tu familia, así como a los empleados de tu empresa, emprendimiento o negocio.</p>
                 <div class="container-number">
                   <h1> +300</h1> <img src="img/economico.png" width="70px" height="70px">

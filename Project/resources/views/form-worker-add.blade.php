@@ -7,7 +7,7 @@
         <div class="container-form">
             <header style="margin-left: -90%;" >Registro</header>
 
-            <form action="/operador" method="POST">
+            <form action="/usuario" method="POST">
                 @csrf
                 <div class="form firts"> <!--Primer form-->
                     <div class="details personal">
@@ -108,7 +108,8 @@
                             </div>
                             
                         </div>
-                        
+                        <input type="hidden" name='tipo_user' value="1" required>
+
                        
                     </div>
                     <div class="cont-botton">
