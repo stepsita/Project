@@ -26,7 +26,7 @@
                         <div class="columnf">{{$dat['apellido'];}}</div>
                         <div class="columnf">{{$dat['cedula'];}}</div>
                         <div class="columnf"> </div>
-                        <div class="columnf"><a href="/operador/{{$dat['id'];}}"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
+                        <div class="columnf"><a href="/usuario/{{$dat['id'];}}"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
                         <div class="columnf"><a href="/change-porfile-worker"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a>  </div>
                         <div class="columnf"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </a> </div>
                     </div>

@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\OperadorController;
+use Illuminate\Http\Request;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PlaneController;
 use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\UserController;
 
 
 
@@ -62,7 +63,7 @@ Route::get('form-customer-add', function () {
 Route::get('form-worker-add', function () {
     return view('form-worker-add');
 });
-Route::resource('operador',OperadorController::class);
+Route::resource('usuario',UserController::class);
 
 
 Route::get('form-customer-modify', function () {
@@ -114,3 +115,9 @@ Route::get('addline-customer', function () {
 });
 
 Route::resource('cliente', ClienteController::class);
+
+Route::post('login_user', function (Request $request) {
+    $userController = new UserController();
+    
+    return $userController->login($request);
+});

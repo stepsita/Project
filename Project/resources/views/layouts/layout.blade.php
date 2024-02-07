@@ -68,7 +68,7 @@
                         </li>
 
                             <li class="nav-link">
-                                <a href="/operador">
+                                <a href="/usuario">
                                     <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
                                     <span class="text nav-text">Buscar Operador</span>
                                 </a>
