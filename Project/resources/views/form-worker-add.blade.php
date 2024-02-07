@@ -13,7 +13,7 @@
                     <div class="details personal">
                         <span class="title"> Detalles personales</span>
                     
-                        <div class="fields">
+                        <div class="fields" >
                             <div class="input-fields">
                                 <label for="nombre">Nombre</label>
                                 <input type="text" name='nombre' placeholder="Nombre" value="{{ old('nombre')}}" required>
@@ -27,7 +27,7 @@
                                 <input type="date" max="2005-12-31" name='fecha_nac'  placeholder="Fecha de nacimiento" value="{{ old('fecha_nac')}}"required>
                             </div>
 
-                            <div class="input-fields">
+                            <div class="input-fields" >
                                 <label for="cedula">CI</label>
                                 <input type="number" name='cedula' placeholder="Cédula de identidad" value="{{ old('cedula')}}" required>
                                 @error('cedula')
@@ -42,7 +42,7 @@
                                     <small style="color: red">{{$message}}</small>
                                 @enderror
                             </div>
-
+                            
                             <?php
                                 $comb = "abc0123456789";
                                 $shfl = str_shuffle($comb);
@@ -55,7 +55,8 @@
                                 <input type="hidden" name='clave' value="{{$pwd}}" required>
                             </div>
                             
-                            <div class="fields" style="justify-content: space-around; width: 550px;">
+                             <!--adaptado maquina prof-->
+                            <div style="justify-content: space-between; width: 62%; display:flex; flex-direction: row; ">
                                 <div class="input-fields">
                                     <label for="estado">Estado</label>
                                     <select name="estado" value="{{ old('estado')}}" required>
@@ -88,12 +89,11 @@
                                     </select>
                                 </div>
 
-                                <div class="input-fields">
+                                <div class="input-fields" >
                                     <label for="municipio">Municipio</label>
                                     <input type="text" name="municipio" placeholder="Ingresa el municipio" value="{{ old('municipio')}}" required>
                                 </div>
-                            </div>
-                           
+                            </div>     
                         </div>
 
                     </div>
