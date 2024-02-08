@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\servicio;
+use App\Models\plane;
 use Illuminate\Http\Request;
 
 class ServicioController extends Controller
@@ -12,7 +13,10 @@ class ServicioController extends Controller
      */
     public function index()
     {
-        //
+        $data['datos_planes']=plane::get();
+        $data['datos_servicios']=servicio::get();
+
+        return view ('catalogue', $data);
     }
 
     /**
@@ -43,6 +47,7 @@ class ServicioController extends Controller
             'cantidad'=> $request['cantidad'],
             'precio'=> $request['precio'],
         ]);
+        $data['datos_planes']=plane::get();
         $data['datos_servicios']=servicio::get();
         return view ('catalogue', $data);
     }

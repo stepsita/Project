@@ -8,4 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class linea extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'cedula',
+        'codigo',
+        'numero',
+        'plan',
+        'pago',
+        'estado_linea',
+        'fecha',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        
+        'estado_linea',
+        'fecha',
+    ];
 }
+
+

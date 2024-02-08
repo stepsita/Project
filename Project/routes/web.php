@@ -8,7 +8,6 @@ use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\UserController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,9 +23,20 @@ Route::get('/', function () {
     return view('login');
 });
 
+/*Route::get('home/{id}', function () {
+    $id = request()->query('id');
+
+    if($id) {
+        
+    }
+
+    return view('home', ["userInfo"=>[]]);
+});*/
 Route::get('home', function () {
-    return view('home');
+    return view('home', ["userInfo"=>[]]);
 });
+
+
 
 Route::get('login', function () {
     return view('login');
@@ -64,6 +74,8 @@ Route::get('form-worker-add', function () {
     return view('form-worker-add');
 });
 Route::resource('usuario',UserController::class);
+
+Route::resource('cliente',ClienteController::class);
 
 
 Route::get('form-customer-modify', function () {

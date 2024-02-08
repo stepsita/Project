@@ -6,6 +6,12 @@ use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Redirect;
+
+
+
 
 
 class UserController extends Controller
@@ -69,7 +75,7 @@ class UserController extends Controller
 
        if($userInfo) {
         if(strcmp($request['clave'], $userInfo->clave) == 0 ) {
-            return view('home',['userInfo' => $userInfo]);
+            return Redirect::to('home')->with( ['userInfo' => $userInfo] );
         }
        }
 

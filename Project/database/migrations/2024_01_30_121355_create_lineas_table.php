@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('lineas', function (Blueprint $table) {
             $table->unsignedBigInteger('cedula');
             $table->id();
-            $table->integer('cod_area');
-            $table->integer('numero') ->unique();
-            $table->string('tipo');
+            $table->string('codigo');
+            $table->string('numero') ->unique();
+            $table->string('plan');
+            $table->string('pago');
             $table->string('estado_linea');
             $table->date('fecha');
             $table->timestamps();
-            $table->foreign('cedula')->references('clientes')->on('cedula');
+            $table->foreign('cedula')->references('cedula')->on('clientes');
 
         });
     }

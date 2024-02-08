@@ -47,7 +47,7 @@
         </section>
 
         <br> <hr class="featurette-divider">
-        
+        <h2 id="userName">Bienvenido </h2>
         <div class="row1-container" >
           <div class="box box-down cyan">
             <h2>Búsqueda</h2>
@@ -58,7 +58,7 @@
          
 
           <div class="box red">
-            <h2>Catálogo</h2>
+            <h2>Catálogo </h2>
             <p>Planes y Servicios de Steyla, con todas las especifícaciones</p>
             <img src="img/bullet.png" width="23%" height="23%">
           </div>
@@ -84,7 +84,7 @@
             <hr class="featurette-divider"> <br>
         
             <div class="container-texto">
-                <h1 >Servicios steyla {{$userInfo['nombre'];}}</h1><br>
+                <h1 >Servicios steyla</h1><br>
                 <p >Disponibles para líneas móviles e internet móvil, ideales para mantener conectados a los miembros de tu familia, así como a los empleados de tu empresa, emprendimiento o negocio.</p>
                 <div class="container-number">
                   <h1> +300</h1> <img src="img/economico.png" width="70px" height="70px">
@@ -96,4 +96,24 @@
             </div>
            
             <br><br><br>
+            <script>
+              window.addEventListener('load', () => {
+                
+                if (@json($userInfo)){
+                  let user = @json($userInfo);
+
+                  const title = document.getElementById('userName')
+                  title.innerHTML=`Catalogo de ${user.nombre}` 
+                  
+                  if (user.length !== 0)
+                    localStorage.setItem("user",JSON.stringify(user));
+                }
+                if (localStorage.getItem('user')){
+                  let user = JSON.parse(localStorage.getItem('user'))
+                  const title = document.getElementById('userName')
+                  title.innerHTML=`Bienvenido ${user.nombre}` 
+                }
+              })
+            </script>
+            <script src="{{ asset('js/verifyLogin.js')}}"></script>
 @endsection

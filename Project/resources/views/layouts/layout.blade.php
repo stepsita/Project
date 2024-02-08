@@ -29,7 +29,6 @@
                     </div>
                     <i class="toggle"><img src="{{ asset('icon/menu-regular-24.png')}}" alt=""></i>
                 </header>
-
                 <div class="menu-bar">
                     <div class="menu">
                         <ul class="menu-links">
@@ -41,13 +40,13 @@
                         </li>
                         
                         <li class="nav-link">
-                            <a href="/form-customer-add">
+                            <a href="/cliente/create">
                                 <i class="bx  icon"><img src="icon/agus.PNG" style="width: 32px;"  alt=""></i>
                                 <span class="text nav-text">Agregar Cliente</span>
                             </a>
                         </li>
                             <li class="nav-link">
-                                <a href="/find-customer">
+                                <a href="/cliente">
                                     <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
                                     <span class="text nav-text">Buscar Cliente</span>
                                 </a>
@@ -142,8 +141,8 @@
                 </div>
             </footer>
         @show
+
         <script src="{{ asset('js/script.js')}}"></script>
-        <script src="{{ asset('js/app.js')}}"></script>
          <!-- Swiper JS -->
          <script src="{{ asset('js/swiper-bundle.min.js')}}"></script>
           <!-- Initialize Swiper -->

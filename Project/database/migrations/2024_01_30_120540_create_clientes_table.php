@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('ciudad');
             $table->string('municipio');
             $table->string('calle');
-            $table->string('nombre_correo')->unique();
-            $table->string('direccion_correo')->unique();
+            $table->string('correo')->unique();
             $table->string('estado_cliente');
             $table->timestamps();
         });

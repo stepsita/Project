@@ -4,7 +4,6 @@
 
 @section('content')
 <section class="flex">
-
     <section class="container-card-cat">
         <div class="col3">
             <h2 class="bc-titulo">Planes y servicios</h2>
@@ -24,11 +23,12 @@
                     <a href="/form-servicios"> Agregar servicio</a> 
                 </button>
             </section>  
-        </div>  
-
+        </div>
         <div class="table">
-            @foreach($datos_planes as $dat)
+            <br>
             <h2 class="bc-titulo">Planes y servicios</h2>
+            <br>
+            @foreach($datos_planes as $dat)
             <div class="row">
                 <div class="column">{{$dat['nombre'];}}</div>
                 <div class="column">{{$dat['min'];}}</div>
@@ -58,4 +58,5 @@
         <br><br>
      </section> <br><br>
 </section>
+
 @endsection

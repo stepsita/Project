@@ -50,6 +50,7 @@ class PlaneController extends Controller
             'gb'=> $request['gb'],
         ]);
         $data['datos_planes']=plane::get();
+        $data['datos_servicios']=servicio::get();
         return view ('catalogue', $data);
     }
 
