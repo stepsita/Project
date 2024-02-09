@@ -6,10 +6,10 @@
 <!--Servicios-->
 <br>
             <div style="margin-left: 390px;" class="container-form" id="container-servicios" >
-                <header>Servicios</header>
+                <header style=" margin-left: -5%;">Servicios</header>
              <form action="{{ route('crear-servicios') }}"  method="POST">
                 @csrf
-                 <div class="form firts"> 
+                 <div class="form firts" style=" margin-left: -5%;"> 
                      <div class="details personal">
                          <span class="title"> Detalles del servicio</span>
                      

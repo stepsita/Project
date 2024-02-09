@@ -99,8 +99,8 @@ Route::middleware('auth')->group(function () {
         return view('form-servicios-change');
     });
 
-*/
 
+*/
  
     Route::get('/crear-operador', function () {
         if(Auth::user() && Auth::user()->tipo_user!=2){
@@ -118,7 +118,7 @@ Route::middleware('auth')->group(function () {
         return view('find-worker',['datos_operadores' => $datos_operadores]);
     
     })->name('buscar-operador');
-
+    
     Route::get('/operador/{id}', [RegisteredUserController::class, 'show']);
 
     
