@@ -121,8 +121,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/operador/{id}', [RegisteredUserController::class, 'show']);
 
-
-
+    
 
     Route::get('verify-email', EmailVerificationPromptController::class)
                 ->name('verification.notice');

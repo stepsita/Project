@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nombre')->unique();
             $table->integer('precio');
-            $table->string('descripcion');
             $table->integer('min');
             $table->integer('sms');
             $table->integer('gb');

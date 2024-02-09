@@ -110,7 +110,7 @@
             <footer class="footer">
                 <div class="row">
                     <div class="col" id="icons">
-                        <a href="index.html"> <img src="img/logo.png" class="logo"></a>
+                        <a href="/home"> <img src="img/logo.png" class="logo"></a>
                     
                         <br>
                         <a href=""><i class="bx bxl-facebook"></i></a>

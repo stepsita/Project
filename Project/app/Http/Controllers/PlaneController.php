@@ -35,7 +35,6 @@ class PlaneController extends Controller
         $request->validate ([
             'nombre'=> ['required', 'string','unique:planes'],
             'precio'=> ['required', 'integer', 'max:100'],
-            'descripcion'=> ['required', 'string'],
             'min'=> ['required', 'integer', 'max:1000'],
             'sms'=> ['required', 'integer', 'max:1000'],
             'gb'=> ['required', 'integer', 'max:100'], 
@@ -44,7 +43,6 @@ class PlaneController extends Controller
         plane::create([
             'nombre'=> $request['nombre'],
             'precio'=> $request['precio'],
-            'descripcion'=> $request['descripcion'],
             'min'=> $request['min'],
             'sms'=> $request['sms'],
             'gb'=> $request['gb'],

@@ -48,7 +48,7 @@
 
         <br> <hr class="featurette-divider">
         <div class="container-texto">
-          <h2>Bienvenido {{Auth::user()->nombre}} </h2>
+          <h2>Bienvenid@, {{Auth::user()->nombre}} </h2>
         </div>
         <div class="row1-container" >
           <div class="box box-down cyan">

@@ -49,10 +49,6 @@
                                     @enderror
                                  </div>
                             </div>
-                             <div class="input-fields">
-                                 <label for="">Descripción</label>
-                                 <input type="text" placeholder="Descripción del servicio" name='descripcion' value="{{ old('descripcion')}}" required >
-                             </div>
                         </div>
                          <div class="cont-botton" style="align-items: center; justify-content: center;">
                              <button class="next" type=submit>

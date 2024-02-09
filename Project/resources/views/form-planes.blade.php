@@ -28,11 +28,6 @@
                                     @enderror
                                 </div>
                                 <div class="input-fields">
-                                    <label for="">Descripción</label>
-                                    <input type="text" placeholder="Descripción del plan" name='descripcion' value="{{ old('descripcion')}}" required>
-                                </div>
-                        
-                                <div class="input-fields">
                                     <label for="">MIN</label>
                                     <input type="number" placeholder="Minutos en llamada" name='min' value="{{ old('min')}}" required>
                                     @error('min')
