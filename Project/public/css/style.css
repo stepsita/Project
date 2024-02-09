@@ -164,10 +164,10 @@ body{
     margin-top: 40px;
 
 }
-.sidebar li a{
+.sidebar li a { /*class de los botones*/
     list-style: none;
     height: 100%;
-    background-color: transparent;
+    background-color:transparent;
     display: flex;
     align-items: center;
     height: 100%;
