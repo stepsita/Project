@@ -16,30 +16,30 @@
                     <div class="contenedor-user">
                         <div class="flex-item">
                             <label class="label-p" for="name">Nombre</label>
-                            <input class="pys" type="text" placeholder="Ingrese el nombre"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['nombre'];}}">
+                            <input class="pys" type="text"  readonly onmousedown="return false;" placeholder="Ingrese el nombre"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['nombre'];}}" >
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Apellido</label>
-                            <input class="pys" type="text" placeholder="Ingrese el apellido" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['apellido'];}}">
+                            <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Ingrese el apellido" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['apellido'];}}">
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Fecha de nacimiento</label>
-                            <input class="pys" type="text" placeholder="Ingrese la fecha"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['fecha_nac'];}}">
+                            <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Ingrese la fecha"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['fecha_nac'];}}">
                         </div>
                     </div>
                     
                     <div class="contenedor-user">
                         <div class="flex-item">
                             <label class="label-p" for="name">Cedula de identidad</label>
-                            <input class="pys" type="number" placeholder="Ingrese la cedula" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['cedula'];}}">
+                            <input class="pys" type="number" readonly onmousedown="return false;" placeholder="Ingrese la cedula" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['cedula'];}}">
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Estado</label>
-                            <input class="pys" type="text" placeholder="Ingrese la cedula"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['estado'];}}">
+                            <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Ingrese la cedula"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['estado'];}}">
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Municipio</label>
-                            <input  class="pys" type="text" placeholder="Ingrese su municipio" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['municipio'];}}">
+                            <input  class="pys" type="text" readonly onmousedown="return false;" placeholder="Ingrese su municipio" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['municipio'];}}">
                         </div>
                     </div>
                     <div class="contenedor-user">
@@ -48,7 +48,7 @@
                             
                                 <h2 style="font-size: 15px; color: rgb(5, 103, 70); margin-top: 1%;">¿Cúal es el nombre completo de tu mamá?</h2>
                             
-                            <input  style="width: 550px;" class="pys" type="text" placeholder="Ingrese la respuesta" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['respuesta'];}}">
+                            <input  style="width: 550px;" class="pys" type="text" readonly onmousedown="return false;" placeholder="Ingrese la respuesta" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['respuesta'];}}">
                         </div>
                     </div>
                 </div>
@@ -57,11 +57,11 @@
                 <div class="contenedor-op">
                     <div class="flex-item">
                         <label class="label-p" for="codigo">Usuario</label>
-                        <input class="pys" type="text" placeholder="Usuario"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['usuario'];}}">
+                        <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Usuario"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['usuario'];}}">
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="numero">Clave asignada</label>
-                        <input class="pys" type="text" placeholder="Contraseña" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['clave'];}}">
+                        <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Contraseña" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['clave'];}}">
                     </div>
                 </div>    
             </div>
