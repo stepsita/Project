@@ -76,13 +76,15 @@
 
                     <div class="botton-content">
                         <li class="">
-                            <form method="POST" action="{{ route('cerrar-sesion') }}">
-                                {{ csrf_field() }}
-                                <button type="submit">
-                                    <i class="icon"><img src="icon/log-out-regular-24.png" alt=""></i>
-                                    <span class="text nav-text">Salir</span>
-                                </button>
-                            </form>
+                            <a href="">
+                                <form method="POST" action="{{ route('cerrar-sesion') }}">
+                                    {{ csrf_field() }}
+                                    <button type="submit">
+                                        <i class="icon"><img src="icon/log-out-regular-24.png" alt=""></i>
+                                        <span class="text nav-text">Salir</span>
+                                    </button>
+                                </form>
+                            </a>
                         </li>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
                     <div class="contenedor-user">
                         <div class="flex-item">
                             <label class="label-p" for="name">Nombre</label>
-                            <input class="pys" type="text"  readonly onmousedown="return false;" placeholder="Ingrese el nombre"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['nombre'];}}" >
+                            <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Ingrese el nombre"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['nombre'];}}">
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Apellido</label>
