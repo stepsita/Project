@@ -15,22 +15,22 @@
       </div>
       <hr class="featurette-divider">
 
-      <form action="/login_user" method="POST">
+      <form action="{{ route('login') }}" method="POST">
         @csrf
         <div class="txt_field">
-          <input type="text" name="usuario" required>
+          <input type="text" name="email" required>
           <span></span>
-          <label>Usuario</label>
+          <label>Correo</label>
         </div>
-        @error('usuario')
+        @error('email')
           <small style="color: red">{{$message}}</small>
         @enderror
         <div class="txt_field">
-          <input type="password" name="clave" required>
+          <input type="password" name="password" required>
           <span></span>
           <label>Clave</label>
         </div>
-        @error('clave')
+        @error('password')
           <small style="color: red">{{$message}}</small>
         @enderror
         <div class="pass"><a href="/security-question">¿Olvido su contraseña? </a></div>

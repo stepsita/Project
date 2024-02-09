@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('estado');
             $table->string('municipio');
             $table->string('usuario')->unique();
-            $table->string('clave');
+            $table->string('email')->unique();
+            $table->string('password');
             $table->string('respuesta');
             $table->integer('tipo_user');
             $table->timestamps();

@@ -47,7 +47,6 @@
         </section>
 
         <br> <hr class="featurette-divider">
-        <h2 id="userName">Bienvenido </h2>
         <div class="row1-container" >
           <div class="box box-down cyan">
             <h2>Búsqueda</h2>
@@ -82,7 +81,7 @@
         </div>
        
             <hr class="featurette-divider"> <br>
-        
+            <h2>Bienvenido {{Auth::user()->nombre}} </h2>
             <div class="container-texto">
                 <h1 >Servicios steyla</h1><br>
                 <p >Disponibles para líneas móviles e internet móvil, ideales para mantener conectados a los miembros de tu familia, así como a los empleados de tu empresa, emprendimiento o negocio.</p>
@@ -95,25 +94,5 @@
                 </div>
             </div>
            
-            <br><br><br>
-            <script>
-              window.addEventListener('load', () => {
-                
-                if (@json($userInfo)){
-                  let user = @json($userInfo);
-
-                  const title = document.getElementById('userName')
-                  title.innerHTML=`Catalogo de ${user.nombre}` 
-                  
-                  if (user.length !== 0)
-                    localStorage.setItem("user",JSON.stringify(user));
-                }
-                if (localStorage.getItem('user')){
-                  let user = JSON.parse(localStorage.getItem('user'))
-                  const title = document.getElementById('userName')
-                  title.innerHTML=`Bienvenido ${user.nombre}` 
-                }
-              })
-            </script>
-            <script src="{{ asset('js/verifyLogin.js')}}"></script>
+            
 @endsection
