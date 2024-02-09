@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nombre')->unique();
             $table->string('tipo');
             $table->integer('cantidad');
-            $table->string('descripcion');
             $table->integer('precio');
             $table->timestamps();
         });

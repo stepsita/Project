@@ -6,7 +6,7 @@
     <section style="margin-top: 5%; margin-left:2%;" class="flex">
         <div  class="container-form" id="container-planes">
                 <header>Planes</header>
-                <form action="/plane" method="POST">
+                <form action="{{ route('crear-planes') }}" method="POST">
                     @csrf
                     <div class="form firts" > <!--Primer form-->
                         <div class="details personal" >
@@ -27,11 +27,6 @@
                                         <small style="color: red">{{$message}}</small>
                                     @enderror
                                 </div>
-                                <div class="input-fields">
-                                    <label for="">Descripción</label>
-                                    <input type="text" placeholder="Descripción del plan" name='descripcion' value="{{ old('descripcion')}}" required>
-                                </div>
-                        
                                 <div class="input-fields">
                                     <label for="">MIN</label>
                                     <input type="number" placeholder="Minutos en llamada" name='min' value="{{ old('min')}}" required>

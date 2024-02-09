@@ -16,7 +16,6 @@ class plane extends Model
     protected $fillable = [
         'nombre',
         'precio',
-        'descripcion',
         'min',
         'sms',
         'gb',

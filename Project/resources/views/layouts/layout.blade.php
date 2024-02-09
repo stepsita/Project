@@ -29,59 +29,60 @@
                     </div>
                     <i class="toggle"><img src="{{ asset('icon/menu-regular-24.png')}}" alt=""></i>
                 </header>
-
                 <div class="menu-bar">
                     <div class="menu">
                         <ul class="menu-links">
-                            <li class="nav-link">
-                            <a href="/plane">
+                        <li class="nav-link">
+                            <a href="/catalogo">
                                 <i class=" icon"><img src="icon/archive-regular-24.png" alt=""></i>
                                 <span class="text nav-text">Catálogo</span>
                             </a>
                         </li>
-                        
                         <li class="nav-link">
-                            <a href="/form-customer-add">
+                            <a href="/crear-clientes">
                                 <i class="bx  icon"><img src="icon/agus.PNG" style="width: 32px;"  alt=""></i>
                                 <span class="text nav-text">Agregar Cliente</span>
                             </a>
                         </li>
                             <li class="nav-link">
-                                <a href="/find-customer">
+                                <a href="/buscar-clientes">
                                     <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
                                     <span class="text nav-text">Buscar Cliente</span>
                                 </a>
                             </li>
 
                             <li class="nav-link">
-                            <a href="/statistics">
+                            <a href="/estadisticas">
                                 <i class="icon"><img src="icon/bar-chart-alt-2-regular-24.png" alt=""></i>
                                 <span class="text nav-text">Estadísticas</span>
                             </a>
                         </li>
-
-                        <li class="nav-link">
-                            <a href="/form-worker-add">
-                                <i class="icon"><img src="icon/agus.PNG" style="width: 32px;" alt=""></i>
-                                <span class="text nav-text">Agregar Operador</span>
-                            </a>
-                        </li>
-
+                        @if(Auth::user() && Auth::user()->tipo_user==2) 
                             <li class="nav-link">
-                                <a href="/usuario">
+                                <a href="/crear-operador">
+                                    <i class="icon"><img src="icon/agus.PNG" style="width: 32px;" alt=""></i>
+                                    <span class="text nav-text">Agregar Operador</span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav-link">
+                                <a href="/buscar-operador">
                                     <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
                                     <span class="text nav-text">Buscar Operador</span>
                                 </a>
                             </li>
-                            
+                        @endif
                     </div>
 
                     <div class="botton-content">
                         <li class="">
-                            <a href="/login">
-                                <i class="icon"><img src="icon/log-out-regular-24.png" alt=""></i>
-                                <span class="text nav-text">Salir</span>
-                            </a>
+                            <form method="POST" action="{{ route('cerrar-sesion') }}">
+                                {{ csrf_field() }}
+                                <button type="submit">
+                                    <i class="icon"><img src="icon/log-out-regular-24.png" alt=""></i>
+                                    <span class="text nav-text">Salir</span>
+                                </button>
+                            </form>
                         </li>
                     </div>
                 </div>
@@ -109,7 +110,7 @@
             <footer class="footer">
                 <div class="row">
                     <div class="col" id="icons">
-                        <a href="index.html"> <img src="img/logo.png" class="logo"></a>
+                        <a href="/home"> <img src="img/logo.png" class="logo"></a>
                     
                         <br>
                         <a href=""><i class="bx bxl-facebook"></i></a>
@@ -124,14 +125,6 @@
                         </p>
                     </div>
                     <div class="col">
-                        <h3>Empresa</h3>
-                        <ul>
-                            <li><a href="/login">Inicio de Sesión</a></li>
-                            <li><a href="busqueda-clientes.html">Búsqueda</a></li>
-                            <li><a href="estadisticas.html">Estadísticas</a></li>
-                        </ul>
-                    </div>
-                    <div class="col">
                         <h3>Redes</h3>
                         <ul>
                             <li><a href="">Instagram</a></li>
@@ -142,8 +135,8 @@
                 </div>
             </footer>
         @show
+
         <script src="{{ asset('js/script.js')}}"></script>
-        <script src="{{ asset('js/app.js')}}"></script>
          <!-- Swiper JS -->
          <script src="{{ asset('js/swiper-bundle.min.js')}}"></script>
           <!-- Initialize Swiper -->

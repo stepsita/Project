@@ -28,7 +28,7 @@ class LineaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

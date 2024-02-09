@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\servicio;
+use App\Models\plane;
 use Illuminate\Http\Request;
 
 class ServicioController extends Controller
@@ -12,7 +13,10 @@ class ServicioController extends Controller
      */
     public function index()
     {
-        //
+        $data['datos_planes']=plane::get();
+        $data['datos_servicios']=servicio::get();
+
+        return view ('catalogue', $data);
     }
 
     /**
@@ -31,7 +35,6 @@ class ServicioController extends Controller
         $request->validate ([
             'nombre'=> ['required', 'string','unique:servicios'],
             'tipo'=> ['required', 'string'],
-            'descripcion'=> ['required', 'string'],
             'cantidad'=> ['required', 'integer', 'max:1000'],
             'precio'=> ['required', 'integer', 'max:100'],
         ]);
@@ -39,12 +42,10 @@ class ServicioController extends Controller
         servicio::create([
             'nombre'=> $request['nombre'],
             'tipo'=> $request['tipo'],
-            'descripcion'=> $request['descripcion'],
             'cantidad'=> $request['cantidad'],
             'precio'=> $request['precio'],
         ]);
-        $data['datos_servicios']=servicio::get();
-        return view ('catalogue', $data);
+        return redirect('catalogo');
     }
 
     /**

@@ -7,7 +7,7 @@
         <div class="container-form">
             <header style="margin-left: -90%;" >Registro</header>
 
-            <form action="/usuario" method="POST">
+            <form action="{{ route('crear-operador') }}" method="POST">
                 @csrf
                 <div class="form firts"> <!--Primer form-->
                     <div class="details personal">
@@ -35,10 +35,10 @@
                                 @enderror
                             </div>
 
-                            <div class="input-fields" >
-                                <label for="usuario">Usuario</label>
-                                <input type="text" name='usuario' placeholder="Usuario"value="{{ old('usuario')}}"  required>
-                                @error('usuario')
+                            <div class="input-fields">
+                                <label for="fecha_nac">Correo</label>
+                                <input type="email" max="2005-12-31" name='email'  placeholder="Correo" value="{{ old('email')}}"required>
+                                @error('email')
                                     <small style="color: red">{{$message}}</small>
                                 @enderror
                             </div>
@@ -52,7 +52,7 @@
                             <div class="input-fields">
                                 <label for="">Clave asignada</label>
                                 <h2><?php echo $pwd;?></h2>
-                                <input type="hidden" name='clave' value="{{$pwd}}" required>
+                                <input type="hidden" name='password' value="{{$pwd}}" required>
                             </div>
                             
                              <!--adaptado maquina prof-->

@@ -7,7 +7,7 @@
 <br>
             <div style="margin-left: 390px;" class="container-form" id="container-servicios" >
                 <header>Servicios</header>
-             <form action="{{url('servicio')}}"  method="POST">
+             <form action="{{ route('crear-servicios') }}"  method="POST">
                 @csrf
                  <div class="form firts"> 
                      <div class="details personal">
@@ -43,17 +43,12 @@
                                          <option value="gb">GB</option>
                                      </select>
                                      
-                                     <input type="number" placeholder="Cantidad" name='cantidad' value="{{ old('cantidad')}}" required style="width: 48%;">
-                                     @error('cantidad')
+                                     <input type="number" placeholder="Cantidad" name='cantidad' value="{{ old('cantidad')}}" required style="width: 55%;">
+                                    @error('cantidad')
                                         <small style="color: red">{{$message}}</small>
                                     @enderror
                                  </div>
                             </div>
- 
-                             <div class="input-fields">
-                                 <label for="">Descripción</label>
-                                 <input type="text" placeholder="Descripción del servicio" name='descripcion' value="{{ old('descripcion')}}" required>
-                             </div>
                         </div>
                          <div class="cont-botton" style="align-items: center; justify-content: center;">
                              <button class="next" type=submit>

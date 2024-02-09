@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\cliente;
 use App\Models\linea;
+use App\Models\plane;
+
 use Illuminate\Http\Request;
 
 class ClienteController extends Controller
@@ -14,9 +16,8 @@ class ClienteController extends Controller
     public function index()
     {
         //
-        $datos['datos']=cliente::get();
-        
-        return view('find-customer', $datos);
+        $data['datos_clientes']=cliente::get();
+        return view ('find-customer', $data);
         //llamado a linea y creo una nueva variable para esta 
     }
 
@@ -25,7 +26,8 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        $data['planes']=plane::get();
+        return view ('form-customer-add', $data);
     }
 
     /**
@@ -33,7 +35,52 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate ([
+            'nombre'=> ['required', 'string'],
+            'apellido'=> ['required', 'string'],
+            'fecha_nac'=> ['required', 'date'],
+            'cedula'=> ['required', 'string', 'unique:clientes', 'max:8','min:8'], 
+            'estado'=> ['required', 'string'],
+            'ciudad'=> ['required', 'string'],
+            'municipio'=> ['required', 'string'],
+            'calle'=> ['required', 'string'],
+            'correo' => ['required', 'string', 'email','unique:clientes'],
+            'estado_cliente'=> ['required', 'string'],
+        ]);
+        cliente::create([
+            'nombre'=> $request['nombre'],
+            'apellido'=> $request['apellido'],
+            'fecha_nac'=> $request['fecha_nac'],
+            'cedula'=> $request['cedula'],
+            'estado'=> $request['estado'],
+            'ciudad'=> $request['ciudad'],
+            'municipio'=> $request['municipio'],
+            'calle'=> $request['calle'],
+            'correo'=> $request['correo'],
+            'estado_cliente'=> $request['estado_cliente'],
+        ]);
+        
+        //agregar informacion a la base de datos
+        $request->validate ([
+            'cedula'=> ['required', 'string'], 
+            'codigo'=> ['required', 'string'],
+            'numero'=> ['required', 'string', 'unique:lineas'],
+            'plan'=> ['required', 'string'],
+            'pago'=> ['required', 'string'],
+            'estado_linea' => ['required', 'string'],
+            'fecha'=> ['required', 'date'],
+        ]);
+        linea::create([
+            'cedula'=> $request['cedula'],
+            'codigo'=> $request['codigo'],
+            'numero'=> $request['numero'],
+            'plan'=> $request['plan'],
+            'pago'=> $request['pago'],
+            'estado_linea'=> $request['estado_linea'],
+            'fecha'=> $request['fecha'],
+        ]);
+      
+        return redirect('buscar-clientes');
     }
 
     /**
