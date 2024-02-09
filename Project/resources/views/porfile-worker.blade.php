@@ -56,12 +56,12 @@
                 <h2 style="margin-left:1.5%;" class="titulo2">Datos de ingreso al sistema</h2>
                 <div class="contenedor-op">
                     <div class="flex-item">
-                        <label class="label-p" for="codigo">Usuario</label>
-                        <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Usuario"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['usuario'];}}">
+                        <label class="label-p" for="codigo">Correo</label>
+                        <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Correo"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['email'];}}">
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="numero">Clave asignada</label>
-                        <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Contraseña" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['clave'];}}">
+                        <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Contraseña" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['password'];}}">
                     </div>
                 </div>    
             </div>

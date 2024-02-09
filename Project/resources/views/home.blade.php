@@ -47,6 +47,9 @@
         </section>
 
         <br> <hr class="featurette-divider">
+        <div class="container-texto">
+          <h2>Bienvenido {{Auth::user()->nombre}} </h2>
+        </div>
         <div class="row1-container" >
           <div class="box box-down cyan">
             <h2>Búsqueda</h2>
@@ -81,7 +84,6 @@
         </div>
        
             <hr class="featurette-divider"> <br>
-            <h2>Bienvenido {{Auth::user()->nombre}} </h2>
             <div class="container-texto">
                 <h1 >Servicios steyla</h1><br>
                 <p >Disponibles para líneas móviles e internet móvil, ideales para mantener conectados a los miembros de tu familia, así como a los empleados de tu empresa, emprendimiento o negocio.</p>

@@ -40,8 +40,11 @@ Route::get('/iniciar-sesion', function () {
 
 Route::post('cerrar-sesion', function () {
     Auth::logout();
-    return view('login');
+    return redirect('iniciar-sesion');
 })->name('cerrar-sesion');
+
+
+
 
 
 require __DIR__.'/auth.php';

@@ -8,7 +8,7 @@
         
         <div class="container-form">
             <header style="margin-left: -91%; margin-top:1%;" >Registro</header>
-            <form action="/cliente" method="POST">
+            <form action="{{ route('crear-clientes') }}" method="POST">
                 @csrf
                 <div class="form firts"> <!--Primer form-->
                     <div class="details personal">
@@ -82,6 +82,9 @@
                             <div class="input-fields" >
                                 <label for="">Correo electrónico</label>
                                 <input type="email" name='correo' placeholder="nombre123@gmail.com" value="{{ old('correo')}}" required>
+                                @error('correo')
+                                    <small style="color: red">{{$message}}</small>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -118,12 +121,12 @@
                             <div class="input-fields">
                                 <label for="">Tipo de pago</label>
                                 <select name="pago" value="{{ old('pago')}}" required>
-                                    <option value=postpago">Post-pago</option>
+                                    <option value="postpago">Post-pago</option>
                                     <option value="prepago">Pre-pago</option>
                                 </select>
                             </div>
                             <input type="hidden" name='estado_linea' value="Activa" required>
-                            <input type="hidden" name='fecha' value="8/2/2024" required>
+                            <input type="hidden" name='fecha' value="2024-08-14" required>
 
 
 

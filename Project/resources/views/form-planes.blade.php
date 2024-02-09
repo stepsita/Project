@@ -6,7 +6,7 @@
     <section style="margin-top: 5%; margin-left:2%;" class="flex">
         <div  class="container-form" id="container-planes">
                 <header>Planes</header>
-                <form action="/plane" method="POST">
+                <form action="{{ route('crear-planes') }}" method="POST">
                     @csrf
                     <div class="form firts" > <!--Primer form-->
                         <div class="details personal" >

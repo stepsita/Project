@@ -16,12 +16,11 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->date('fecha_nac');
-            $table->integer('cedula');
+            $table->integer('cedula')->unique();
             $table->string('estado');
             $table->string('municipio');
-            $table->string('usuario')->unique();
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password')->unique();
             $table->string('respuesta');
             $table->integer('tipo_user');
             $table->timestamps();

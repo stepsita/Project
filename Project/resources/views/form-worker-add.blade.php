@@ -38,12 +38,7 @@
                             <div class="input-fields">
                                 <label for="fecha_nac">Correo</label>
                                 <input type="email" max="2005-12-31" name='email'  placeholder="Correo" value="{{ old('email')}}"required>
-                            </div>
-
-                            <div class="input-fields" >
-                                <label for="usuario">Usuario</label>
-                                <input type="text" name='usuario' placeholder="Usuario"value="{{ old('usuario')}}"  required>
-                                @error('usuario')
+                                @error('email')
                                     <small style="color: red">{{$message}}</small>
                                 @enderror
                             </div>

@@ -32,41 +32,39 @@
                 <div class="menu-bar">
                     <div class="menu">
                         <ul class="menu-links">
-                        @if(Auth::user() && Auth::user()->tipo_user==1) 
-                            <li class="nav-link">
-                                <a href="{{ route('catalogo') }}">
-                                    <i class=" icon"><img src="icon/archive-regular-24.png" alt=""></i>
-                                    <span class="text nav-text">Catálogo</span>
-                                </a>
-                            </li>
-                        @endif
                         <li class="nav-link">
-                            <a href="/cliente/create">
+                            <a href="/catalogo">
+                                <i class=" icon"><img src="icon/archive-regular-24.png" alt=""></i>
+                                <span class="text nav-text">Catálogo</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="/crear-clientes">
                                 <i class="bx  icon"><img src="icon/agus.PNG" style="width: 32px;"  alt=""></i>
                                 <span class="text nav-text">Agregar Cliente</span>
                             </a>
                         </li>
                             <li class="nav-link">
-                                <a href="/cliente">
+                                <a href="/buscar-clientes">
                                     <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
                                     <span class="text nav-text">Buscar Cliente</span>
                                 </a>
                             </li>
 
                             <li class="nav-link">
-                            <a href="/statistics">
+                            <a href="/estadisticas">
                                 <i class="icon"><img src="icon/bar-chart-alt-2-regular-24.png" alt=""></i>
                                 <span class="text nav-text">Estadísticas</span>
                             </a>
                         </li>
-
-                        <li class="nav-link">
-                            <a href="/form-worker-add">
-                                <i class="icon"><img src="icon/agus.PNG" style="width: 32px;" alt=""></i>
-                                <span class="text nav-text">Agregar Operador</span>
-                            </a>
-                        </li>
                         @if(Auth::user() && Auth::user()->tipo_user==2) 
+                            <li class="nav-link">
+                                <a href="/crear-operador">
+                                    <i class="icon"><img src="icon/agus.PNG" style="width: 32px;" alt=""></i>
+                                    <span class="text nav-text">Agregar Operador</span>
+                                </a>
+                            </li>
+                        
                             <li class="nav-link">
                                 <a href="/buscar-operador">
                                     <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
@@ -125,14 +123,6 @@
                         <p> Una empresa que prioriza la atención y el servicio
                             a todos nuestros usuarios. Rompiendo barreras y comunicanco 
                         </p>
-                    </div>
-                    <div class="col">
-                        <h3>Empresa</h3>
-                        <ul>
-                            <li><a href="/login">Inicio de Sesión</a></li>
-                            <li><a href="busqueda-clientes.html">Búsqueda</a></li>
-                            <li><a href="estadisticas.html">Estadísticas</a></li>
-                        </ul>
                     </div>
                     <div class="col">
                         <h3>Redes</h3>

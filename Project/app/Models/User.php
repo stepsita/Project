@@ -22,7 +22,6 @@ class User extends Authenticatable
         'apellido',
         'fecha_nac',
         'cedula',
-        'usuario',
         'email',
         'password',
         'estado',

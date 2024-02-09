@@ -35,8 +35,18 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-       
-        //agregar informacion a la base de datos
+        $request->validate ([
+            'nombre'=> ['required', 'string'],
+            'apellido'=> ['required', 'string'],
+            'fecha_nac'=> ['required', 'date'],
+            'cedula'=> ['required', 'string', 'unique:clientes', 'max:8','min:8'], 
+            'estado'=> ['required', 'string'],
+            'ciudad'=> ['required', 'string'],
+            'municipio'=> ['required', 'string'],
+            'calle'=> ['required', 'string'],
+            'correo' => ['required', 'string', 'email','unique:clientes'],
+            'estado_cliente'=> ['required', 'string'],
+        ]);
         cliente::create([
             'nombre'=> $request['nombre'],
             'apellido'=> $request['apellido'],
@@ -51,6 +61,15 @@ class ClienteController extends Controller
         ]);
         
         //agregar informacion a la base de datos
+        $request->validate ([
+            'cedula'=> ['required', 'string'], 
+            'codigo'=> ['required', 'string'],
+            'numero'=> ['required', 'string', 'unique:lineas'],
+            'plan'=> ['required', 'string'],
+            'pago'=> ['required', 'string'],
+            'estado_linea' => ['required', 'string'],
+            'fecha'=> ['required', 'date'],
+        ]);
         linea::create([
             'cedula'=> $request['cedula'],
             'codigo'=> $request['codigo'],
@@ -60,9 +79,8 @@ class ClienteController extends Controller
             'estado_linea'=> $request['estado_linea'],
             'fecha'=> $request['fecha'],
         ]);
-        $data['datos_clientes']=cliente::get();
-        $data['datos_linea']=linea::get();
-        return view ('find-customer', $data);
+      
+        return redirect('buscar-clientes');
     }
 
     /**

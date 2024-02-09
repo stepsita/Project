@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\plane;
 use App\Models\servicio;
+use App\Models\linea;
+use App\Models\cliente;
+
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PlaneController;
+use App\Http\Controllers\ServicioController;
+
 
 
 
@@ -39,6 +46,7 @@ Route::middleware('guest')->group(function () {
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.store');
+    
 });
 
 Route::middleware('auth')->group(function () {
@@ -48,32 +56,71 @@ Route::middleware('auth')->group(function () {
     })->name('home');
 
     Route::get('/catalogo', function () {
-        if(Auth::user() && Auth::user()->tipo_user!=1){
-            return redirect('home');
-        }
         $datos_planes=plane::all();
         $datos_servicios=servicio::all();
         return view('catalogue',['datos_planes' => $datos_planes, 'datos_servicios' => $datos_servicios]);
     })->name('catalogo');
 
+    Route::get('/crear-planes', function () {
+        return view('form-planes');
+    })->name('crear-planes'); 
+    Route::post('/crear-planes', [PlaneController::class, 'store'])->name('crear-planes');
+
+    Route::get('/crear-servicios', function () {
+        return view('form-servicios');
+    })->name('crear-servicios'); 
+    Route::post('/crear-servicios', [ServicioController::class, 'store'])->name('crear-servicios');
+
+    Route::get('/estadisticas', function () {
+        return view('statistics');
+    })->name('estadisticas'); 
+
+    Route::get('form-planes-change', function () {
+        return view('form-planes-change');
+    });
+
+    Route::get('/crear-clientes', function () {
+        $planes=plane::all();
+        return view('form-customer-add',['planes' => $planes]);
+    })->name('crear-clientes'); 
+    Route::post('/crear-clientes', [ClienteController::class, 'store'])->name('crear-clientes');
+
+    Route::get('/buscar-clientes', function () {
+        $datos_clientes=cliente::all();
+        $datos_lineas=linea::all();
+        return view('find-customer',['datos_clientes' => $datos_clientes, 'datos_lineas' => $datos_lineas]);
+    })->name('buscar-clientes');    
+
+
+    /*
     
-    Route::get('/operador', function () {
+    
+    Route::get('form-servicios-change', function () {
+        return view('form-servicios-change');
+    });
+
+*/
+
+ 
+    Route::get('/crear-operador', function () {
         if(Auth::user() && Auth::user()->tipo_user!=2){
             return redirect('home');
         }
         return view('form-worker-add');
-    });
-
+    })->name('crear-operador');
     Route::post('/crear-operador', [RegisteredUserController::class, 'createUser'])->name('crear-operador');
-
+    
     Route::get('/buscar-operador', function () {
         if(Auth::user() && Auth::user()->tipo_user!=2){
             return redirect('home');
         }
         $datos_operadores= User::where('tipo_user',1)->get();
         return view('find-worker',['datos_operadores' => $datos_operadores]);
-
+    
     })->name('buscar-operador');
+
+    Route::get('/operador/{id}', [RegisteredUserController::class, 'show']);
+
 
 
 
