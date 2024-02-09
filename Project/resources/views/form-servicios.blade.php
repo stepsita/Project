@@ -5,7 +5,8 @@
 @section('content')
 <!--Servicios-->
 <br>
-            <div style="margin-left: 390px;" class="container-form" id="container-servicios" >
+    <section style=" margin-left:-30%;" class="flex">
+            <div  class="container-form" id="container-servicios" >
                 <header>Servicios</header>
              <form action="{{url('servicio')}}"  method="POST">
                 @csrf
@@ -30,13 +31,13 @@
                              </div>
                          </div>
                         <div class="fields" >
-                            <div class="input-fields" >
+                            <div class="input-fields" style="width:45%;">
                                  <div style="flex-direction: row;">
                                      <label for="" style="margin-right: 58px;">Tipo</label>
                                      <label for="">Cantidad</label>
                                  </div>
                                 
-                                 <div style="flex-direction: row; width: 70%;">
+                                 <div style="flex-direction: row;  ">
                                      <select name="tipo" value="{{ old('tipo')}}"required id="#style-exception" style="width: 80px;">
                                          <option value="min">MIN</option>
                                          <option value="sms">SMS</option>
@@ -65,4 +66,5 @@
                  </div>      
              </form>
          </div>
+    </section>
 @endsection

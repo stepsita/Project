@@ -48,26 +48,26 @@
 
         <br> <hr class="featurette-divider">
        
-        
+       
         <div class="row1-container" >
           <div class="box box-down cyan">
             <h2>Búsqueda</h2>
-            <p>• Usuario</p>
-            <p>• Operador</p>
+            <a href="/find-customer"><p>• Usuario</p></a>
+            <a href="/find-worker"><p>• Operador</p></a>
             <img src="img/search.png" width="25%" height="25%">
           </div>
-         
+        
 
           <div class="box red">
             <h2>Catálogo</h2>
-            <p>Planes y Servicios de Steyla, con todas las especifícaciones</p>
+            <a href="/catalogue"><p>Planes y Servicios de Steyla, con todas las especifícaciones</p></a>
             <img src="img/bullet.png" width="23%" height="23%">
           </div>
         
           <div class="box box-down blue">
             <h2>Agregar</h2>
-            <p>• Usuario</p>
-            <p>• Operador</p>
+            <a href="/form-customer-add"><p>• Usuario</p></a>
+            <a href="/form-worker-add"><p>• Operador</p></a>
             <img src="img/agregar-usuario.png" width="25%" height="25%">
           </div>
           
@@ -75,26 +75,13 @@
         <div class="row2-container">
           <div class="box orange">
             <h2>Estadísticas</h2>
-            <p>• Personales</p>
-            <p>• Generales</p>
+            <a href="/personal-statistics"><p>• Personales</p></a>
+            <a href="/statistics"><p>• Generales</p></a>
             <img src="img/statistics.png" width="25%" height="25%">
           </div>
          
         </div>
        
-            <hr class="featurette-divider"> <br>
-        
-            <div class="container-texto">
-                <h1 >Servicios steyla</h1><br>
-                <p >Disponibles para líneas móviles e internet móvil, ideales para mantener conectados a los miembros de tu familia, así como a los empleados de tu empresa, emprendimiento o negocio.</p>
-                <div class="container-number">
-                  <h1> +300</h1> <img src="img/economico.png" width="70px" height="70px">
-                 
-                </div>
-                <div class="text-number" style="margin-bottom: 10px;">
-                  <h4> Vendidos</h4>
-                </div>
-            </div>
-           
-            <br><br><br>
+    
+        <br><br><br>
 @endsection
