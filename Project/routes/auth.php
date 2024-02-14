@@ -18,6 +18,7 @@ use App\Models\linea;
 use App\Models\cliente;
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\LineaController;
 use App\Http\Controllers\PlaneController;
 use App\Http\Controllers\ServicioController;
 
@@ -75,10 +76,6 @@ Route::middleware('auth')->group(function () {
         return view('statistics');
     })->name('estadisticas'); 
 
-    Route::get('form-planes-change', function () {
-        return view('form-planes-change');
-    });
-
     Route::get('/crear-clientes', function () {
         $planes=plane::all();
         return view('form-customer-add',['planes' => $planes]);
@@ -89,19 +86,25 @@ Route::middleware('auth')->group(function () {
         $datos_clientes=cliente::all();
         $datos_lineas=linea::all();
         return view('find-customer',['datos_clientes' => $datos_clientes, 'datos_lineas' => $datos_lineas]);
-    })->name('buscar-clientes');    
+    })->name('buscar-clientes');  
 
+    Route::get('/añadir-linea/{id}', function ($id) {
+        $planes=plane::all();
+        $servicios=servicio::all();
+        return view('addline-customer',['planes' => $planes, 'servicios' => $servicios, 'cedula'=> $id]);
+    })->name('/añadir-linea'); 
+    Route::post('/añadir-linea', [LineaController::class, 'store'])->name('añadir-linea');
+    
 
     /*
-    
-    
+       Route::get('form-planes-change', function () {
+        return view('form-planes-change');
+    }); 
     Route::get('form-servicios-change', function () {
         return view('form-servicios-change');
     });
-
-
 */
- 
+ //admin
     Route::get('/crear-operador', function () {
         if(Auth::user() && Auth::user()->tipo_user!=2){
             return redirect('home');

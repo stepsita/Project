@@ -115,7 +115,6 @@
                                     @foreach($planes as $dat)
                                         <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
                                     @endforeach
-
                                 </select>
                             </div>
                             <div class="input-fields">

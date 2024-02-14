@@ -6,55 +6,54 @@
     <section style="margin-top: 5%; margin-left:2%;" class="flex">
         <div style="max-width: 650px;" class="container-form" >
             <header style="margin-left: -65%;">Agregar nueva línea</header>
-            <form action="/find-customer">
+            <form action="{{route('añadir-linea')}}" method="POST">
+                @csrf
                 <div class="form firts"> <!--Primer form-->
-                   
                     <div class="details personal">
                         <span class="title" style="margin-top: 2%; "> Detalles de la línea</span>                 
                         <div class="fields" id="data_line"style="margin-right: 15%;"> <!--hay que modificar esto en java. Debido a que hay que ver 
                                                                                             lo de como va a traer la info cuando sean varias lineas por cliente-->
-                            <div class="input-fields" >
+                                <input type="hidden" name='cedula' value="{{$cedula}}" required>
+                                <div class="input-fields" >
                                 <label for="">Código</label>
                                 <h2> 0411</h2>
+                                <input type="hidden" name='codigo' value="0411" required>
                             </div>
                             <div class="input-fields">
                                 <label for="">Número asignado</label>
-                                <h2>6086582</h2>
+                                <?php
+                                    $comb = "0123456789";
+                                    $shfl = str_shuffle($comb);
+                                    $pwd = substr($shfl,0,7);
+                                ?>
+                                <h2><?php echo $pwd;?></h2>
+                                <input type="hidden" name='numero' value="{{$pwd}}" required>
                             </div>                         
 
                             <div class="input-fields">
                             <label for="">Plan</label>
-                                <select name="ciudades" required>
-                                    <option value="valencia">Básico</option>
-                                    <option value="valencia">Intermedio</option>
-                                    <option value="caracas">Premium</option>
-                                </select>
-                            </div>
-                            <div class="input-fields">
-                            <label for="">Servicios</label>
-                                <select name="ciudades" required>
-                                    <option value="valencia">Llamadas extras</option>
-                                    <option value="valencia">Mensajes extras</option>
-                                    <option value="caracas">Datos extras</option>
+                                <select name="plan" value="{{ old('plan')}}" required>
+                                    @foreach($planes as $dat)
+                                        <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                           
                             <div class="input-fields">
                                 <label for="">Tipo de pago</label>
-                                <select name="pagos" required>
-                                    <option value="valencia">Post-pago</option>
-                                    <option value="valencia">Pre-pago</option>
+                                <select name="pago" value="{{ old('pago')}}" required>
+                                    <option value="postpago">Post-pago</option>
+                                    <option value="prepago">Pre-pago</option>
                                 </select>
                             </div>
-                            
+                            <input type="hidden" name='estado_linea' value="Activa" required>
+                            <input type="hidden" name='fecha' value="2024-08-14" required>
                         </div>
                         <div class="cont-botton" >
-                            <button class="next">
+                            <button class="next" type="submit">
                                 <span class="btnText">Agregar</span>
                                 <i class="uil uil-navigator"></i>
-                            </button>
-
-                           
+                            </button> 
                         </div> 
                     </div>
                 </div>      
