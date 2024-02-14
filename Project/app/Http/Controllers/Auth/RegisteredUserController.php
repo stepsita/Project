@@ -47,6 +47,7 @@ class RegisteredUserController extends Controller
             'tipo_user' => $request->tipo_user,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'estado_user' => $request->estado_user,
         ]);
         
         //event(new Registered($user));
@@ -82,6 +83,7 @@ class RegisteredUserController extends Controller
             'tipo_user' => $request->tipo_user,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'estado_user' => $request->estado_user,
         ]);
         
         //event(new Registered($user));
@@ -97,5 +99,17 @@ class RegisteredUserController extends Controller
         }
         $data['operador1'] = User::find($id);
         return view ('porfile-worker', $data);
+    }
+    public function edit($id)
+    {
+        if(Auth::user() && Auth::user()->tipo_user!=2){
+            return redirect('home');
+        }
+        $data['operador'] = User::find($id);
+        return view ('change-porfile-worker', $data);
+    }
+    public function update(operador $operador)
+    {
+       
     }
 }

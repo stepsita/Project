@@ -88,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" name='estado_cliente' value="Activa" required>
+                    <input type="hidden" name='estado_cliente' value="1" required>
 
                     <div class="details personal">
                         <span class="title" style="margin-top: 2%; "> Detalles de la línea</span>
@@ -124,7 +124,8 @@
                                     <option value="prepago">Pre-pago</option>
                                 </select>
                             </div>
-                            <input type="hidden" name='estado_linea' value="Activa" required>
+                            <input type="hidden" name='servicio' value="0" required>
+                            <input type="hidden" name='estado_linea' value="1" required>
                             <input type="hidden" name='fecha' value="2024-08-14" required>
 
 

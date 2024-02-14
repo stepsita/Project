@@ -13,6 +13,7 @@ class linea extends Model
         'codigo',
         'numero',
         'plan',
+        'servicio',
         'pago',
         'estado_linea',
         'fecha',

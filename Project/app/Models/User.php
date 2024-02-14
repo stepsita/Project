@@ -28,6 +28,7 @@ class User extends Authenticatable
         'municipio',
         'respuesta',
         'tipo_user',
+        'estado_user',
     ];
 
     /**

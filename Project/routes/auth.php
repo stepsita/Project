@@ -123,6 +123,9 @@ Route::middleware('auth')->group(function () {
     })->name('buscar-operador');
     
     Route::get('/operador/{id}', [RegisteredUserController::class, 'show']);
+    Route::get('/editar-operador/{id}', [RegisteredUserController::class, 'edit']);
+    Route::put('/actualizar-operador/{operador}', [RegisteredUserController::class, 'update'])->name('actualizar-operador');
+
 
     
 

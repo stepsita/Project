@@ -17,6 +17,7 @@ class servicio extends Model
         'nombre',
         'tipo',
         'cantidad',
-        'precio',        
+        'precio',   
+        'estado',     
     ];
 }

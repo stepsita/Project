@@ -46,7 +46,15 @@
                                     <option value="prepago">Pre-pago</option>
                                 </select>
                             </div>
-                            <input type="hidden" name='estado_linea' value="Activa" required>
+                            <div class="input-fields">
+                                <label for="">Servicios</label>
+                                <select name="servicio" value="{{ old('servicio')}}"  required>
+                                    @foreach($servicios as $dat)
+                                        <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <input type="hidden" name='estado_linea' value="1" required>
                             <input type="hidden" name='fecha' value="2024-08-14" required>
                         </div>
                         <div class="cont-botton" >

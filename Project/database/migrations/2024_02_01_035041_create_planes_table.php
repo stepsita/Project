@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('min');
             $table->integer('sms');
             $table->integer('gb');
+            $table->integer('estado');
             $table->timestamps();
         });
     }

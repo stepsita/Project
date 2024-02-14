@@ -45,6 +45,4 @@ Route::post('cerrar-sesion', function () {
 
 
 
-
-
 require __DIR__.'/auth.php';

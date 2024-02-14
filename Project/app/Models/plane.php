@@ -19,6 +19,6 @@ class plane extends Model
         'min',
         'sms',
         'gb',
-        
+        'estado',
     ];
 }

@@ -109,6 +109,7 @@
                             
                         </div>
                         <input type="hidden" name='tipo_user' value="1" required>
+                        <input type="hidden" name='estado_user' value="1" required>
 
                        
                     </div>

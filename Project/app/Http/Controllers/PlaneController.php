@@ -35,9 +35,10 @@ class PlaneController extends Controller
         $request->validate ([
             'nombre'=> ['required', 'string','unique:planes'],
             'precio'=> ['required', 'integer', 'max:100'],
-            'min'=> ['required', 'integer', 'max:1000'],
-            'sms'=> ['required', 'integer', 'max:1000'],
+            'min'=> ['required', 'integer', 'max:10000'],
+            'sms'=> ['required', 'integer', 'max:10000'],
             'gb'=> ['required', 'integer', 'max:100'], 
+            'estado'=> ['required', 'integer'],
         ]);
         //agregar informacion a la base de datos
         plane::create([
@@ -46,6 +47,7 @@ class PlaneController extends Controller
             'min'=> $request['min'],
             'sms'=> $request['sms'],
             'gb'=> $request['gb'],
+            'estado'=> $request['estado'],
         ]);
         return redirect('catalogo');
     }
