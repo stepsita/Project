@@ -50,6 +50,7 @@
                                     @enderror
                                 </div>
                             </div>
+                            <input type="hidden" name='estado' value="1" required>
                             <div class="cont-botton" style="align-items: center; justify-content: center;">
                                 <button class="next" type=submit >
                                     <span class="btnText">Agregar</span>

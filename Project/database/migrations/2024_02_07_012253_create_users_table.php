@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('password')->unique();
             $table->string('respuesta');
             $table->integer('tipo_user');
+            $table->integer('estado_user');
             $table->timestamps();
         });
     }

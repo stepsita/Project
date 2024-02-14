@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('codigo');
             $table->string('numero') ->unique();
             $table->string('plan');
+            $table->string('servicio');
             $table->string('pago');
             $table->string('estado_linea');
             $table->date('fecha');

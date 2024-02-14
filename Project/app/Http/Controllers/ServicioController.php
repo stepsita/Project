@@ -35,8 +35,9 @@ class ServicioController extends Controller
         $request->validate ([
             'nombre'=> ['required', 'string','unique:servicios'],
             'tipo'=> ['required', 'string'],
-            'cantidad'=> ['required', 'integer', 'max:1000'],
+            'cantidad'=> ['required', 'integer', 'max:10000'],
             'precio'=> ['required', 'integer', 'max:100'],
+            'estado'=> ['required', 'integer',],
         ]);
         //agregar informacion a la base de datos
         servicio::create([
@@ -44,6 +45,7 @@ class ServicioController extends Controller
             'tipo'=> $request['tipo'],
             'cantidad'=> $request['cantidad'],
             'precio'=> $request['precio'],
+            'estado'=> $request['estado'],
         ]);
         return redirect('catalogo');
     }

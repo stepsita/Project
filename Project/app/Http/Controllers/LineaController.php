@@ -28,7 +28,18 @@ class LineaController extends Controller
      */
     public function store(Request $request)
     {
-        
+        linea::create([
+            'cedula'=> $request['cedula'],
+            'codigo'=> $request['codigo'],
+            'numero'=> $request['numero'],
+            'plan'=> $request['plan'],
+            'servicio'=> $request['servicio'],
+            'pago'=> $request['pago'],
+            'estado_linea'=> $request['estado_linea'],
+            'fecha'=> $request['fecha'],
+        ]);
+      
+        return redirect('buscar-clientes');
     }
 
     /**

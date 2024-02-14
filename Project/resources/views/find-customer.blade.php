@@ -30,7 +30,7 @@
                         <div class="columnf"><a href="/porfile-customer"> <img class="visualizar" class="boton" src="img/ver.png" height="30px" width="30px"> </a> </div>
                         <div class="columnf"><a href="/personal-statistics"> <img class="estadistica" class="boton" src="icon/grafico-de-barras.png" height="30px" width="30px"> </a> </div>
                         <div class="columnf"><a href="/change-porfile-customer"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
-                        <div class="columnf"><a href="addline-customer"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a>  </a> </div>
+                        <div class="columnf"><a href="/añadir-linea/{{$dat['cedula'];}}"><img class="agregar" src="img/mas.PNG" height="30px" width="30px" class="boton"> </a>  </a> </div>
                         <div class="columnf"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"> </div>
                     </div>
                     <hr>

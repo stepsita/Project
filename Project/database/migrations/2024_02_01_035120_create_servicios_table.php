@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('tipo');
             $table->integer('cantidad');
             $table->integer('precio');
+            $table->integer('estado');
             $table->timestamps();
         });
     }
