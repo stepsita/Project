@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="flex">
-    <section style="margin-left: 4%;" class="container-card-ope">
+    <section style="margin-left: 4%; height:108vh;" class="container-card-ope">
         <div class="container-columnas">
             <div class="col3">
                 <h2 class="titulo-v">Operador</h2>
