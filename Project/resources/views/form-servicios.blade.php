@@ -24,7 +24,7 @@
                              <div class="input-fields">
                                  <label for="">Precio</label>
                                  <input type="number" placeholder="Precio"  name='precio' value="{{ old('precio')}}"required>
-                                 @error('precio')
+                                @error('precio')
                                     <small style="color: red">{{$message}}</small>
                                 @enderror
                              </div>

@@ -64,7 +64,6 @@
                                         <option value="Anzoategui">Anzoátegui</option>
                                         <option value="Apure">Apure</option>
                                         <option value="Aragua">Aragua</option>
-                                        <option value="Aragua">Aragua</option>
                                         <option value="Barinas">Barinas</option>
                                         <option value="Bolivar">Bolívar</option>
                                         <option value="Carabobo">Carabobo</option>
@@ -91,7 +90,7 @@
 
                                 <div class="input-fields" >
                                     <label for="municipio">Municipio</label>
-                                    <input type="text" name="municipio" placeholder="Ingresa el municipio" value="{{ old('municipio')}}" required>
+                                    <input type="text" name="municipio" placeholder="Ingrese su municipio" value="{{ old('municipio')}}" required>
                                 </div>
                             </div>     
                         </div>
@@ -104,7 +103,7 @@
                         <div class="fields" style="align-items: center; justify-content: center;">
                             <div class="input-fields"  >
                                 <label for="respuesta">Respuesta</label>
-                                <input type="text" name="respuesta" id="agrandar-input" placeholder="Escribe la respuesta" value="{{ old('respuesta')}}" required style="align-items: center; justify-content: center;">
+                                <input type="text" name="respuesta" id="agrandar-input" placeholder="Ingrese su respuesta" value="{{ old('respuesta')}}" required style="align-items: center; justify-content: center;">
                             </div>
                             
                         </div>

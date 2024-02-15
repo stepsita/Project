@@ -61,17 +61,22 @@ class ServicioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(servicio $servicio)
+    public function edit($id)
     {
-        //
+        $data['servicio'] = servicio::find($id);
+        return view ('form-servicios-change', $data);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, servicio $servicio)
+    public function update(Request $request, $id)
     {
-        //
+        $update=$request->except('_token','_method');
+        servicio::where("id", $id)->update($update);
+        //return $update;
+        return redirect('catalogo');
+
     }
 
     /**

@@ -108,8 +108,26 @@ class RegisteredUserController extends Controller
         $data['operador'] = User::find($id);
         return view ('change-porfile-worker', $data);
     }
-    public function update(operador $operador)
+    public function update(Request $request, $id)
     {
-       
+       /* $request->validate([
+            'nombre'=> ['required', 'string'],
+            'apellido'=> ['required', 'string'],
+            'fecha_nac'=> ['required', 'date'],
+            'cedula'=> ['required', 'string', 'unique:users', 'max:8','min:8'],
+            'clave'=> ['required', 'string','max:10','unique:users'],
+            'estado'=> ['required', 'string'],
+            'municipio'=> ['required', 'string'],
+            'respuesta'=> ['required', 'string'],
+            'tipo_user'=> ['required', 'string'],
+            'email' => ['required', 'string', 'email','unique:users'],
+            'password' => ['required', 'string','unique:users'],
+            'estado_user'=> ['required', 'string']
+        ]);*/
+        $update=$request->except('_token','_method');
+        User::where("id", $id)->update($update);
+        //return $update;
+        return redirect('buscar-operador');
+
     }
 }

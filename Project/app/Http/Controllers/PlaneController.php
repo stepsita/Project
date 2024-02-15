@@ -63,18 +63,23 @@ class PlaneController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(plane $plane)
+    public function edit($id)
     {
-        //
+        $data['plan'] = plane::find($id);
+        return view ('form-planes-change', $data);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, plane $plane)
+    public function update(Request $request, $id)
     {
-        //
+        $update=$request->except('_token','_method');
+        plane::where("id", $id)->update($update);
+        //return $update;
+        return redirect('catalogo');
     }
+
 
     /**
      * Remove the specified resource from storage.

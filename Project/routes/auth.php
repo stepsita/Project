@@ -66,11 +66,16 @@ Route::middleware('auth')->group(function () {
         return view('form-planes');
     })->name('crear-planes'); 
     Route::post('/crear-planes', [PlaneController::class, 'store'])->name('crear-planes');
+    Route::get('/editar-plan/{id}/edit', [PlaneController::class, 'edit']);
+    Route::patch('/actualizar-plan/{plan}', [PlaneController::class, 'update'])->name('actualizar-plan');
+
 
     Route::get('/crear-servicios', function () {
         return view('form-servicios');
     })->name('crear-servicios'); 
     Route::post('/crear-servicios', [ServicioController::class, 'store'])->name('crear-servicios');
+    Route::get('/editar-servicio/{id}/edit', [ServicioController::class, 'edit']);
+    Route::patch('/actualizar-servicio/{servicio}', [ServicioController::class, 'update'])->name('actualizar-servicio');
 
     Route::get('/estadisticas', function () {
         return view('statistics');
@@ -123,8 +128,8 @@ Route::middleware('auth')->group(function () {
     })->name('buscar-operador');
     
     Route::get('/operador/{id}', [RegisteredUserController::class, 'show']);
-    Route::get('/editar-operador/{id}', [RegisteredUserController::class, 'edit']);
-    Route::put('/actualizar-operador/{operador}', [RegisteredUserController::class, 'update'])->name('actualizar-operador');
+    Route::get('/editar-operador/{id}/edit', [RegisteredUserController::class, 'edit']);
+    Route::patch('/actualizar-operador/{operador}', [RegisteredUserController::class, 'update'])->name('actualizar-operador');
 
 
     
