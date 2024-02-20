@@ -4,14 +4,14 @@
 
 @section('content')
 <section class="flex">
-    <section style="margin-left: 4%; height:108vh;" class="container-card-ope">
+    <section style="margin-left: 4%; height:90vh;" class="container-card-ope">
         <div class="container-columnas">
             <div class="col3">
                 <h2 class="titulo-v">Operador</h2>
                 <hr class="featurette-divider-mp">
                 <h2 style="margin-left: 1%; margin-bottom:0.5%;" class="titulo2">Datos personales</h2>
                 <div class="datos">
-                <form action="{{ url('/actualizar-operador', $operador['id'])}}" method="POST">
+                <form action="{{ url('/actualizar-operador', $operador['email'])}}" method="POST">
                     @csrf
                     @method('PATCH')
                     <div class="contenedor-user">
@@ -68,8 +68,11 @@
                             </select>
                         </div>
                         <div class="flex-item">
-                            <label class="label-p" for="name">Municipio</label>
-                            <input  class="pys" name="municipio" type="text" placeholder="Ingrese su municipio" style="padding-left:10px; padding-right: 10px;" value="{{$operador['municipio']}}">
+                            <label class="label-p" for="codigo">Correo</label>
+                            <input class="pys" type="email" name="email" placeholder="Correo"  style="padding-left:10px; padding-right: 10px;" value="{{$operador['email']}}">
+                            @error('email')
+                                <small style="color: red">{{$message}}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="contenedor-user">
@@ -78,23 +81,6 @@
                                 <h2 style="font-size: 15px; color: rgb(5, 103, 70); margin-top: 1%;">¿Cúal es el nombre completo de tu mamá?</h2>
                                 <input name="respuesta" style="width: 550px;" class="pys" type="text" placeholder="Ingrese su respuesta" style="padding-left:10px; padding-right: 10px;" value="{{$operador['respuesta']}}">
                             </div>   
-                        </div>
-                        <h2 style="margin-left: 1%; margin-bottom:0.5%;" class="titulo2">Datos de ingreso al sistema</h2>
-                        <div class="contenedor-op">
-                            <div class="flex-item">
-                                <label class="label-p" for="codigo">Correo</label>
-                                <input class="pys" type="email" name="email" placeholder="Correo"  style="padding-left:10px; padding-right: 10px;" value="{{$operador['email']}}">
-                                @error('email')
-                                    <small style="color: red">{{$message}}</small>
-                                @enderror
-                            </div>
-                            <div class="flex-item">
-                                <label class="label-p" for="numero">Clave asignada</label>
-                                <input class="pys" name="password" type="text" placeholder="Contraseña" style="padding-left:10px; padding-right: 10px;" value="{{$operador['password']}}">
-                                @error('password')
-                                    <small style="color: red">{{$message}}</small>
-                                @enderror
-                            </div>
                         </div>
                     </div>
                     <div class="cont-botton" style="align-items: center; justify-content: center;">

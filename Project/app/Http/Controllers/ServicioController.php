@@ -78,7 +78,12 @@ class ServicioController extends Controller
         return redirect('catalogo');
 
     }
-
+    public function updateDelete( $id)
+    {
+        servicio::where("id", $id)->update(['estado'=>0]);
+        //return $update;
+        return redirect('catalogo');
+    }
     /**
      * Remove the specified resource from storage.
      */

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\linea;
+use App\Models\contrato_plane;
 use Illuminate\Http\Request;
 
-class LineaController extends Controller
+class ContratoPlaneController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,21 +28,13 @@ class LineaController extends Controller
      */
     public function store(Request $request)
     {
-        linea::create([
-            'cedula'=> $request['cedula'],
-            'numero'=> $request['numero'],
-            'pago'=> $request['pago'],
-            'estado_linea'=> $request['estado_linea'],
-            'fecha'=> $request['fecha']
-        ]);
-      
-        return redirect('buscar-clientes');
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(linea $linea)
+    public function show(contrato_plane $contrato_plane)
     {
         //
     }
@@ -50,7 +42,7 @@ class LineaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(linea $linea)
+    public function edit(contrato_plane $contrato_plane)
     {
         //
     }
@@ -58,7 +50,7 @@ class LineaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, linea $linea)
+    public function update(Request $request, contrato_plane $contrato_plane)
     {
         //
     }
@@ -66,7 +58,7 @@ class LineaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(linea $linea)
+    public function destroy(contrato_plane $contrato_plane)
     {
         //
     }

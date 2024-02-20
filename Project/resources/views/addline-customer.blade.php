@@ -34,7 +34,9 @@
                             <label for="">Plan</label>
                                 <select name="plan" value="{{ old('plan')}}" required>
                                     @foreach($planes as $dat)
-                                        <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                        @if ($dat['estado']==1)
+                                            <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -50,7 +52,9 @@
                                 <label for="">Servicios</label>
                                 <select name="servicio" value="{{ old('servicio')}}"  required>
                                     @foreach($servicios as $dat)
-                                        <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                        @if ($dat['estado']==1)
+                                            <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>

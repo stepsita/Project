@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class linea extends Model
+class contrato_plane extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'cedula',
-        'numero',
-        'pago',
-        'fecha',
-        'estado_linea',
+        'operador',
+        'plan',
+        'linea',
+        'estado_plan',
     ];
 
     /**
@@ -22,10 +21,7 @@ class linea extends Model
      * @var array<int, string>
      */
     protected $hidden = [
-        
-        'estado_linea',
-        'fecha',
+        'estado_plan',
+        'operador',
     ];
 }
-
-

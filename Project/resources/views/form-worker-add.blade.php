@@ -87,11 +87,6 @@
                                         <option value="Zulia">Zulia</option>
                                     </select>
                                 </div>
-
-                                <div class="input-fields" >
-                                    <label for="municipio">Municipio</label>
-                                    <input type="text" name="municipio" placeholder="Ingrese su municipio" value="{{ old('municipio')}}" required>
-                                </div>
                             </div>     
                         </div>
 

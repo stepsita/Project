@@ -97,7 +97,6 @@
                             <div class="input-fields" >
                                 <label for="">Código</label>
                                 <h2> 0411</h2>
-                                <input type="hidden" name='codigo' value="0411" required>
                             </div>
                             <div class="input-fields">
                                 <label for="">Número asignado</label>
@@ -113,7 +112,9 @@
                             <label for="">Plan</label>
                                 <select name="plan" required>
                                     @foreach($planes as $dat)
-                                        <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                        @if ($dat['estado']==1)
+                                            <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -124,9 +125,10 @@
                                     <option value="prepago">Pre-pago</option>
                                 </select>
                             </div>
-                            <input type="hidden" name='servicio' value="0" required>
                             <input type="hidden" name='estado_linea' value="1" required>
                             <input type="hidden" name='fecha' value="2024-08-14" required>
+                            <input type="hidden" name='operador' value="{{$operador['id'];}}" required>
+                            <input type="hidden" name='estado_plan' value="1" required>
 
 
 

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\cliente;
 use App\Models\linea;
 use App\Models\plane;
+use App\Models\contrato_plane;
+use App\Models\contrato_servicio;
+
 
 use Illuminate\Http\Request;
 
@@ -63,24 +66,24 @@ class ClienteController extends Controller
         //agregar informacion a la base de datos
         $request->validate ([
             'cedula'=> ['required', 'string'], 
-            'codigo'=> ['required', 'string'],
             'numero'=> ['required', 'string', 'unique:lineas'],
-            'plan'=> ['required', 'string'],
             'pago'=> ['required', 'string'],
             'estado_linea' => ['required', 'string'],
             'fecha'=> ['required', 'date'],
         ]);
-        linea::create([
+        $linea= linea::create([
             'cedula'=> $request['cedula'],
-            'codigo'=> $request['codigo'],
             'numero'=> $request['numero'],
-            'plan'=> $request['plan'],
-            'servicio'=> $request['servicio'],
             'pago'=> $request['pago'],
             'estado_linea'=> $request['estado_linea'],
-            'fecha'=> $request['fecha'],
+            'fecha'=> $request['fecha']
         ]);
-      
+        contrato_plane::create([
+            'operador'=> $request['operador'],
+            'plan'=> $request['plan'],
+            'estado_plan'=> $request['estado_plan'],
+            'linea'=> $linea['id']
+        ]);
         return redirect('buscar-clientes');
     }
 

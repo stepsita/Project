@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="flex">
-    <section style="height:108vh;" class="container-card-pys">
+    <section style="height:80vh;" class="container-card-pys">
         <div class="container-columnas">
         
             <div class="col3">
@@ -38,10 +38,10 @@
                             <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Ingrese la cedula"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['estado'];}}">
                         </div>
                         <div class="flex-item">
-                            <label class="label-p" for="name">Municipio</label>
-                            <input  class="pys" type="text" readonly onmousedown="return false;" placeholder="Ingrese su municipio" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['municipio'];}}">
+                            <label class="label-p" for="codigo">Correo</label>
+                            <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Correo"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['email'];}}">
                         </div>
-                    </div>
+                    </div>    
                     <div class="contenedor-user">
                         <div class="flex-item">
                             <label class="label-p" for="name">Pregunta de seguridad</label>
@@ -51,19 +51,7 @@
                             <input  style="width: 550px;" class="pys" type="text" readonly onmousedown="return false;" placeholder="Ingrese la respuesta" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['respuesta'];}}">
                         </div>
                     </div>
-                </div>
-
-                <h2 style="margin-left:1.5%;" class="titulo2">Datos de ingreso al sistema</h2>
-                <div class="contenedor-op">
-                    <div class="flex-item">
-                        <label class="label-p" for="codigo">Correo</label>
-                        <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Correo"  style="padding-left:10px; padding-right: 10px;" value="{{$operador1['email'];}}">
-                    </div>
-                    <div class="flex-item">
-                        <label class="label-p" for="numero">Clave asignada</label>
-                        <input class="pys" type="text" readonly onmousedown="return false;" placeholder="Contraseña" style="padding-left:10px; padding-right: 10px;" value="{{$operador1['password'];}}">
-                    </div>
-                </div>    
+                </div>   
             </div>
         </div>
     </section><br>

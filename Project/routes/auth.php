@@ -16,11 +16,13 @@ use App\Models\plane;
 use App\Models\servicio;
 use App\Models\linea;
 use App\Models\cliente;
+use App\Models\operadore;
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\LineaController;
 use App\Http\Controllers\PlaneController;
 use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\OperadoreController;
 
 
 
@@ -53,7 +55,8 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
 
     Route::get('/home', function () {
-        return view('home');
+        $operador = operadore::where('email', Auth::user()->email)->firstOrFail();
+        return view('home', ['operador' => $operador]);
     })->name('home');
 
     Route::get('/catalogo', function () {
@@ -68,6 +71,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/crear-planes', [PlaneController::class, 'store'])->name('crear-planes');
     Route::get('/editar-plan/{id}/edit', [PlaneController::class, 'edit']);
     Route::patch('/actualizar-plan/{plan}', [PlaneController::class, 'update'])->name('actualizar-plan');
+    Route::get('/eliminar-plan/{id}', [PlaneController::class, 'updateDelete']);
 
 
     Route::get('/crear-servicios', function () {
@@ -76,17 +80,21 @@ Route::middleware('auth')->group(function () {
     Route::post('/crear-servicios', [ServicioController::class, 'store'])->name('crear-servicios');
     Route::get('/editar-servicio/{id}/edit', [ServicioController::class, 'edit']);
     Route::patch('/actualizar-servicio/{servicio}', [ServicioController::class, 'update'])->name('actualizar-servicio');
+    Route::get('/eliminar-servicio/{id}', [ServicioController::class, 'updateDelete']);
+
 
     Route::get('/estadisticas', function () {
         return view('statistics');
     })->name('estadisticas'); 
 
+
+
     Route::get('/crear-clientes', function () {
         $planes=plane::all();
-        return view('form-customer-add',['planes' => $planes]);
+        $operador = operadore::where('email', Auth::user()->email)->firstOrFail();
+        return view('form-customer-add',['planes' => $planes, 'operador' => $operador]);
     })->name('crear-clientes'); 
     Route::post('/crear-clientes', [ClienteController::class, 'store'])->name('crear-clientes');
-
     Route::get('/buscar-clientes', function () {
         $datos_clientes=cliente::all();
         $datos_lineas=linea::all();
@@ -96,6 +104,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/añadir-linea/{id}', function ($id) {
         $planes=plane::all();
         $servicios=servicio::all();
+        $operador = operadore::where('email', Auth::user()->email)->firstOrFail();
         return view('addline-customer',['planes' => $planes, 'servicios' => $servicios, 'cedula'=> $id]);
     })->name('/añadir-linea'); 
     Route::post('/añadir-linea', [LineaController::class, 'store'])->name('añadir-linea');
@@ -110,26 +119,26 @@ Route::middleware('auth')->group(function () {
     });
 */
  //admin
-    Route::get('/crear-operador', function () {
-        if(Auth::user() && Auth::user()->tipo_user!=2){
-            return redirect('home');
-        }
-        return view('form-worker-add');
-    })->name('crear-operador');
-    Route::post('/crear-operador', [RegisteredUserController::class, 'createUser'])->name('crear-operador');
-    
-    Route::get('/buscar-operador', function () {
-        if(Auth::user() && Auth::user()->tipo_user!=2){
-            return redirect('home');
-        }
-        $datos_operadores= User::where('tipo_user',1)->get();
-        return view('find-worker',['datos_operadores' => $datos_operadores]);
-    
-    })->name('buscar-operador');
-    
-    Route::get('/operador/{id}', [RegisteredUserController::class, 'show']);
-    Route::get('/editar-operador/{id}/edit', [RegisteredUserController::class, 'edit']);
-    Route::patch('/actualizar-operador/{operador}', [RegisteredUserController::class, 'update'])->name('actualizar-operador');
+ Route::get('/crear-operador', function () {
+    if(Auth::user() && Auth::user()->tipo_user!=2){
+        return redirect('home');
+    }
+    return view('form-worker-add');
+})->name('crear-operador');
+Route::post('/crear-operador', [RegisteredUserController::class, 'createUser'])->name('crear-operador');
+
+Route::get('/buscar-operador', function () {
+    if(Auth::user() && Auth::user()->tipo_user!=2){
+        return redirect('home');
+    }
+    $datos_operadores= operadore::where('tipo_user',1)->where('estado_user',1)->get();
+    return view('find-worker',['datos_operadores' => $datos_operadores]);
+})->name('buscar-operador');
+
+    Route::get('/operador/{id}', [OperadoreController::class, 'show']);
+    Route::get('/editar-operador/{id}/edit', [OperadoreController::class, 'edit']);
+    Route::patch('/actualizar-operador/{operador}', [OperadoreController::class, 'update'])->name('actualizar-operador');
+    Route::get('/eliminar-operador/{operador}', [OperadoreController::class, 'updateDelete']);
 
 
     
