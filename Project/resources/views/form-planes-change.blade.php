@@ -47,6 +47,18 @@
                                     <small style="color: red">{{$message}}</small>
                                 @enderror
                             </div>
+                            <div class="input-fields">
+
+                            </div>
+                            <div class="input-fields">
+
+                            </div>
+                            <div class="input-fields">
+
+                            </div>
+                            <div class="input-fields">
+
+                            </div>
                         </div>
                         <div class="cont-botton" style="align-items: center; justify-content: center;">
                             <button class="next" type=submit >

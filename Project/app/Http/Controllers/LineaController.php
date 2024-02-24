@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\linea;
+use App\Models\contrato_plane;
+use App\Models\contrato_servicio;
+
 use Illuminate\Http\Request;
 
 class LineaController extends Controller
@@ -28,12 +31,31 @@ class LineaController extends Controller
      */
     public function store(Request $request)
     {
-        linea::create([
+        $request->validate ([
+            'cedula'=> ['required', 'string'], 
+            'numero'=> ['required', 'string', 'unique:lineas'],
+            'pago'=> ['required', 'string'],
+            'estado_linea' => ['required', 'string'],
+            'fecha'=> ['required', 'date'],
+        ]);
+        $linea= linea::create([
             'cedula'=> $request['cedula'],
             'numero'=> $request['numero'],
             'pago'=> $request['pago'],
             'estado_linea'=> $request['estado_linea'],
             'fecha'=> $request['fecha']
+        ]);
+        contrato_plane::create([
+            'operador'=> $request['operador'],
+            'plan'=> $request['plan'],
+            'estado_plan'=> $request['estado_plan'],
+            'linea'=> $linea['id']
+        ]);
+        contrato_servicio::create([
+            'operador'=> $request['operador'],
+            'servicio'=> $request['servicio'],
+            'estado_servicio'=> $request['estado_servicio'],
+            'linea'=> $linea['id']
         ]);
       
         return redirect('buscar-clientes');

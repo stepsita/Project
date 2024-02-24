@@ -55,8 +55,18 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
 
     Route::get('/home', function () {
+        $user=User::whereEmail(Auth::user()->email)->first()->estado_user;
+        //  dd($user);
+        if ($user == '0'){
+            // dd('Llegando');
+            Auth::logout();
+            return redirect()->route('iniciar-sesion');
+            // return abort(401);
+        }
         $operador = operadore::where('email', Auth::user()->email)->firstOrFail();
         return view('home', ['operador' => $operador]);
+
+        
     })->name('home');
 
     Route::get('/catalogo', function () {
@@ -85,8 +95,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/estadisticas', function () {
         return view('statistics');
-    })->name('estadisticas'); 
-
+    })->name('estadisticas');  
 
 
     Route::get('/crear-clientes', function () {
@@ -96,19 +105,23 @@ Route::middleware('auth')->group(function () {
     })->name('crear-clientes'); 
     Route::post('/crear-clientes', [ClienteController::class, 'store'])->name('crear-clientes');
     Route::get('/buscar-clientes', function () {
-        $datos_clientes=cliente::all();
-        $datos_lineas=linea::all();
-        return view('find-customer',['datos_clientes' => $datos_clientes, 'datos_lineas' => $datos_lineas]);
+        $datos_clientes=cliente::join('lineas', 'clientes.cedula', '=', 'lineas.cedula')->get();
+        return view('find-customer',['datos_clientes' => $datos_clientes]);
     })->name('buscar-clientes');  
 
     Route::get('/añadir-linea/{id}', function ($id) {
         $planes=plane::all();
         $servicios=servicio::all();
         $operador = operadore::where('email', Auth::user()->email)->firstOrFail();
-        return view('addline-customer',['planes' => $planes, 'servicios' => $servicios, 'cedula'=> $id]);
+        return view('addline-customer',['planes' => $planes, 'servicios' => $servicios, 'cedula'=> $id,'operador' => $operador]);
     })->name('/añadir-linea'); 
     Route::post('/añadir-linea', [LineaController::class, 'store'])->name('añadir-linea');
-    
+    Route::get('/linea/{id}', [ClienteController::class, 'show']);
+    Route::get('/editar-linea/{id}/edit', [ClienteController::class, 'edit']);
+    Route::patch('/actualizar-linea/{linea}', [ClienteController::class, 'update'])->name('actualizar-linea');
+    Route::get('/eliminar-linea/{linea}', [ClienteController::class, 'updateDelete']);
+
+
 
     /*
        Route::get('form-planes-change', function () {
@@ -164,3 +177,4 @@ Route::get('/buscar-operador', function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+

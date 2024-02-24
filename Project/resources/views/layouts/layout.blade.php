@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <title> Index steyla </title>
+        <title> Steyla </title>
 
         <link rel="stylesheet" href="{{ asset('css/style.css')}}">
         <link rel="icon" href="{{ asset('/img/cellphone.png')}}">

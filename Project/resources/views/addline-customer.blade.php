@@ -35,7 +35,7 @@
                                 <select name="plan" value="{{ old('plan')}}" required>
                                     @foreach($planes as $dat)
                                         @if ($dat['estado']==1)
-                                            <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                            <option value="{{$dat['id']}}">{{$dat['nombre'];}}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -60,6 +60,10 @@
                             </div>
                             <input type="hidden" name='estado_linea' value="1" required>
                             <input type="hidden" name='fecha' value="2024-08-14" required>
+                            <input type="hidden" name='operador' value="{{$operador['id'];}}" required>
+                            <input type="hidden" name='estado_plan' value="1" required>
+                            <input type="hidden" name='estado_servicio' value="1" required>
+
                         </div>
                         <div class="cont-botton" >
                             <button class="next" type="submit">

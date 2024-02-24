@@ -33,7 +33,7 @@
         @error('password')
           <small style="color: red">{{$message}}</small>
         @enderror
-        <div class="pass"><a href="/security-question">¿Olvido su contraseña? </a></div>
+        <div class="pass"><a href="/respuesta">¿Olvido su contraseña? </a></div>
       <div style="align-items: center; justify-content: center; align-content: center; width: 100%; display: flex; flex-direction: row; ">
           <button class="boton-i" type="submit">
               Iniciar
