@@ -24,32 +24,40 @@
                 </button>
             </section>  
         </div>
+
+        <h2 class="bc-titulo" style="text-align: left; margin-left: 6%; margin-bottom:-2%">Planes</h2>
+        <br>
         <div class="table">
-            <h2 class="bc-titulo">Planes</h2>
             @foreach($datos_planes as $dat)
-            <div class="row">
-                <div class="column">{{$dat['nombre'];}}</div>
-                <div class="column">{{$dat['min'];}} min</div>
-                <div class="column">{{$dat['sms'];}} sms</div>
-                <div class="column">{{$dat['gb'];}} gb</div>
-                <div class="column">{{$dat['precio'];}}$</div>
-                <div class="column"><a href="/plan/{{$dat['id'];}}"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
-                <div class="column"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"></div>
-            </div>
-        <hr>
+                @if ($dat['estado']==1)
+                    <div class="row">
+                        <div class="column">{{$dat['nombre'];}}</div>
+                        <div class="column">{{$dat['min'];}} min</div>
+                        <div class="column">{{$dat['sms'];}} sms</div>
+                        <div class="column">{{$dat['gb'];}} gb</div>
+                        <div class="column">{{$dat['precio'];}}$</div>
+                        <div class="column"><a href="/editar-plan/{{$dat['id'];}}/edit"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
+                        <div class="column"><a href="/eliminar-plan/{{$dat['id'];}}"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"></a></div>
+                    </div>
+                    <hr>
+                @endif
             @endforeach
-            <h2 class="bc-titulo">Servicios</h2>
+        </div>
+            <h2 class="bc-titulo" style="text-align: left; margin-left: 6%; margin-bottom:-2%">Servicios</h2>
             <br>
+        <div class="table">
             @foreach($datos_servicios as $dat)
-            <div class="row">
-                <div class="column">{{$dat['nombre'];}}</div>
-                <div class="column">{{$dat['tipo'];}}</div>
-                <div class="column">{{$dat['cantidad'];}}</div>
-                <div class="column">{{$dat['precio'];}}$</div>
-                <div class="column"><a href="/servicio/{{$dat['id'];}}"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
-                <div class="column"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"></div>
-            </div>
-        <hr>
+                @if ($dat['estado']==1)
+                    <div class="row">
+                        <div class="column">{{$dat['nombre'];}}</div>
+                        <div class="column">{{$dat['tipo'];}}</div>
+                        <div class="column">{{$dat['cantidad'];}}</div>
+                        <div class="column">{{$dat['precio'];}}$</div>
+                        <div class="column"><a href="/editar-servicio/{{$dat['id'];}}/edit"> <img class="modificar" class="boton" src="img/modificar.png" height="30px" width="30px"> </a> </div>
+                        <div class="column"><a href="/eliminar-servicio/{{$dat['id'];}}"><img class="eliminar" src="img/eliminar.png" height="30px" width="30px"></a></div>
+                    </div>
+                    <hr>
+                @endif
             @endforeach
         </div>
         <br><br>

@@ -3,8 +3,8 @@
 @endsection
 
 @section('content')
-<section class="flex">
-    <section style="margin-left: 3%; " class="container-card-usu">
+<section class="flex" >
+    <section  style="margin-left: 3%; height:133vh;" class="container-card-usu">
         <div class="container-columnas">
         
             <div class="col3">
@@ -12,48 +12,78 @@
                 <hr class="featurette-divider-mp">
                 <span style="margin-left: 1%;" >Datos personales</span>
                 <div class="datos">
+                    @foreach($datos as $dat)
+                    <form action="{{ url('/actualizar-linea', $dat['numero'])}}" method="POST">
+                        @csrf
+                        @method('PATCH')
                     <div class="contenedor-user">
                         <div class="flex-item">
                             <label class="label-p" for="name">Nombre</label>
-                            <input class="pys"type="text" placeholder="Ingrese el nombre"  style="padding-left:10px; padding-right: 10px;" value="Camila">
+                            <input class="pys" type="text" value="{{$dat['nombre']}}" name='nombre' style="padding-left:10px; padding-right: 10px;"  >
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Apellido</label>
-                            <input class="pys" type="text" placeholder="Ingrese el apellido" style="padding-left:10px; padding-right: 10px;" value="Fernandez">
+                            <input class="pys" type="text" value="{{$dat['apellido']}}" name='apellido' style="padding-left:10px; padding-right: 10px;"  >
                         </div>
                         <div class="flex-item">
-                            <label class="label-p" for="name">Fecha de nacimiento</label>
-                            <input class="pys" type="date" placeholder="Ingrese la fecha"  style="padding-left:10px; padding-right: 10px;" value="13/12/2006">
+                            <label class="label-p" for="name">Cedula de identidad</label>
+                            <input class="pys" type="number" value="{{$dat['cedula']}}" name='cedula' style="padding-left:10px; padding-right: 10px;"  >
                         </div>
                     </div>
                     
                     <div class="contenedor-user">
                         <div class="flex-item">
-                            <label class="label-p" for="name">Cedula de identidad</label>
-                            <input class="pys" type="number" placeholder="Ingrese la cedula" style="padding-left:10px; padding-right: 10px;" value="31998023">
-                        </div>
-                        <div class="flex-item">
-                            <label class="label-p" for="name">Ciudad</label>
-                            <input class="pys" type="text" placeholder="Ingrese la cedula"  style="padding-left:10px; padding-right: 10px;" value="Caracas">
+                            <label class="label-p" for="name">Fecha de nacimiento</label>
+                            <input class="pys" type="date" value="{{$dat['fecha_nac']}}" name='fecha_nac' style="padding-left:10px; padding-right: 10px;"  >
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Correo</label>
-                            <input class="pys" type="mail" placeholder="Ingrese rl correo" style="padding-left:10px; padding-right: 10px;" value="Colón">
+                            <input class="pys" type="email"  name='correo' value="{{$dat['correo']}} " style="padding-left:10px; padding-right: 10px;"  >
+                        </div>
+                        <div class="flex-item">
+                            <label class="label-p" for="name">Estado</label>
+                            <select name="estado" class="pys" style="padding-left:10px; padding-right: 10px;" value="{{$dat['estado']}}" required>
+                                <option @if($dat['estado']=="Amazonas") selected @endif value="Amazonas">Amazonas</option>
+                                <option @if($dat['estado']=="Anzoategui") selected @endif value="Anzoategui">Anzoátegui</option>
+                                <option @if($dat['estado']=="Apure") selected @endif value="Apure">Apure</option>
+                                <option @if($dat['estado']=="Aragua") selected @endif value="Aragua">Aragua</option>
+                                <option @if($dat['estado']=="Barinas") selected @endif value="Barinas">Barinas</option>
+                                <option @if($dat['estado']=="Bolivar") selected @endif value="Bolivar">Bolívar</option>
+                                <option @if($dat['estado']=="Carabobo") selected @endif value="Carabobo">Carabobo</option>
+                                <option @if($dat['estado']=="Cojedes") selected @endif value="Cojedes">Cojedes</option>
+                                <option @if($dat['estado']=="Delta Amacuro") selected @endif value="Delta Amacuro">Delta Amacuro</option>
+                                <option @if($dat['estado']=="Dependencias Federales") selected @endif value="Dependencias Federales">Dependencias Federales</option>
+                                <option @if($dat['estado']=="Distrito Capital") selected @endif value="Distrito Capital">Distrito Capital</option>
+                                <option @if($dat['estado']=="Falcon") selected @endif value="Falcon">Falcón</option>
+                                <option @if($dat['estado']=="Guarico") selected @endif value="Guarico">Guárico</option>
+                                <option @if($dat['estado']=="Lara") selected @endif value="Lara">Lara</option>
+                                <option @if($dat['estado']=="Merida") selected @endif value="Merida">Mérida</option>
+                                <option @if($dat['estado']=="Miranda") selected @endif value="Miranda">Miranda</option>
+                                <option @if($dat['estado']=="Monagas") selected @endif value="Monagas">Monagas</option>
+                                <option @if($dat['estado']=="Nueva Esparta") selected @endif value="Nueva Esparta">Nueva Esparta</option>
+                                <option @if($dat['estado']=="Portuguesa") selected @endif value="Portuguesa">Portuguesa</option>
+                                <option @if($dat['estado']=="Sucre") selected @endif value="Sucre">Sucre</option>
+                                <option @if($dat['estado']=="Tachira") selected @endif value="Tachira">Táchira</option>
+                                <option @if($dat['estado']=="Trujillo") selected @endif value="Trujillo">Trujillo</option>
+                                <option @if($dat['estado']=="Vargas") selected @endif value="Vargas">Vargas</option>
+                                <option @if($dat['estado']=="Yaracuy") selected @endif value="Yaracuy">Yaracuy</option>
+                                <option @if($dat['estado']=="Zulia") selected @endif value="Zulia">Zulia</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="contenedor-user">
                         <div class="flex-item">
-                            <label class="label-p" for="name">Codigo postal</label>
-                            <input class="pys" type="number" placeholder="Ingrese el codigo postal" style="padding-left:10px; padding-right: 10px;" value="1030">
+                            <label class="label-p" for="name">Ciudad</label>
+                            <input name='ciudad' class="pys" type="text" value="{{$dat['ciudad']}}" style="padding-left:10px; padding-right: 10px;" >
+                        </div>
+                        <div class="flex-item">
+                            <label class="label-p" for="name">Municipio</label>
+                            <input class="pys" name='municipio' type="text" value="{{$dat['municipio']}}" style="padding-left:10px; padding-right: 10px;" >
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Calle</label>
-                            <input class="pys" type="text" placeholder="Ingrese la calle de vivienda"  style="padding-left:10px; padding-right: 10px;" value="Mexico">
-                        </div>
-                        <div class="flex-item">
-                            <label class="label-p" for="name">Casa/apartamento</label>
-                            <input class="pys" type="text" placeholder="Ingrese el numero" style="padding-left:10px; padding-right: 10px;" value="25">
+                            <input class="pys" name='calle' type="text" value="{{$dat['calle']}}" style="padding-left:10px; padding-right: 10px;" >
                         </div>
                     </div>
 
@@ -63,27 +93,17 @@
                 <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="codigo">Código</label>
-                        <input class="pys" type="number" placeholder="Ingrese el código"  style="padding-left:10px; padding-right: 10px;" value="0411">
+                        <h2 style="outline: none; color:#179c2b; padding: 0 15px; height: 42px; width: 220px;margin: 8px 0; font-size: 20px; font-weight:600; font-weight: 400;"> 0411</h2>                    
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="numero">Número asignado</label>
-                        <input class="pys" type="text" placeholder="Número" style="padding-left:10px; padding-right: 10px;" value="4630501">
+                        <h2 style="outline: none; color:#179c2b; padding: 0 15px; height: 42px; width: 220px;margin: 8px 0; font-size: 20px; font-weight:600; font-weight: 400;">{{$dat['numero']}}</h2>                    
                     </div>
-                    <div class="flex-item">
-                        <label class="label-p" for="estado">Estado</label>
-                        <select option="estado" id="estado" style="padding-left:10px; padding-right: 10px;">
-                            <option value="Post-pago">Activa</option>
-                            <option value="Post-pago">En espera</option>
-                            <option value="Pre-pago">Inactiva</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="pago">Tipo de Pago</label>
-                        <select option="pago" id="pago" style="padding-left:10px; padding-right: 10px;">
-                            <option value="Post-pago">Post-pago</option>
-                            <option value="Pre-pago">Pre-pago</option>
+                        <select name="pago" option="pago" id="pago" style="padding-left:10px; padding-right: 10px;">
+                            <option  @if($dat['pago']=="prepago") selected @endif value="prepago">Pre-pago</option>
+                            <option  @if($dat['pago']=="postpago") selected @endif value="postpago">Post-pago</option>
                         </select>
                     </div>
                 </div>
@@ -92,32 +112,44 @@
                 <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="plan">Plan</label>
-                        <select pago="plan" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
-                            <option class="pys" value="Básico" >Básico</option>
-                            <option class="pys" value="Intermedio">Intermedio</option>
-                            <option class="pys" value="Premium">Premium</option>
+                        <select name="plan" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
+                            @foreach($plan as $data)
+                                @if ($data['estado']==1)
+                                    <option @if($data['nombre']==$dat['nombre_plan']) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
+                                @endif
+                            @endforeach
                         </select>
                     </div>
                     <div class="flex-item">
-                        <label class="label-p" for="plan">Servicios</label>
-                        <select pago="servicio" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
-                            <option class="pys" value="Básico" >Llamadas extras</option>
-                            <option class="pys" value="Intermedio">Mensajes extras</option>
-                            <option class="pys" value="Premium">Datos extras</option>
+                        @if ($dat['estado_servicio']==0)
+                            <label class="label-p" for="plan">Servicios <span style="color: red">(Puede añadir un servicio)</span></label>
+                            <input type="hidden" name='linea' value="{{$dat['id_linea']}}" required>
+                            <input type="hidden" name='estado_servicio' value="1" required>
+                        @else
+                            <label class="label-p" for="plan">Servicios</label>
+                        @endif
+                        <select name="servicio" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
+                            @foreach($servicio as $data)
+                                @if ($data['estado']==1)
+                                    <option @if($data['nombre']==$dat['nombre_servicio']) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
+                                @endif
+                            @endforeach
                         </select>
                     </div>
+
                 </div>
-                <div class="contenedor-userb">
-                    <div class="flex-item">
-                        <button  type="submit" class="cancelar">Cancelar cambios</button>
-                    </div>
-                    <div class="flex-item">
-                        <button type="submit" class="cambiar">Guardar cambios</button>
-                    </div>
-                </div>
+            @endforeach
+            <input type="hidden" name='operador' value="{{$operador['id']}}" required>
+            <input type="hidden" name='id_cs' value="{{$dat['id_cs']}}" required>
+            <input type="hidden" name='id_cp' value="{{$dat['id_cp']}}" required>
+
+
+            <div class="cont-botton" style="align-items: center; justify-content: center;">
+                <button type="submit" class="cambiar" class="input-mp">Guardar cambios</button>
+            </div>
 
             </div>
-            
+        </form>
         </div>
     </section><br>
     <br><br>

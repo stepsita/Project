@@ -12,12 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('lineas', function (Blueprint $table) {
-            $table->unsignedBigInteger('cedula');
             $table->id();
-            $table->string('codigo');
+            $table->unsignedBigInteger('cedula');
             $table->string('numero') ->unique();
-            $table->string('plan');
-            $table->string('servicio');
             $table->string('pago');
             $table->string('estado_linea');
             $table->date('fecha');

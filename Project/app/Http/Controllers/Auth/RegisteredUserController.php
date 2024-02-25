@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\operadore;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -57,33 +58,44 @@ class RegisteredUserController extends Controller
         return redirect(RouteServiceProvider::HOME);
     }
     public function createUser(Request $request){
-       /* 
         $request->validate([
             'nombre'=> ['required', 'string'],
             'apellido'=> ['required', 'string'],
             'fecha_nac'=> ['required', 'date'],
-            'cedula'=> ['required', 'string', 'unique:users', 'max:8','min:8'],
-            'clave'=> ['required', 'string','max:10','unique:users'],
+            'cedula'=> ['required', 'string', 'unique:operadores', 'max:8','min:8'],
             'estado'=> ['required', 'string'],
-            'municipio'=> ['required', 'string'],
             'respuesta'=> ['required', 'string'],
             'tipo_user'=> ['required', 'string'],
-            'email' => ['required', 'string', 'email','unique:users'],
-            'password' => ['required', 'string','unique:users'],
-        ]);*/
-
-        $user = User::create([
+            'email' => ['required', 'string', 'email','unique:operadores'],
+            'password' => ['required', 'string'],
+            'estado_user' => ['required', 'string']
+        ]);
+        operadore::create([
             'nombre' => $request->nombre,
             'apellido' => $request->apellido,
             'fecha_nac' => $request->fecha_nac,
             'cedula' => $request->cedula,
             'estado' => $request->estado,
-            'municipio' => $request->municipio,
             'respuesta' => $request->respuesta,
             'tipo_user' => $request->tipo_user,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'estado_user' => $request->estado_user,
+        ]);
+        $request->validate([
+            'email' => ['required', 'string', 'email','unique:users'],
+            'password' => ['required', 'string'],
+            'respuesta'=> ['required', 'string'],
+            'estado_user' => ['required', 'string'],
+            'tipo_user'=> ['required', 'string']
+        ]);
+
+        $user = User::create([
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'respuesta' => $request->respuesta,
+            'estado_user' => $request->estado_user,
+            'tipo_user' => $request->tipo_user,
         ]);
         
         //event(new Registered($user));
@@ -108,8 +120,26 @@ class RegisteredUserController extends Controller
         $data['operador'] = User::find($id);
         return view ('change-porfile-worker', $data);
     }
-    public function update(operador $operador)
+    public function update(Request $request, $id)
     {
-       
+       $request->validate([
+            'nombre'=> ['required', 'string'],
+            'apellido'=> ['required', 'string'],
+            'fecha_nac'=> ['required', 'date'],
+            'cedula'=> ['required', 'string', 'unique:users', 'max:8','min:8'],
+            'clave'=> ['required', 'string','max:10','unique:users'],
+            'estado'=> ['required', 'string'],
+            'municipio'=> ['required', 'string'],
+            'respuesta'=> ['required', 'string'],
+            'email' => ['required','email','unique:users'],
+            'password' => ['required', 'string','unique:users']
+        ]);
+
+        $update=$request->except('_token','_method');
+        User::where("id", $id)->update($update);
+       // if 
+
+        //return $update;
+        return redirect('buscar-operador');
     }
 }

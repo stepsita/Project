@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <title> Index steyla </title>
+        <title> Steyla </title>
 
         <link rel="stylesheet" href="{{ asset('css/style.css')}}">
         <link rel="icon" href="{{ asset('/img/cellphone.png')}}">
@@ -34,40 +34,40 @@
                         <ul class="menu-links">
                         <li class="nav-link">
                             <a href="/catalogo">
-                                <i class=" icon"><img src="icon/archive-regular-24.png" alt=""></i>
+                                <i class=" icon"><img src="{{ asset('icon/archive-regular-24.png')}}" alt=""></i>
                                 <span class="text nav-text">Catálogo</span>
                             </a>
                         </li>
                         <li class="nav-link">
                             <a href="/crear-clientes">
-                                <i class="bx  icon"><img src="icon/agus.PNG" style="width: 32px;"  alt=""></i>
+                                <i class="bx  icon"><img src=" {{asset('icon/agus.PNG')}}" style="width: 32px;"  alt=""></i>
                                 <span class="text nav-text">Agregar Cliente</span>
                             </a>
                         </li>
                             <li class="nav-link">
                                 <a href="/buscar-clientes">
-                                    <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
+                                    <i class="bx  icon"><img src="{{ asset('icon/search-regular-24.png')}}" alt=""></i>
                                     <span class="text nav-text">Buscar Cliente</span>
                                 </a>
                             </li>
 
                             <li class="nav-link">
                             <a href="/estadisticas">
-                                <i class="icon"><img src="icon/bar-chart-alt-2-regular-24.png" alt=""></i>
+                                <i class="icon"><img src="{{ asset('icon/bar-chart-alt-2-regular-24.png')}}" alt=""></i>
                                 <span class="text nav-text">Estadísticas</span>
                             </a>
                         </li>
                         @if(Auth::user() && Auth::user()->tipo_user==2) 
                             <li class="nav-link">
                                 <a href="/crear-operador">
-                                    <i class="icon"><img src="icon/agus.PNG" style="width: 32px;" alt=""></i>
+                                    <i class="icon"><img src="{{ asset('icon/agus.PNG')}}" style="width: 32px;" alt=""></i>
                                     <span class="text nav-text">Agregar Operador</span>
                                 </a>
                             </li>
                         
                             <li class="nav-link">
                                 <a href="/buscar-operador">
-                                    <i class="bx  icon"><img src="icon/search-regular-24.png" alt=""></i>
+                                    <i class="bx  icon"><img src="{{ asset('icon/search-regular-24.png')}}" alt=""></i>
                                     <span class="text nav-text">Buscar Operador</span>
                                 </a>
                             </li>
@@ -80,7 +80,7 @@
                                 <form method="POST" action="{{ route('cerrar-sesion') }}">
                                     {{ csrf_field() }}
                                     <button type="submit">
-                                        <i class="icon"><img src="icon/log-out-regular-24.png" alt=""></i>
+                                        <i class="icon"><img src="{{ asset('icon/log-out-regular-24.png')}}" alt=""></i>
                                         <span class="text nav-text">Salir</span>
                                     </button>
                                 </form>
@@ -112,7 +112,7 @@
             <footer class="footer">
                 <div class="row">
                     <div class="col" id="icons">
-                        <a href="/home"> <img src="img/logo.png" class="logo"></a>
+                        <a href="/home"> <img src="{{asset('img/logo.png')}}" class="logo"></a>
                     
                         <br>
                         <a href=""><i class="bx bxl-facebook"></i></a>

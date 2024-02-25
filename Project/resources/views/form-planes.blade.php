@@ -49,6 +49,18 @@
                                         <small style="color: red">{{$message}}</small>
                                     @enderror
                                 </div>
+                                <div class="input-fields">
+
+                                </div>
+                                <div class="input-fields">
+    
+                                </div>
+                                <div class="input-fields">
+    
+                                </div>
+                                <div class="input-fields">
+    
+                                </div>
                             </div>
                             <input type="hidden" name='estado' value="1" required>
                             <div class="cont-botton" style="align-items: center; justify-content: center;">
