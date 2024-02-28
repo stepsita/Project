@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\operadore;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 use Illuminate\Http\Request;
 
@@ -41,9 +44,27 @@ class RespuestaController extends Controller
             ]);
         }
         if ($user->respuesta==$request->respuesta){
-            return view ('password-change', $user);
+            return view ('password-change',with([
+                'datos' => $user
+            ])); 
         }
         //dd($user->respuesta);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $email)
+    {
+        $operador = operadore::where('email', $email)->firstOrFail();
+        $user = User::where('email', $email)->firstOrFail();
+        $update = $request->except('_token', '_method');
+        $cambio = [
+            'password' => Hash::make($update['password'])
+        ];
+        $operador->update($cambio);
+        $user->update($cambio);
+        return redirect('iniciar-sesion');
     }
     public function index()
     {
@@ -82,13 +103,7 @@ class RespuestaController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.

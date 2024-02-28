@@ -108,8 +108,16 @@
                                 <h2><?php echo $pwd;?></h2>
                                 <input type="hidden" name='numero' value="{{$pwd}}" required>
                             </div>
+                            <!--
                             <div class="input-fields">
-                            <label for="">Plan</label>
+                                <label for="">Tipo de pago</label>
+                                <select name="pago" value="{{ old('pago')}}" required>
+                                    <option value="prepago">Pre-pago</option>
+                                    <option value="postpago">Post-pago</option>
+                                </select>
+                            </div>
+                            <div class="input-fields">
+                                <label for="">Plan</label>
                                 <select name="plan" required>
                                     @foreach($planes as $dat)
                                         @if ($dat['estado']==1)
@@ -117,14 +125,38 @@
                                         @endif
                                     @endforeach
                                 </select>
-                            </div>
+                            </div>-->
                             <div class="input-fields">
-                                <label for="">Tipo de pago</label>
-                                <select name="pago" value="{{ old('pago')}}" required>
-                                    <option value="postpago">Post-pago</option>
-                                    <option value="prepago">Pre-pago</option>
-                                </select>
-                            </div>
+                            <label for="">Tipo de pago</label>
+                            <select name="pago" id="tipo_pago" value="{{ old('pago')}}" required>
+                                <option value="prepago">Pre-pago</option>
+                                <option value="postpago">Post-pago</option>
+                            </select>
+                        </div>
+
+                        <div class="input-fields" id="target_campo_plan">  
+                            <label for="">Plan</label>
+                            <select name="plan" required>
+                                @foreach($planes as $dat)
+                                    @if ($dat['estado']==1)
+                                        <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <script>
+                            const tipoPagoSelect = document.getElementById('tipo_pago');
+                            const targetCampoPlan = document.getElementById('target_campo_plan'); // ID cambiado
+                            
+                            tipoPagoSelect.addEventListener('change', function() {
+                                if (tipoPagoSelect.value === 'postpago') {
+                                    targetCampoPlan.style.display = 'none';
+                                } else {
+                                    targetCampoPlan.style.display = 'block';
+                                }
+                            });
+                        </script>
                             <input type="hidden" name='estado_linea' value="1" required>
                             <input type="hidden" name='fecha' value="2024-08-14" required>
                             <input type="hidden" name='operador' value="{{$operador['id'];}}" required>

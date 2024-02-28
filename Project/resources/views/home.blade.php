@@ -11,8 +11,8 @@
                 <div class="image-data">
                   <span class="text">Steyla</span>
                   <h2>
-                    Conéctate, Comunicate <br />
-                    Vive
+                    Trabajamos por su<br />
+                    Conexión
                   </h2>
                   
                 </div>
@@ -22,8 +22,8 @@
                 <div class="image-data">
                   <span class="text">Steyla</span>
                   <h2>
-                    La mejor opción<br />
-                    de comunicación
+                    Unidos por<br />
+                    la comunicación
                   </h2>
                 
                 </div>
@@ -52,7 +52,7 @@
         <div class="row1-container" >
           <div class="box box-down cyan">
             <h2>Búsqueda</h2>
-            <p>• Usuario</p>
+           <a href=""></a> <p>• Usuario</p>
             <p>• Operador</p>
             <img src="img/search.png" width="25%" height="25%">
           </div>
@@ -83,17 +83,7 @@
         </div>
        
             <hr class="featurette-divider"> <br>
-            <div class="container-texto">
-                <h1 >Servicios steyla</h1><br>
-                <p >Disponibles para líneas móviles e internet móvil, ideales para mantener conectados a los miembros de tu familia, así como a los empleados de tu empresa, emprendimiento o negocio.</p>
-                <div class="container-number">
-                  <h1> +300</h1> <img src="img/economico.png" width="70px" height="70px">
-                 
-                </div>
-                <div class="text-number" style="margin-bottom: 10px;">
-                  <h4> Vendidos</h4>
-                </div>
-            </div>
+           
            
             
 @endsection

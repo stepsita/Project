@@ -8,6 +8,8 @@ use App\Http\Controllers\RespuestaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\operadore;
+
 
 
 
@@ -50,6 +52,7 @@ Route::get('/respuesta', function () {
     return view('security-question');
 })->name('respuesta');
 Route::post('/respuesta', [RespuestaController::class, 'respuesta'])->name('respuesta');
+Route::patch('/actualizar-respuesta/{email}', [RespuestaController::class, 'update'])->name('actualizar-respuesta');
 
 
 

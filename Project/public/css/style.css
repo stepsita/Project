@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;  
 }
+
 :root {
     --body-color:#9B27B00D;
     --sidebar-color:#FFFFFF;
@@ -588,6 +589,7 @@ h2 {
     height: 2px;
     padding: 0;
     margin: 20px auto 0 auto;
+    
 }
 .container-texto h1{
     font-size: 48px;
@@ -791,7 +793,7 @@ h2 {
   position:relative;
   max-width: 400px;
   min-width: 340px;
-  height: 450px;
+  padding: 1%;
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
@@ -971,8 +973,8 @@ form .fields .input-fields{ /* cont de los input y labels individualmente*/
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: calc(45px/2);
     border: none;
     cursor: pointer;
@@ -986,7 +988,7 @@ form .fields .input-fields{ /* cont de los input y labels individualmente*/
   /* plus sign */
   .sign {
     width: 100%;
-    font-size: 2.2em;
+    font-size: 2em;
     color: white;
     transition-duration: .3s;
     display: flex;
@@ -1000,7 +1002,7 @@ form .fields .input-fields{ /* cont de los input y labels individualmente*/
     width: 0%;
     opacity: 0;
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 500;
     transition-duration: .3s;
   }
@@ -1512,7 +1514,6 @@ span.text{
   height: 240px;
   width: 240px;
   border-radius: 50%;
-  background: conic-gradient(hsl(116, 43%, 50%) 180deg, #ededed 0deg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1932,7 +1933,7 @@ margin-bottom: 13px;
     color: #333;
     padding: 0 15px;
     height: 42px;
-    width: 230px;
+   
     margin: 8px 0;
     font-size: 14px;
     font-weight: 400;

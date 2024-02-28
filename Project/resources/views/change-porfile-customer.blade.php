@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="flex" >
-    <section  style="margin-left: 3%; height:133vh;" class="container-card-usu">
+    <section  style="margin-left: 3%; height:110vh;" class="container-card-usu">
         <div class="container-columnas">
         
             <div class="col3">
@@ -15,7 +15,11 @@
                     @foreach($datos as $dat)
                     <form action="{{ url('/actualizar-linea', $dat['numero'])}}" method="POST">
                         @csrf
-                        @method('PATCH')
+                        @method('PATCH') <span>
+                        <input type="hidden" name='operador' value="{{$operador['id']}}" required>
+                        <input type="hidden" name='id_cs' value="{{$dat['id_cs']}}" required>
+                        <input type="hidden" name='id_cp' value="{{$dat['id_cp']}}" required>
+                        <input type="hidden" name='linea' value="{{$dat['id_linea']}}" required>
                     <div class="contenedor-user">
                         <div class="flex-item">
                             <label class="label-p" for="name">Nombre</label>
@@ -109,7 +113,8 @@
                 </div>
                 <h2 style="margin-left: 1%;" class="titulo">Planes y servicios de la línea</h2>
                 <hr style="margin-left: 1%;" class="featurette-divider-mp">
-                <div class="contenedor-user">
+
+                {{-- <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="plan">Plan</label>
                         <select name="plan" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
@@ -120,11 +125,16 @@
                             @endforeach
                         </select>
                     </div>
+                    <button class="Btn" id="boton" style="margin-left: -50px;">
+                        <div class="sign">+</div>
+                        <div class="text-plussing">Servicio</div>
+                    </button>
                     <div class="flex-item">
                         @if ($dat['estado_servicio']==0)
                             <label class="label-p" for="plan">Servicios <span style="color: red">(Puede añadir un servicio)</span></label>
                             <input type="hidden" name='linea' value="{{$dat['id_linea']}}" required>
                             <input type="hidden" name='estado_servicio' value="1" required>
+                            
                         @else
                             <label class="label-p" for="plan">Servicios</label>
                         @endif
@@ -136,12 +146,52 @@
                             @endforeach
                         </select>
                     </div>
+                </div> --}}
+                    <div class="row" style="margin:0px">
+                        <div class="col-md-4">
+                            <div class="flex-item">
+                                <label class="label-p" for="plan">Plan</label>
+                                <select name="plan" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
+                                    @foreach($plan as $data)
+                                        @if ($data['estado']==1)
+                                            <option @if($data['nombre']==$dat['nombre_plan']) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="Btn" id="boton">
+                                <div class="sign">+</div>
+                                <div class="text-plussing">Servicio</div>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="servicioExtra" style="display: none;">
+                                <div class="flex-item">
+                                    @if ($dat['estado_servicio']==0)
+                                        <label class="label-p" for="plan">Servicios <span style="color: red">(Puede añadir un servicio)</span></label>
+                                    @else
+                                        <label class="label-p" for="plan">Servicios</label>
+                                    @endif
+                                    <select name="servicio" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
+                                        <option @if($dat['estado_servicio']==0) selected @endif  value="0">Elija un servicio<option>
+                                        @foreach($servicio as $data)
+                                            @if ($data['estado']==1 )
+                                                <option @if($data['nombre']==$dat['nombre_servicio']and $dat['estado_servicio']==1) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
+                                            @endif
+                                        @endforeach
 
-                </div>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
             @endforeach
-            <input type="hidden" name='operador' value="{{$operador['id']}}" required>
-            <input type="hidden" name='id_cs' value="{{$dat['id_cs']}}" required>
-            <input type="hidden" name='id_cp' value="{{$dat['id_cp']}}" required>
+            
+
 
 
             <div class="cont-botton" style="align-items: center; justify-content: center;">
@@ -154,4 +204,16 @@
     </section><br>
     <br><br>
 </section>
+<script src="{{ asset('js/app.js')}}"></script>
+<script>
+    document.getElementById("boton").addEventListener("click", function(event) {
+        event.preventDefault();
+        var servicioExtra = document.getElementById("servicioExtra");
+        if (servicioExtra.style.display === "none") {
+            servicioExtra.style.display = "block";
+        } else {
+            servicioExtra.style.display = "none";
+        }
+    });
+</script>
 @endsection

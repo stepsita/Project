@@ -7,11 +7,12 @@
 @section('content')
 <!--Servicios-->
 <br>    
-    <section class="flex">
-         <div class="container-form" id="container-pregunta" style="height: 40vh;" >
+    <section class="flex" >
+         <div class="container-form" id="container-pregunta" style="height: 45vh;" >
              <header>Recupera tu contraseña</header>
-             <form action="{{ route('respuesta') }}" method="post">
+             <form action="{{ url('/actualizar-respuesta', $datos['email'])}}" method="POST">
                 @csrf
+                @method('PATCH')
                      <div class="details personal" >
                          <span class="title">Recuperar contraseña</span>
                         <?php
@@ -21,11 +22,11 @@
                         ?>
                          <div class="fields" >
                                 <label for="">Clave asignada</label>
-                                <h2><?php echo $pwd;?></h2>
+                                <h2 style="color:#179c2b;"><?php echo $pwd;?></h2>
                                 <input type="hidden" name='password' value="{{$pwd}}" required>
-                         </div>
+                         </div> 
                          <br>
-                         <div style=" display:flex; align-items: center; justify-content: center; height: 5vh; background-color: coral;">                           
+                         <div style=" display:flex; align-items: center; justify-content: center;  ">                           
                                 <button type="submit" style="margin-top: 13px;" class="boton-i" >
                                     Aceptar
                                 </button>

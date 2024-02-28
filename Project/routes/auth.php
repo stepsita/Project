@@ -23,6 +23,7 @@ use App\Http\Controllers\LineaController;
 use App\Http\Controllers\PlaneController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\OperadoreController;
+use App\Http\Controllers\EstadisticasController;
 
 
 
@@ -93,9 +94,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/eliminar-servicio/{id}', [ServicioController::class, 'updateDelete']);
 
 
-    Route::get('/estadisticas', function () {
-        return view('statistics');
-    })->name('estadisticas');  
+    Route::get('/estadisticas', [EstadisticasController::class, 'index']);
 
 
     Route::get('/crear-clientes', function () {
@@ -121,16 +120,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/actualizar-linea/{linea}', [ClienteController::class, 'update'])->name('actualizar-linea');
     Route::get('/eliminar-linea/{linea}', [ClienteController::class, 'updateDelete']);
 
-
-
-    /*
-       Route::get('form-planes-change', function () {
-        return view('form-planes-change');
-    }); 
-    Route::get('form-servicios-change', function () {
-        return view('form-servicios-change');
-    });
-*/
  //admin
  Route::get('/crear-operador', function () {
     if(Auth::user() && Auth::user()->tipo_user!=2){

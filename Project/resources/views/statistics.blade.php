@@ -48,61 +48,33 @@
    <div class="contiene-es"><!--Contiene ambas cards de gr[aficas]-->
     <div class="container-es">
         <div class="skill-box">
-            <h1>VENTAS</h1>
+            <h1>PLANES</h1>
         </div>
-        <div class="skill-box">
-            <span class="title-g">PREMIUM</span>
-            <div class="skill-bar">
-                <span class="skill-per premiumventa">
-                    <span class="tooltip"> 90</span>
-                </span>
+        @foreach($planes as $p)
+            <div class="skill-box">
+                <span class="title-g">{{$p->nombre}}</span>
+                <div class="skill-bar">
+                    <span class="skill-per basicoventa">
+                        <span class="tooltip">{{$p->total_usos}}</span>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="skill-box">
-            <span class="title-g">MEDIO</span>
-            <div class="skill-bar">
-                <span class="skill-per medioventa">
-                    <span class="tooltip"> 50</span>
-                </span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <span class="title-g">BÁSICO</span>
-            <div class="skill-bar">
-                <span class="skill-per basicoventa">
-                    <span class="tooltip"> 40</span>
-                </span>
-            </div>
-        </div>
+        @endforeach
     </div>
     <div class="container-es">
         <div class="skill-box">
-            <h1>USOS</h1>
+            <h1>SERVICIOS</h1>
         </div>
-        <div class="skill-box">
-            <span class="title-g">MEDIO</span>
-            <div class="skill-bar">
-                <span class="skill-per medious">
-                    <span class="tooltip"> 100</span>
-                </span>
+        @foreach($servicios as $s)
+            <div class="skill-box">
+                <span class="title-g">{{$s->nombre}}</span>
+                <div class="skill-bar">
+                    <span class="skill-per basicoventa">
+                        <span class="tooltip">{{$s->total_usos}}</span>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="skill-box">
-            <span class="title-g">PREMIUM</span>
-            <div class="skill-bar">
-                <span class="skill-per medio premiumus">
-                    <span class="tooltip"> 70</span>
-                </span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <span class="title-g">BÁSICO</span>
-            <div class="skill-bar">
-                <span class="skill-per basicous">
-                    <span class="tooltip"> 90</span>
-                </span>
-            </div>
-        </div>
+        @endforeach
     </div>
    </div>
    <div style=" display:flex; flex-direction:  row; max-width: 100%; align-items: center; justify-content: space-around;">
@@ -111,23 +83,23 @@
             <div class="cont-in" id="color1">
                 <i class='bx '><img src="icon/check-circle-solid-24.png" height="35px" width="35px"></i>
                 <h2>Líneas activas</h2>
-                <span class="num" data-val="90">90</span>
+                <span class="num" data-val="50">{{$activa}}</span>
             </div>
             <div class="cont-in" id="color2">
                 <i class='bx '><img src="icon/no-entry-solid-24.png" height="35px" width="35px"></i>
                 <h2>Líneas desactivadas</h2>
-                <span class="num" data-val="50">50</span>
+                <span class="num" data-val="20">{{$desactiva}}</span>
             </div>
         </div>
         <!-- Cards de pagos-->
         <div class="contiene-con" style="margin-right: 5%; margin-left: 0;">
-            <div class="circular-progress">
-                <span class="progress-value">50%
+            <div class="circular-progress" style="background: conic-gradient(hsl(116, 43%, 50%) {{$gpt}}deg, #ededed 0deg);">
+                <span class="progress-value">{{$postpago}}%
                     <h1 class="title"> Post-pago</h1>
                 </span>
             </div>
-            <div class="circular-progress">
-                <span class="progress-value">50%
+            <div class="circular-progress"  style="background: conic-gradient(hsl(116, 43%, 50%) {{$gpr}}deg, #ededed 0deg);">
+                <span class="progress-value">{{$prepago}}%
                     <h1 class="title"> Pre-pago</h1>
                 </span>
             </div>

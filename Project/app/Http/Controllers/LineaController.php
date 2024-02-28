@@ -45,20 +45,24 @@ class LineaController extends Controller
             'estado_linea'=> $request['estado_linea'],
             'fecha'=> $request['fecha']
         ]);
-        contrato_plane::create([
-            'operador'=> $request['operador'],
-            'plan'=> $request['plan'],
-            'estado_plan'=> $request['estado_plan'],
-            'linea'=> $linea['id']
-        ]);
-        contrato_servicio::create([
-            'operador'=> $request['operador'],
-            'servicio'=> $request['servicio'],
-            'estado_servicio'=> $request['estado_servicio'],
-            'linea'=> $linea['id']
-        ]);
-      
+        if ($request['pago']=='prepago'){
+            contrato_plane::create([
+                'operador'=> $request['operador'],
+                'plan'=> $request['plan'],
+                'estado_plan'=> $request['estado_plan'],
+                'linea'=> $linea['id']
+            ]);
+            if (!empty($request['servicio'])) {
+                contrato_servicio::create([
+                    'operador'=> $request['operador'],
+                    'servicio'=> $request['servicio'],
+                    'estado_servicio'=>'1',
+                    'linea'=> $linea['id']
+                ]);
+            }   
+        }
         return redirect('buscar-clientes');
+    
     }
 
     /**

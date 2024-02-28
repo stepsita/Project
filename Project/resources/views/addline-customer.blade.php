@@ -28,10 +28,18 @@
                                 ?>
                                 <h2><?php echo $pwd;?></h2>
                                 <input type="hidden" name='numero' value="{{$pwd}}" required>
-                            </div>                         
-
+                            </div>      
+                            <!--                   
                             <div class="input-fields">
-                            <label for="">Plan</label>
+                                <label for="">Tipo de pago</label>
+                                <select name="pago" value="{{ old('pago')}}" required>
+                                    <option value="prepago">Pre-pago</option>
+
+                                    <option value="postpago">Post-pago</option>
+                                </select>
+                            </div>
+                            <div class="input-fields">
+                                <label for="">Plan</label>
                                 <select name="plan" value="{{ old('plan')}}" required>
                                     @foreach($planes as $dat)
                                         @if ($dat['estado']==1)
@@ -41,28 +49,123 @@
                                 </select>
                             </div>
                           
-                            <div class="input-fields">
-                                <label for="">Tipo de pago</label>
-                                <select name="pago" value="{{ old('pago')}}" required>
-                                    <option value="postpago">Post-pago</option>
-                                    <option value="prepago">Pre-pago</option>
-                                </select>
-                            </div>
-                            <div class="input-fields">
-                                <label for="">Servicios</label>
-                                <select name="servicio" value="{{ old('servicio')}}"  required>
-                                    @foreach($servicios as $dat)
-                                        @if ($dat['estado']==1)
-                                            <option value="{{$dat['id'];}}">{{$dat['nombre'];}}</option>
-                                        @endif
-                                    @endforeach
-                                </select>
-                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button class="Btn" id="boton2">
+                                        <div class="sign">+</div>
+                                        <div class="text-plussing">Servicio</div>
+                                    </button>
+                                </div>
+                            
+                                <div class="col-md-8">
+                                    <div class="input-fields" id="servicioExtra2" style="display: none;">
+                                        <label for="">Servicios</label>
+                                        <select name="servicio" value="{{ old('servicio')}}"  required>
+                                            @foreach($servicios as $dat)
+                                                @if ($dat['estado']==1)
+                                                    <option value="{{$dat['id']}}">{{$dat['nombre']}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="campos-de-entrada">
+    <label for="">Tipo de pago</label>
+    <select name="pago" id="tipo_pago" value="{{ old('pago')}}" required>
+        <option value="prepago">Pre-pago</option>
+        <option value="postpago">Post-pago</option>
+    </select>
+</div>
+
+<div class="campos-de-entrada" id="seccion_plan">
+    <label for="">Plan</label>
+    <select name="plan" value="{{ old('plan')}}">
+        @foreach($planes as $dat)
+            @if ($dat['estado']==1)
+                <option value="{{$dat['id']}}">{{$dat['nombre'];}}</option>
+            @endif
+        @endforeach
+    </select>
+</div>
+
+<div class="fila" id="fila_servicios">
+    <div class="col-md-4">
+        <button class="Btn" id="boton2">
+            <div class="signo">+</div>
+            <div class="texto-agregar">Servicio</div>
+        </button>
+    </div>
+
+    <div class="col-md-8">
+        <div class="campos-de-entrada" id="servicioExtra2" style="display: none;">
+            <label for="">Servicios</label>
+            <select name="servicio" value="{{ old('servicio')}}">
+                <option value="NULL">Elija un servicio<option>
+                @foreach($servicios as $dat)
+                    @if ($dat['estado']==1)
+                        <option value="{{$dat['id']}}">{{$dat['nombre']}}</option>
+                    @endif
+                @endforeach
+            </select>
+        </div>
+    </div>
+</div>
+
+<script>
+    const selectTipoPago = document.getElementById('tipo_pago');
+    const seccionPlan = document.getElementById('seccion_plan');
+    const filaServicios = document.getElementById('fila_servicios');
+
+    let planOculto = false; // Bandera para rastrear la visibilidad del "Plan"
+    let serviciosOcultos = false; // Bandera para rastrear la visibilidad de "Servicios"
+
+    selectTipoPago.addEventListener('change', function() {
+        if (selectTipoPago.value === 'postpago') {
+            // Ocultar elementos si aún no están ocultos
+            if (!planOculto) {
+                seccionPlan.style.display = "none";
+                planOculto = true;
+            }
+            if (!serviciosOcultos) {
+                filaServicios.style.display = "none";
+                serviciosOcultos = true;
+            }
+        } else if (selectTipoPago.value === 'prepago') {
+            // Mostrar elementos si estaban ocultos previamente
+            if (planOculto) {
+                seccionPlan.style.display = "";
+                planOculto = false;
+            }
+            if (serviciosOcultos) {
+                filaServicios.style.display = "";
+                serviciosOcultos = false;
+            }
+        }
+    });
+</script>
+
+<script>
+    document.getElementById("boton2").addEventListener("click", function(event) {
+        event.preventDefault();
+        var servicioExtra = document.getElementById("servicioExtra2");
+        if (servicioExtra.style.display === "none") {
+            servicioExtra.style.display = "block";
+        } else {
+            servicioExtra.style.display = "none";
+        }
+    });
+</script>
+
+
+
+                            
+
+
                             <input type="hidden" name='estado_linea' value="1" required>
                             <input type="hidden" name='fecha' value="2024-08-14" required>
                             <input type="hidden" name='operador' value="{{$operador['id'];}}" required>
                             <input type="hidden" name='estado_plan' value="1" required>
-                            <input type="hidden" name='estado_servicio' value="1" required>
 
                         </div>
                         <div class="cont-botton" >
@@ -76,4 +179,6 @@
             </form>
         </div>
     </section>
+
+    
 @endsection

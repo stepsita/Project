@@ -1,4 +1,4 @@
-
+/*
 const btn = document.querySelector('.Btn');
 const dataLine = document.querySelector('#data_line');
 let cont = 0;
@@ -54,8 +54,19 @@ btn.addEventListener('click', e => {
     </div>
     `);
 
-  });
+  });*/
+  document.getElementById('boton').addEventListener('click', function() {
+    const button = document.getElementById('boton');
+    const serviceContainer = document.getElementById('servicio-container');
 
-  window.dispatchEvent(new Event('resize'));
+    if (serviceContainer.style.display === 'none') {
+        serviceContainer.style.display = 'block';
+        button.style.display = 'none'; // Hide the button after displaying the container
+    } else {
+        console.error('Error: La sección de servicios ya está visible.'); // Handle potential error
+    }
+});
+
+
 
   

@@ -6,7 +6,7 @@
     <section class="flex">
         <section class="container-card-cat">
                 <div class="col3">
-                    <h2 class="bc-titulo">Busqueda de operadores</h2>
+                    <h2 class="bc-titulo">Búsqueda de operadores</h2>
                     <div class="buscar">
                         <input type="text" placeholder="Buscar" required />
                         <div class="btn">

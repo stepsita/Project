@@ -7,13 +7,14 @@
 @section('content')
   <section class="flex">
     <!-- Formulario -->
-    <div class="center">
+    
+    <div class="center" style="background-color: rgb(255, 255, 255); ">
       
       <h5>Inicio de sesión</h5>
       <div class="id-usuario">
         <img class="selected" alt="45px" width="45px" src="img/admin.png" >      
       </div>
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" >
 
       <form action="{{ route('login') }}" method="POST">
         @csrf
@@ -21,9 +22,10 @@
           <input type="text" name="email" required>
           <span></span>
           <label>Correo</label>
+          
         </div>
         @error('email')
-          <small style="color: red">{{$message}}</small>
+          <small style="color: red; ">{{$message}}</small>
         @enderror
         <div class="txt_field">
           <input type="password" name="password" required>
@@ -34,12 +36,12 @@
           <small style="color: red">{{$message}}</small>
         @enderror
         <div class="pass"><a href="/respuesta">¿Olvido su contraseña? </a></div>
-      <div style="align-items: center; justify-content: center; align-content: center; width: 100%; display: flex; flex-direction: row; ">
-          <button class="boton-i" type="submit">
-              Iniciar
-            </button>
-      </div>
-    </form>
+        <div style="align-items: center; justify-content: center; align-content: center; width: 100%; display: flex; flex-direction: row; ">
+            <button class="boton-i" type="submit">
+                Iniciar
+              </button>
+        </div>
+      </form>
     </div>
   </section>
 @endsection

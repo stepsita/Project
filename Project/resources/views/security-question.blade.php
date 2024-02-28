@@ -7,11 +7,13 @@
 @section('content')
 <!--Servicios-->
 <br>    
-    <section class="flex" >
-         <div class="container-form" id="container-pregunta">
+    <section class="flex" style="height: 70vh;">
+        <form action="{{ route('respuesta') }}" method="post"> 
+        <div class="container-form" id="container-pregunta">
+           
              <header>Recupera tu contraseña</header>
-             <form action="{{ route('respuesta') }}" method="post">
                 @csrf
+                <br>
                 <div class="details personal" >
                     <span class="title">¿Cúal es el nombre completo de tu mamá?</span>
                     <div class="fields" >
@@ -34,7 +36,8 @@
                         <button type="submit" style="margin-top: 13px;" class="boton-i" > Enviar </button>
                     </div>   
                 </div>      
-             </form>
+           
          </div>
+        </form>
     </section>
 @endsection
