@@ -26,8 +26,7 @@ class ClienteController extends Controller
         return view ('find-customer', $data);
         //llamado a linea y creo una nueva variable para esta 
     }
-
-    /**
+uod    /**
      * Show the form for creating a new resource.
      */
     public function create()
