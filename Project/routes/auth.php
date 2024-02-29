@@ -146,6 +146,8 @@ Route::get('/buscar-operador', function () {
     Route::get('/editar-operador/{id}/edit', [OperadoreController::class, 'edit']);
     Route::patch('/actualizar-operador/{operador}', [OperadoreController::class, 'update'])->name('actualizar-operador');
     Route::get('/eliminar-operador/{operador}', [OperadoreController::class, 'updateDelete']);
+    
+    Route::post('/busquedad-operador', [OperadoreController::class, 'busquedadOperador'])->name('busquedad-operador');
 
 
     

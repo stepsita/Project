@@ -28,7 +28,7 @@
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Cedula de identidad</label>
-                            <input class="pys" type="number" value="{{$dat['cedula']}}" name='cedula' style="padding-left:10px; padding-right: 10px;"  >
+                            <input class="pys" type="number" value="{{$dat['cedula']}}" name='cedula' style="padding-left:10px; padding-right: 10px;"readonly onmousedown="return false;">
                         </div>
                     </div>
                     
@@ -40,6 +40,9 @@
                         <div class="flex-item">
                             <label class="label-p" for="name">Correo</label>
                             <input class="pys" type="email"  name='correo' value="{{$dat['correo']}} " style="padding-left:10px; padding-right: 10px;"  >
+                            @error('correo')
+                            <small style="color: red">{{$message}}</small>
+                        @enderror
                         </div>
                         <div class="flex-item">
                             <label class="label-p" for="name">Estado</label>

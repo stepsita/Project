@@ -8,11 +8,16 @@
                 <div class="col3">
                     <h2 class="bc-titulo">Búsqueda de operadores</h2>
                     <div class="buscar">
-                        <input type="text" placeholder="Buscar" required />
-                        <div class="btn">
-                        <img src="img/lupa.png" height="20px" width="20px" style="margin-bottom: 1px;">
+                        <form action="{{ route('busquedad-operador') }}" method="post">
+                            @csrf
+                            <input type="text" name="cedula" placeholder="Buscar cedula" required>
+                            <div class="btn">
+                                <button type="submit">
+                                    <img src="img/lupa.png" height="20px" width="20px" style="margin-bottom: 1px;">
+                                </button>
+                            </div>
+                        </form>
                         </div>
-                    </div>
                 </div>
                 
                 <h2 class="titulo2">Operadores</h2>

@@ -43,6 +43,11 @@ class OperadoreController extends Controller
     /**
      * Display the specified resource.
      */
+    public function busquedadOperador(Request $request)
+    {
+        $datos_operadores=operadore::where('cedula',$request['cedula'])->get();
+        return view('find-worker',['datos_operadores' => $datos_operadores]);
+    }
     public function show($id)
     {
         if(Auth::user() && Auth::user()->tipo_user!=2){

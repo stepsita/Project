@@ -169,29 +169,37 @@ class ClienteController extends Controller
 
      public function update(Request $request, $lineaid)
      {
-        //dd($request);
          $update=$request->except('_token','_method');
-         $cliente = [
-            'nombre' => $update['nombre'],
-            'apellido' => $update['apellido'],
-            'cedula' => $update['cedula'],
-            'fecha_nac' => $update['fecha_nac'],
-            'correo' => $update['correo'],
-            'estado' => $update['estado'],
-            'ciudad' => $update['ciudad'],
-            'municipio' => $update['municipio'],
-            'calle' => $update['calle']
-        ];
+         $cliente=cliente::where("cedula", $request['cedula'])->firstOrFail();
+        if ($cliente->correo != $request['correo']){
+            $request->validate([
+                'correo' => ['required', 'string', 'email','unique:clientes'],
+            ]);
+        }
+
+        //  $cliente = [
+        //     'nombre' => $update['nombre'],
+        //     'apellido' => $update['apellido'],
+        //     'cedula' => $update['cedula'],
+        //     'fecha_nac' => $update['fecha_nac'],
+        //     'correo' => $update['correo'],
+        //     'estado' => $update['estado'],
+        //     'ciudad' => $update['ciudad'],
+        //     'municipio' => $update['municipio'],
+        //     'calle' => $update['calle']
+        // ];
         $linea = [
             'pago' => $update['pago'],
         ];
          linea::where("numero", $lineaid)->update($linea);
-         cliente::where("cedula", $request['cedula'])->update($cliente);
+         $cliente->update($update);
+         //cliente::where("cedula", $request['cedula'])->update($cliente);
         
         //return $contrato_planes;
         return redirect('buscar-clientes');
 
         }
+        //editar plan
         public function updatep(Request $request, $lineaid) {
             $update=$request->except('_token','_method');
             contrato_plane::create([
@@ -204,6 +212,7 @@ class ClienteController extends Controller
            return redirect('buscar-clientes');
    
         }
+        //editar servicio
         public function updates(Request $request, $lineaid) {
             $update=$request->except('_token','_method');
             // dd($update);
