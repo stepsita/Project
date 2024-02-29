@@ -139,7 +139,10 @@
                                     
                                         <div class="flex-item">
                                             <label class="label-p" for="name">Tu plan</label>
-                                            <input class="pys" name='calle' type="text" value="{{ $contratoPlan != '' ? $contratoPlan->plane->nombre : ''}}" style="padding-left:10px; padding-right: 10px;" >
+                                            <input class="pys" name='calle' type="text" value="{{ $contratoPlan != '' ? $contratoPlan->plane->nombre : ''}}" style="padding-left:10px; padding-right: 10px;width: 150px;" >
+                                            @if ($errors->has('plan'))
+                                                <small style="color: red">{{ $errors->first('plan') }}</small>
+                                            @endif
                                         </div>
                                         <div class="flex-item">
                                             <label class="label-p" for="plan">Plan</label>
@@ -150,6 +153,7 @@
                                                         @endif
                                                     @endforeach
                                             </select> 
+                                            
                                         </div>
                                     
                         </div>
@@ -178,8 +182,11 @@
                                     <input type="hidden" name='operador' value="{{$operador['id']}}" required>
                                     <div class="flex-item">
                                         <label class="label-p" for="name">Tu servicio</label>
-                                        <input class="pys" name='calle' type="text" value="{{ $contratoServicio != '' ? $contratoServicio->servicios->nombre : ''}}" style="padding-left:10px; padding-right: 10px;" >
-                                        </div>
+                                        <input class="pys" name='calle' type="text" value="{{ $contratoServicio != '' ? $contratoServicio->servicios->nombre : ''}}" style="padding-left:10px; padding-right: 10px; width: 150px;" >
+                                        @if ($errors->has('servicio'))
+                                                <small style="color: red">{{ $errors->first('servicio') }}</small>
+                                        @endif
+                                    </div>
                                     <label class="label-p" for="plan">Servicio</label>
                                     <select name="servicio" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
                                         @foreach($servicio as $data)

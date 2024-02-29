@@ -202,12 +202,18 @@ class ClienteController extends Controller
         //editar plan
         public function updatep(Request $request, $lineaid) {
             $update=$request->except('_token','_method');
-            contrato_plane::create([
-                'operador' => $update['operador'],
-                'plan' => $update['plan'],
-                'linea'=>  $lineaid
-            ]);
-            
+            $infoLinea= linea::whereId($lineaid)->first();
+            if($infoLinea['pago']=='prepago'){
+                contrato_plane::create([
+                    'operador' => $update['operador'],
+                    'plan' => $update['plan'],
+                    'linea'=>  $lineaid
+                ]);
+            }elseif($infoLinea['pago']=='postpago'){
+                return back()->withErrors([
+                    'plan' => 'No se puede añadir un plan siendo postpago.',
+                ]);
+            }
            //return $contrato_planes;
            return redirect('buscar-clientes');
    
@@ -215,12 +221,20 @@ class ClienteController extends Controller
         //editar servicio
         public function updates(Request $request, $lineaid) {
             $update=$request->except('_token','_method');
+            $infoLinea= linea::whereId($lineaid)->first();
+            if($infoLinea['pago']=='prepago'){
+                contrato_servicio::create([
+                    'operador' => $update['operador'],
+                    'servicio' => $update['servicio'],
+                    'linea'=>  $lineaid
+                ]);
+            }elseif($infoLinea['pago']=='postpago'){
+                return back()->withErrors([
+                    'servicio' => 'No se puede añadir un servicio siendo postpago.',
+                ]);
+            }
             // dd($update);
-            contrato_servicio::create([
-                'operador' => $update['operador'],
-                'servicio' => $update['servicio'],
-                'linea'=>  $lineaid
-            ]);
+            
             
            //return $contrato_planes;
            return redirect('buscar-clientes');
