@@ -26,7 +26,8 @@ class ClienteController extends Controller
         return view ('find-customer', $data);
         //llamado a linea y creo una nueva variable para esta 
     }
-uod    /**
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -36,7 +37,7 @@ uod    /**
     }
     public function busquedadLinea(Request $request)
     {
-        $datos_clientes=cliente::join('lineas', 'clientes.cedula', '=', 'lineas.cedula')->where('lineas.numero', $request->linea)->get();
+        $datos_clientes=cliente::join('lineas', 'clientes.cedula', '=', 'lineas.cedula')->where('linea.numero', $request->linea)->get();
         return view('find-customer',['datos_clientes' => $datos_clientes]);
     }
     /**
