@@ -7,12 +7,6 @@
     <section class="container-card-cat">
         <div class="col3">
             <h2 class="bc-titulo">Planes y servicios</h2>
-            <div class="buscar">
-                <input type="text" placeholder="Buscar" required />
-                <div class="btn">
-                    <img src="img/lupa.png" height="20px" width="20px" style="margin-bottom: 1px;">
-                </div>
-            </div>
 
             <section class="botones">
                 <button class="Boton"> 

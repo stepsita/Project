@@ -92,26 +92,26 @@
                 <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="name">Nombre</label>
-                        <input class="pys" type="text" value="{{$contratoPlan->plane->nombre}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                        <input class="pys" type="text" value="{{ $contratoPlan != '' ? $contratoPlan->plane->nombre : ''}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="name">Precio</label>
-                        <input class="pys" type="text" value="{{$plan->precio}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >                
+                        <input class="pys" type="text" value="{{ $contratoPlan != '' ? $plan->precio : ''}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >                
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="name">Min</label>
-                        <input class="pys" value="{{$plan->min}}" type="text" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                        <input class="pys" value="{{ $contratoPlan != '' ? $plan->min : ''}}" type="text" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                     </div>
                 
                 </div>
                 <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="name">SMS</label>
-                        <input class="pys" type="text"  value="{{$plan->sms}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                        <input class="pys" type="text"  value="{{ $contratoPlan != '' ? $plan->sms : ''}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="name">GB</label>
-                        <input class="pys" type="text"  value="{{$plan->gb}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                        <input class="pys" type="text"  value="{{ $contratoPlan != '' ? $plan->gb : ''}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                     </div>
                     <div class="flex-item">
                     </div>

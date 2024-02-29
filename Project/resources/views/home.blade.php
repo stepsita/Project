@@ -47,13 +47,22 @@
 
         <br> <hr class="featurette-divider">
         <div class="container-texto">
-          <h2>Bienvenid@ {{$operador->nombre}} </h2>
+          <h2>Bienvenid@ {{$operador->nombre}} - 
+          @if ($operador->tipo_user==1)
+            Operador
+          @endif
+          @if ($operador->tipo_user==2)
+            Administrador
+          @endif
+          </h2>
         </div>
         <div class="row1-container" >
           <div class="box box-down cyan">
             <h2>Búsqueda</h2>
-           <a href=""></a> <p>• Usuario</p>
-            <p>• Operador</p>
+           <a href=""></a> <p>• Cliente</p>
+           @if ($operador->tipo_user==2)
+           <p>• Operador</p>
+         @endif
             <img src="img/search.png" width="25%" height="25%">
           </div>
          
@@ -66,8 +75,10 @@
         
           <div class="box box-down blue">
             <h2>Agregar</h2>
-            <p>• Usuario</p>
-            <p>• Operador</p>
+            <p>• Cliente</p>
+            @if ($operador->tipo_user==2)
+              <p>• Operador</p>
+            @endif
             <img src="img/agregar-usuario.png" width="25%" height="25%">
           </div>
           
@@ -75,7 +86,6 @@
         <div class="row2-container">
           <div class="box orange">
             <h2>Estadísticas</h2>
-            <p>• Personales</p>
             <p>• Generales</p>
             <img src="img/statistics.png" width="25%" height="25%">
           </div>
