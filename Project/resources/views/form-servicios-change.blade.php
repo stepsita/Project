@@ -18,13 +18,14 @@
                     <div class="input-fields">
                         <label for="">Nombre</label>
                         <input type="text" placeholder="Nombre" name='nombre' value="{{$servicio['nombre']}}" required>
+                        @error('nombre')
+                        <small style="color: red">{{$message}}</small>
+                    @enderror
                     </div>
                     <div class="input-fields">
                         <label for="">Precio</label>
                         <input type="number" placeholder="Precio"  name='precio' value="{{$servicio['precio']}}"required>
-                        @error('precio')
-                            <small style="color: red">{{$message}}</small>
-                        @enderror
+
                     </div>
                 </div>
                 <div class="fields" >
@@ -42,9 +43,7 @@
                             </select>
                             
                             <input type="number" placeholder="Cantidad" name='cantidad' value="{{$servicio['cantidad']}}" required style="width: 55%;">
-                            @error('cantidad')
-                                <small style="color: red">{{$message}}</small>
-                            @enderror
+
                         </div>
                     </div>
                 </div>

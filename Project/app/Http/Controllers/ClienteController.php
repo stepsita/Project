@@ -99,32 +99,30 @@ class ClienteController extends Controller
     public function show($linea)
     {
         $data = cliente::join('lineas', 'clientes.cedula', '=', 'lineas.cedula')->where('lineas.numero','=', $linea)->get();
-        foreach ($data as $dat){
-            if ($dat['pago']=='prepago'){
-                $data= cliente::join('lineas', 'clientes.cedula', '=', 'lineas.cedula')
-                 ->join('contrato_planes','lineas.id','=','contrato_planes.linea')
-                 ->join('planes','planes.id','=','contrato_planes.plan')
-                 ->leftjoin('contrato_servicios','lineas.id','=','contrato_servicios.linea')
-                 ->leftjoin('servicios','servicios.id','=','contrato_servicios.servicio')
-                 ->select([
-                     'clientes.*',
-                     'lineas.*',
-                     'contrato_planes.*',
-                     'contrato_servicios.*',
-                     'planes.*',
-                     'servicios.*',
-                     'clientes.nombre AS nombre',
-                     'clientes.estado AS estado',
-                     'planes.nombre AS nombre_plan',
-                     'servicios.nombre AS nombre_servicio',
-                     'planes.precio AS precio_plan',
-                     'servicios.precio AS precio_servicio'
-                 ])
-                 ->where('lineas.numero','=', $linea)->get();
-            }
+        $infoLinea= linea::whereNumero($linea)->first();
+        $contratoPlanes=contrato_plane::latest()->whereLinea($infoLinea->id)->first();
+        $contratoServicios=contrato_servicio::latest()->whereLinea($infoLinea->id)->first();
+        
+        if(is_null($contratoServicios))
+        {
+            $servicio=servicio::all();
+        }else{
+            $servicio=servicio::where('id',$contratoServicios->servicio)->first();
         }
+        if(is_null($contratoPlanes))
+        {
+            $plan=plane::all();
+        }else{
+            $plan=plane::where('id',$contratoPlanes->plan)->first();
+        }
+
         return view ('porfile-customer', with([
-            'datos' => $data
+            'datos' => $data,   
+            'plan' => $plan,
+            'servicio' => $servicio,
+            'contratoPlan'=> $contratoPlanes,
+            'contratoServicio' => $contratoServicios,
+            'infoLinea'=>$infoLinea
         ])); 
     }
 

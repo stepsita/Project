@@ -17,35 +17,30 @@
                             <div class="input-fields">
                                 <label for="">Nombre</label>
                                 <input type="text" placeholder="Nombre" name='nombre' value="{{$plan['nombre']}}" required>
+                                @error('nombre')
+                                    <small style="color: red">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="input-fields">
                                 <label for="">Precio</label>
                                 <input type="number" placeholder="Precio" name='precio' value="{{$plan['precio']}}" required>
-                                @error('precio')
-                                    <small style="color: red">{{$message}}</small>
-                                @enderror
+                    
                             </div>
                             <div class="input-fields">
                                 <label for="">MIN</label>
                                 <input type="number" placeholder="Minutos en llamada" name='min' value="{{$plan['min']}}" required>
-                                @error('min')
-                                    <small style="color: red">{{$message}}</small>
-                                @enderror
+
                             </div>
 
                             <div class="input-fields">
                                 <label for="">SMS</label>
                                 <input type="number" placeholder="Cantidad de mensajes" name='sms' value="{{$plan['sms']}}" required>
-                                @error('sms')
-                                    <small style="color: red">{{$message}}</small>
-                                @enderror
+
                             </div>
                             <div class="input-fields">
                                 <label for="" style="margin-right: 9%;">GB</label>
                                 <input type="number" placeholder="Cantidad de GB"  name='gb' value="{{$plan['gb']}}" required>
-                                @error('gb')
-                                    <small style="color: red">{{$message}}</small>
-                                @enderror
+
                             </div>
                             <div class="input-fields">
 

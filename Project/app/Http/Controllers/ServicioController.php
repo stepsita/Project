@@ -73,10 +73,15 @@ class ServicioController extends Controller
     public function update(Request $request, $id)
     {
         $update=$request->except('_token','_method');
-        servicio::where("id", $id)->update($update);
+        $servicio=servicio::where("id", $id)->firstOrFail();
+        if ($servicio->nombre != $update['nombre']){
+            $request->validate([
+                'nombre' => ['required', 'string', 'unique:servicios']
+            ]);
+        }
+        $servicio->update($update);
         //return $update;
         return redirect('catalogo');
-
     }
     public function updateDelete( $id)
     {

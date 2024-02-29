@@ -92,26 +92,26 @@
                 <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="name">Nombre</label>
-                        <input class="pys" type="text" value="{{$dat['nombre_plan']}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                        <input class="pys" type="text" value="{{$contratoPlan->plane->nombre}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="name">Precio</label>
-                        <input class="pys" type="text" value="{{$dat['precio_plan']}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >                
+                        <input class="pys" type="text" value="{{$plan->precio}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >                
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="name">Min</label>
-                        <input class="pys" value="{{$dat['min']}}" type="text" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                        <input class="pys" value="{{$plan->min}}" type="text" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                     </div>
                 
                 </div>
                 <div class="contenedor-user">
                     <div class="flex-item">
                         <label class="label-p" for="name">SMS</label>
-                        <input class="pys" type="text"  value="{{$dat['sms']}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                        <input class="pys" type="text"  value="{{$plan->sms}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="name">GB</label>
-                        <input class="pys" type="text"  value="{{$dat['gb']}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                        <input class="pys" type="text"  value="{{$plan->gb}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                     </div>
                     <div class="flex-item">
                     </div>
@@ -122,19 +122,19 @@
             <div class="contenedor-user">
                 <div class="flex-item">
                     <label class="label-p" for="codigo">Nombre del servicio</label>
-                    <input class="pys" type="text"  value="{{$dat['nombre_servicio']}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                    <input class="pys" type="text"  value="{{ $contratoServicio != '' ? $contratoServicio->servicios->nombre : ''}}" style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                 </div>
                 <div class="flex-item">
                     <label class="label-p" for="numero">Precio</label>
-                    <input class="pys" type="text" value="{{$dat['precio_servicio']}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                    <input class="pys" type="text" value="{{ $contratoServicio != '' ? $servicio->precio : ''}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                 </div>
                 <div class="flex-item">
                     <label class="label-p" for="estado">Tipo</label>
-                    <input class="pys" type="text" value="{{$dat['tipo']}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                    <input class="pys" type="text" value="{{ $contratoServicio != '' ? $servicio->tipo : ''}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                 </div>
                 <div class="flex-item">
                     <label class="label-p" for="servicio">Cantidad</label>
-                    <input class="pys" type="text" value="{{$dat['cantidad']}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
+                    <input class="pys" type="text" value="{{ $contratoServicio != '' ? $servicio->cantidad : ''}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                 </div>
             </div>
 

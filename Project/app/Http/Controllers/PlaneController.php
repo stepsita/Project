@@ -75,7 +75,13 @@ class PlaneController extends Controller
     public function update(Request $request, $id)
     {
         $update=$request->except('_token','_method');
-        plane::where("id", $id)->update($update);
+        $plan=plane::where("id", $id)->firstOrFail();
+        if ($plan->nombre != $update['nombre']){
+            $request->validate([
+                'nombre' => ['required', 'string', 'unique:planes']
+            ]);
+        }
+        $plan->update($update);
         //return $update;
         return redirect('catalogo');
     }
