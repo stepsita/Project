@@ -132,7 +132,7 @@ class RegisteredUserController extends Controller
             'municipio'=> ['required', 'string'],
             'respuesta'=> ['required', 'string'],
             'email' => ['required','email','unique:users'],
-            'password' => ['required', 'string','unique:users']
+            'password' => ['required', 'string']
         ]);
 
         $update=$request->except('_token','_method');

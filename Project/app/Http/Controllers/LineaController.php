@@ -31,13 +31,13 @@ class LineaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate ([
+       /* $request->validate ([
             'cedula'=> ['required', 'string'], 
             'numero'=> ['required', 'string', 'unique:lineas'],
             'pago'=> ['required', 'string'],
             'estado_linea' => ['required', 'string'],
             'fecha'=> ['required', 'date'],
-        ]);
+        ]);*/
         $linea= linea::create([
             'cedula'=> $request['cedula'],
             'numero'=> $request['numero'],
@@ -49,10 +49,9 @@ class LineaController extends Controller
             contrato_plane::create([
                 'operador'=> $request['operador'],
                 'plan'=> $request['plan'],
-                'estado_plan'=> $request['estado_plan'],
                 'linea'=> $linea['id']
             ]);
-            if (!empty($request['servicio'])) {
+            if ($request['servicio']!==NULL) {
                 contrato_servicio::create([
                     'operador'=> $request['operador'],
                     'servicio'=> $request['servicio'],

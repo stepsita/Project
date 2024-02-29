@@ -12,7 +12,6 @@ class contrato_servicio extends Model
         'operador',
         'servicio',
         'linea',
-        'estado_servicio',
     ];
 
     /**
@@ -24,4 +23,8 @@ class contrato_servicio extends Model
         'estado_servicio',
         'operador',
     ];
+    public function servicios() 
+    {
+        return $this->belongsTo(servicio::class, 'servicio');
+    }
 }

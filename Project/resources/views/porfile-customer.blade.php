@@ -10,7 +10,7 @@
             <div class="col3">
                 <h2 class="titulo-v">Visualizar</h2>
                 <hr class="featurette-divider-mp">
-                <h2 style="margin-left: 1%; margin-bottom:-0.5%" class="titulo2">Planes y Servicios adquiridos</h2>
+                <h2 style="margin-left: 1%; margin-bottom:-0.5%" class="titulo2">Datos Personales</h2>
                 @foreach($datos as $dat)
                 <div class="datos" >
                     <div class="contenedor-user">
@@ -83,7 +83,6 @@
     </section><br>
     
 @if($dat['pago']=='prepago')
-@if($dat['estado_plan']==1) 
 
     <section class="container-card-pys">
         <div class="col3">
@@ -117,9 +116,7 @@
                     <div class="flex-item">
                     </div>
                 </div>
-            @endif
        
-        @if($dat['estado_servicio']==1) 
             <br>
             <h2 style="margin-left: 1%; margin-bottom:-0.5%; margin-top:-2.5%;" class="titulo2">Servicio adquirido</h2>
             <div class="contenedor-user">
@@ -140,8 +137,7 @@
                     <input class="pys" type="text" value="{{$dat['cantidad']}}"  style="padding-left:10px; padding-right: 10px;" readonly onmousedown="return false;" >
                 </div>
             </div>
-        
-        @endif
+
     @endif
                 @endforeach    
             </div>

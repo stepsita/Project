@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('municipio');
             $table->string('calle');
             $table->string('correo')->unique();
-            $table->string('estado_cliente');
             $table->timestamps();
         });
     }

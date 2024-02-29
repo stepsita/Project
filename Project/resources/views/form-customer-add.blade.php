@@ -88,7 +88,6 @@
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" name='estado_cliente' value="1" required>
 
                     <div class="details personal">
                         <span class="title" style="margin-top: 2%; "> Detalles de la línea</span>
@@ -151,16 +150,17 @@
                             
                             tipoPagoSelect.addEventListener('change', function() {
                                 if (tipoPagoSelect.value === 'postpago') {
-                                    targetCampoPlan.style.display = 'none';
+                                    
+                                    targetCampoPlan.style.visibility = 'hidden';
                                 } else {
-                                    targetCampoPlan.style.display = 'block';
+                                    targetCampoPlan.style.visibility = 'visible';
+                                  
                                 }
                             });
                         </script>
                             <input type="hidden" name='estado_linea' value="1" required>
                             <input type="hidden" name='fecha' value="2024-08-14" required>
                             <input type="hidden" name='operador' value="{{$operador['id'];}}" required>
-                            <input type="hidden" name='estado_plan' value="1" required>
 
 
 

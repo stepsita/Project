@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger('operador');
             $table->unsignedBigInteger('servicio');
             $table->unsignedBigInteger('linea');
-            $table->string('estado_servicio');
             $table->timestamps();
             $table->foreign('operador')->references('id')->on('operadores');
             $table->foreign('servicio')->references('id')->on('servicios');

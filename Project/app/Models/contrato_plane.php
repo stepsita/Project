@@ -12,7 +12,6 @@ class contrato_plane extends Model
         'operador',
         'plan',
         'linea',
-        'estado_plan',
     ];
 
     /**
@@ -21,7 +20,11 @@ class contrato_plane extends Model
      * @var array<int, string>
      */
     protected $hidden = [
-        'estado_plan',
         'operador',
     ];
+
+    public function plane() 
+    {
+        return $this->belongsTo(Plane::class, 'plan');
+    }
 }

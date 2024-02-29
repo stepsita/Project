@@ -8,10 +8,15 @@
             <div class="col3">
                 <h2 class="bc-titulo">Búsqueda de clientes</h2>
                 <div class="buscar">
-                    <input type="text" placeholder="Buscar" required />
+                <form action="{{ route('busquedad-linea') }}" method="post">
+                    @csrf
+                    <input type="text" name="linea" placeholder="Buscar linea" required>
                     <div class="btn">
-                      <img src="img/lupa.png" height="20px" width="20px" style="margin-bottom: 1px;">
+                        <button type="submit">
+                            <img src="img/lupa.png" height="20px" width="20px" style="margin-bottom: 1px;">
+                        </button>
                     </div>
+                </form>
                 </div>
                 <h2 class="titulo2">Lineas Activas</h2>
                 <div class="datos">  

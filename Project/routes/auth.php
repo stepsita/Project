@@ -108,6 +108,9 @@ Route::middleware('auth')->group(function () {
         return view('find-customer',['datos_clientes' => $datos_clientes]);
     })->name('buscar-clientes');  
 
+    Route::post('/busquedad-linea', [ClienteController::class, 'busquedadLinea'])->name('busquedad-linea');
+
+
     Route::get('/añadir-linea/{id}', function ($id) {
         $planes=plane::all();
         $servicios=servicio::all();
@@ -118,6 +121,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/linea/{id}', [ClienteController::class, 'show']);
     Route::get('/editar-linea/{id}/edit', [ClienteController::class, 'edit']);
     Route::patch('/actualizar-linea/{linea}', [ClienteController::class, 'update'])->name('actualizar-linea');
+    Route::patch('/actualizar-p/{linea}', [ClienteController::class, 'updatep'])->name('actualizar-p');
+    Route::patch('/actualizar-s/{linea}', [ClienteController::class, 'updates'])->name('actualizar-s');
     Route::get('/eliminar-linea/{linea}', [ClienteController::class, 'updateDelete']);
 
  //admin

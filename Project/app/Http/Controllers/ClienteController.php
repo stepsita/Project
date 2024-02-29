@@ -35,7 +35,11 @@ class ClienteController extends Controller
         $data['planes']=plane::get();
         return view ('form-customer-add', $data);
     }
-
+    public function busquedadLinea(Request $request)
+    {
+        $datos_clientes=cliente::join('lineas', 'clientes.cedula', '=', 'lineas.cedula')->where('lineas.numero', $request->linea)->get();
+        return view('find-customer',['datos_clientes' => $datos_clientes]);
+    }
     /**
      * Store a newly created resource in storage.
      */
@@ -51,7 +55,6 @@ class ClienteController extends Controller
             'municipio'=> ['required', 'string'],
             'calle'=> ['required', 'string'],
             'correo' => ['required', 'string', 'email','unique:clientes'],
-            'estado_cliente'=> ['required', 'string'],
         ]);
         cliente::create([
             'nombre'=> $request['nombre'],
@@ -63,7 +66,6 @@ class ClienteController extends Controller
             'municipio'=> $request['municipio'],
             'calle'=> $request['calle'],
             'correo'=> $request['correo'],
-            'estado_cliente'=> $request['estado_cliente'],
         ]);
         
         //agregar informacion a la base de datos
@@ -85,7 +87,6 @@ class ClienteController extends Controller
             contrato_plane::create([
                 'operador'=> $request['operador'],
                 'plan'=> $request['plan'],
-                'estado_plan'=> $request['estado_plan'],
                 'linea'=> $linea['id']
             ]);
         }
@@ -132,38 +133,35 @@ class ClienteController extends Controller
      */
     public function edit($linea)
     {
-        $data= cliente::join('lineas', 'clientes.cedula', '=', 'lineas.cedula')
-        ->join('contrato_planes','lineas.id','=','contrato_planes.linea')
-        ->join('planes','planes.id','=','contrato_planes.plan')
-        ->leftjoin('contrato_servicios','lineas.id','=','contrato_servicios.linea')
-        ->leftjoin('servicios','servicios.id','=','contrato_servicios.servicio')
-        ->select([
-            'clientes.*',
-            'lineas.*',
-            'contrato_planes.*',
-            'contrato_servicios.*',
-            'planes.*',
-            'servicios.*',
-            'lineas.id AS id_linea',
-            'clientes.nombre AS nombre',
-            'clientes.estado AS estado',
-            'planes.nombre AS nombre_plan',
-            'servicios.nombre AS nombre_servicio',
-            'planes.precio AS precio_plan',
-            'servicios.precio AS precio_servicio',
-            'contrato_servicios.id AS id_cs',
-            'contrato_planes.id AS id_cp'
-        ])
-        ->where('lineas.numero','=', $linea)->get();
-        $plan=plane::all();
-        $servicio=servicio::all();
+        $data = cliente::join('lineas', 'clientes.cedula', '=', 'lineas.cedula')->where('lineas.numero','=', $linea)->get();
+        $infoLinea= linea::whereNumero($linea)->first();
+        $contratoPlanes=contrato_plane::latest()->whereLinea($infoLinea->id)->first();
+        $contratoServicios=contrato_servicio::latest()->whereLinea($infoLinea->id)->first();
+        
+        if(is_null($contratoServicios))
+        {
+            $servicio=servicio::all();
+        }else{
+            $servicio=servicio::whereNot('id',$contratoServicios->servicio)->get();
+        }
+        if(is_null($contratoPlanes))
+        {
+            $plan=plane::all();
+        }else{
+            $plan=plane::whereNot('id',$contratoPlanes->plan)->get();
+        }
+        //  dd($contratoServicios);
+
         $operador = operadore::where('email', Auth::user()->email)->firstOrFail();
          // dd($data);
         return view ('change-porfile-customer', with([
-            'datos' => $data,
+            'datos' => $data,   
             'plan' => $plan,
             'servicio' => $servicio,
             'operador' => $operador,
+            'contratoPlan'=> $contratoPlanes,
+            'contratoServicio' => $contratoServicios,
+            'infoLinea'=>$infoLinea
         ])); 
     }
 
@@ -186,73 +184,41 @@ class ClienteController extends Controller
             'municipio' => $update['municipio'],
             'calle' => $update['calle']
         ];
-        
-    
-        if ($update['pago']=='postpago'){
-            $linea = [
-                'pago' => 'postpago'
-            ];
-            $contrato_planes = [
-                'estado_plan'=>'0',
-                'operador' => $update['operador']
-            ];
-            if (!empty($update['id_cs'])){ 
-                $contrato_servicios = [
-                    'estado_servicio'=>'0',
-                    'operador' => $update['operador']
-                ];
-                contrato_servicio::where("id", $update['id_cs'])->update($contrato_servicios);
-            }
-            contrato_plane::where("id", $update['id_cp'])->update($contrato_planes);
-        }
-        if ($update['pago']=='prepago'){
-            $linea = [
-                'pago' => 'prepago'
-            ];
-            $contrato_planes = [
-                'estado_plan'=>'1',
-                'plan' => $update['plan'],
-                'operador' => $update['operador'],
-            ];
-            contrato_plane::where("id", $update['id_cp'])->update($contrato_planes);
-            if (is_null($update['id_cp'])){ 
-                contrato_plane::create([
-                    'operador' => $update['operador'],
-                    'plan' => $update['plan'],
-                    'estado_plan'=>'1',
-                    'linea'=>  $update['linea']
-                ]);
-            }
-            if ($update['servicio']==0){ 
-                $contrato_servicios =contrato_servicio::find($update['id_cs']);
-                $contrato_servicios->update([
-                    'estado_servicio'=>'0',
-                    'operador' => $update['operador'],
-                ]);
-                $contrato_servicios->save();
-            }elseif ($update['id_cs']>0){ 
-                $contrato_servicios = [
-                    'estado_servicio'=>'1',
-                    'servicio' => $update['servicio'],
-                    'operador' => $update['operador'],
-                ];
-                contrato_servicio::where("id", $update['id_cs'])->update($contrato_servicios);
-            }elseif (is_null($update['id_cs'])){ 
-                contrato_servicio::create([
-                    'operador' => $update['operador'],
-                    'servicio' => $update['servicio'],
-                    'estado_servicio'=>'1',
-                    'linea'=>  $update['linea']
-                ]);
-            }
-        }
+        $linea = [
+            'pago' => $update['pago'],
+        ];
          linea::where("numero", $lineaid)->update($linea);
          cliente::where("cedula", $request['cedula'])->update($cliente);
         
         //return $contrato_planes;
         return redirect('buscar-clientes');
-        }
 
+        }
+        public function updatep(Request $request, $lineaid) {
+            $update=$request->except('_token','_method');
+            contrato_plane::create([
+                'operador' => $update['operador'],
+                'plan' => $update['plan'],
+                'linea'=>  $lineaid
+            ]);
+            
+           //return $contrato_planes;
+           return redirect('buscar-clientes');
+   
+        }
+        public function updates(Request $request, $lineaid) {
+            $update=$request->except('_token','_method');
+            // dd($update);
+            contrato_servicio::create([
+                'operador' => $update['operador'],
+                'servicio' => $update['servicio'],
+                'linea'=>  $lineaid
+            ]);
+            
+           //return $contrato_planes;
+           return redirect('buscar-clientes');
+   
+           }
     /**
      * Remove the specified resource from storage.
      */
@@ -264,9 +230,6 @@ class ClienteController extends Controller
     {
         $idLinea = Linea::whereNumero($linea)->first()->id;
         Linea::whereNumero($linea)->update(['estado_linea' => 0]);
-        contrato_plane::whereLinea($idLinea)->update(['estado_plan' => 0]);
-        contrato_servicio::whereLinea($idLinea)->update(['estado_servicio' => 0]);
-
         return redirect('buscar-clientes');
     }
 }

@@ -18,7 +18,6 @@ class cliente extends Model
         'municipio',
         'calle',
         'correo',
-        'estado_cliente',
     ];
 
     /**
@@ -28,6 +27,5 @@ class cliente extends Model
      */
     protected $hidden = [
         
-        'estado_cliente',
     ];
 }

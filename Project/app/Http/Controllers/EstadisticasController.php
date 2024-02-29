@@ -27,11 +27,9 @@ class EstadisticasController extends Controller
         $gpr = round(($prepago*360)/100);
         $gpt = round(($postpago*360)/100);
         $planesUsados = contrato_plane::join('planes', 'contrato_planes.plan', '=', 'planes.id')
-        ->where('contrato_planes.estado_plan', '1')
         ->select('planes.nombre', contrato_plane::raw('count(*) as total_usos'))
         ->groupBy('planes.nombre')->get();
         $serviciosUsados = contrato_servicio::join('servicios', 'contrato_servicios.servicio', '=', 'servicios.id')
-        ->where('contrato_servicios.estado_servicio', '1')
         ->select('servicios.nombre', contrato_servicio::raw('count(*) as total_usos'))
         ->groupBy('servicios.nombre')->get();
         return view ('statistics', with([

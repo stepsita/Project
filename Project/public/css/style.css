@@ -355,7 +355,7 @@ a.button:hover {
   opacity: 1;
   height: 12px;
   width: 12px;
-  background-color: #fff;
+  background-color: #8e0a0a;
   visibility: hidden;
 }
 .swiper-pagination-bullet-active {
@@ -1653,6 +1653,16 @@ form .txt_field{
 }
 
 /*CONTENEDOR Y COLUMNAS*/
+.cont-plan-service{
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+
+  width:100%;
+
+  padding-left: 14%;
+  padding-right: 14%;
+}
 .container-card-usu{
   display: flex;
   justify-content: center;

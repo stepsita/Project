@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="flex" >
-    <section  style="margin-left: 3%; height:110vh;" class="container-card-usu">
+    <section  style="margin-left: 3%; height:90vh;" class="container-card-usu">
         <div class="container-columnas">
         
             <div class="col3">
@@ -16,9 +16,6 @@
                     <form action="{{ url('/actualizar-linea', $dat['numero'])}}" method="POST">
                         @csrf
                         @method('PATCH') <span>
-                        <input type="hidden" name='operador' value="{{$operador['id']}}" required>
-                        <input type="hidden" name='id_cs' value="{{$dat['id_cs']}}" required>
-                        <input type="hidden" name='id_cp' value="{{$dat['id_cp']}}" required>
                         <input type="hidden" name='linea' value="{{$dat['id_linea']}}" required>
                     <div class="contenedor-user">
                         <div class="flex-item">
@@ -76,7 +73,7 @@
                         </div>
                     </div>
 
-                    <div class="contenedor-user">
+                    <div class="contenedor-user" >
                         <div class="flex-item">
                             <label class="label-p" for="name">Ciudad</label>
                             <input name='ciudad' class="pys" type="text" value="{{$dat['ciudad']}}" style="padding-left:10px; padding-right: 10px;" >
@@ -91,8 +88,6 @@
                         </div>
                     </div>
 
-                </div>
-
                 <span style="margin-left: 1%;">Datos de la línea</span>
                 <div class="contenedor-user">
                     <div class="flex-item">
@@ -105,115 +100,130 @@
                     </div>
                     <div class="flex-item">
                         <label class="label-p" for="pago">Tipo de Pago</label>
-                        <select name="pago" option="pago" id="pago" style="padding-left:10px; padding-right: 10px;">
+                        <select name="pago" option="pago" id="tipo_pago"  style="padding-left:10px; padding-right: 10px;">
                             <option  @if($dat['pago']=="prepago") selected @endif value="prepago">Pre-pago</option>
                             <option  @if($dat['pago']=="postpago") selected @endif value="postpago">Post-pago</option>
                         </select>
                     </div>
                 </div>
-                <h2 style="margin-left: 1%;" class="titulo">Planes y servicios de la línea</h2>
-                <hr style="margin-left: 1%;" class="featurette-divider-mp">
-
-                {{-- <div class="contenedor-user">
-                    <div class="flex-item">
-                        <label class="label-p" for="plan">Plan</label>
-                        <select name="plan" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
-                            @foreach($plan as $data)
-                                @if ($data['estado']==1)
-                                    <option @if($data['nombre']==$dat['nombre_plan']) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
-                                @endif
-                            @endforeach
-                        </select>
-                    </div>
-                    <button class="Btn" id="boton" style="margin-left: -50px;">
-                        <div class="sign">+</div>
-                        <div class="text-plussing">Servicio</div>
-                    </button>
-                    <div class="flex-item">
-                        @if ($dat['estado_servicio']==0)
-                            <label class="label-p" for="plan">Servicios <span style="color: red">(Puede añadir un servicio)</span></label>
-                            <input type="hidden" name='linea' value="{{$dat['id_linea']}}" required>
-                            <input type="hidden" name='estado_servicio' value="1" required>
-                            
-                        @else
-                            <label class="label-p" for="plan">Servicios</label>
-                        @endif
-                        <select name="servicio" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
-                            @foreach($servicio as $data)
-                                @if ($data['estado']==1)
-                                    <option @if($data['nombre']==$dat['nombre_servicio']) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
-                                @endif
-                            @endforeach
-                        </select>
-                    </div>
-                </div> --}}
-                    <div class="row" style="margin:0px">
-                        <div class="col-md-4">
-                            <div class="flex-item">
-                                <label class="label-p" for="plan">Plan</label>
-                                <select name="plan" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
-                                    @foreach($plan as $data)
-                                        @if ($data['estado']==1)
-                                            <option @if($data['nombre']==$dat['nombre_plan']) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
-                                        @endif
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <button class="Btn" id="boton">
-                                <div class="sign">+</div>
-                                <div class="text-plussing">Servicio</div>
-                            </button>
-                        </div>
-                        <div class="col-md-4">
-                            <div id="servicioExtra" style="display: none;">
-                                <div class="flex-item">
-                                    @if ($dat['estado_servicio']==0)
-                                        <label class="label-p" for="plan">Servicios <span style="color: red">(Puede añadir un servicio)</span></label>
-                                    @else
-                                        <label class="label-p" for="plan">Servicios</label>
-                                    @endif
-                                    <select name="servicio" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
-                                        <option @if($dat['estado_servicio']==0) selected @endif  value="0">Elija un servicio<option>
-                                        @foreach($servicio as $data)
-                                            @if ($data['estado']==1 )
-                                                <option @if($data['nombre']==$dat['nombre_servicio']and $dat['estado_servicio']==1) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
-                                            @endif
-                                        @endforeach
-
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-            @endforeach
-            
-
-
-
-            <div class="cont-botton" style="align-items: center; justify-content: center;">
-                <button type="submit" class="cambiar" class="input-mp">Guardar cambios</button>
-            </div>
-
+                @endforeach
+                <div class="cont-botton" style="align-items: center; justify-content: center;">
+                    <button type="submit" class="cambiar" class="input-mp">Guardar cambios</button>
+                </div>
             </div>
         </form>
-        </div>
-    </section><br>
-    <br><br>
+        </div>  
+        
+    </section>
 </section>
+<section id="target_campo_card">
+<div class="cont-plan-service" >
+    <section  style="margin-left: 3%; height:48vh;" class="container-card-usu" id="target_campo_plan">
+        <div class="container-columnas">
+            <div class="col3">
+                <h2 class="titulo">Planes</h2>
+                <hr class="featurette-divider-mp"> 
+                <div style="margin:0px">
+                    <div class="col-md-4" >
+                        <div class="flex-item">
+                            {{-- @foreach($contratoPlan as $dat) --}}
+                                <form action="{{ url('/actualizar-p', $infoLinea->id)}}" method="POST">
+                                
+                                    @csrf
+                                    @method('PATCH') 
+                                    <input type="hidden" name='operador' value="{{$operador['id']}}" required>
+                                   
+                                    
+                                        <div class="flex-item">
+                                            <label class="label-p" for="name">Tu plan</label>
+                                            <input class="pys" name='calle' type="text" value="{{ $contratoPlan != '' ? $contratoPlan->plane->nombre : ''}}" style="padding-left:10px; padding-right: 10px;" >
+                                        </div>
+                                        <div class="flex-item">
+                                            <label class="label-p" for="plan">Plan</label>
+                                            <select name="plan" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
+                                                   @foreach($plan as $data)
+                                                        @if ($data['estado']==1)
+                                                            <option @if($data['nombre']==$dat['nombre_plan']) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
+                                                        @endif
+                                                    @endforeach
+                                            </select> 
+                                        </div>
+                                    
+                        </div>
+                    </div>
+                    <div class="cont-botton" style="align-items: center; justify-content: center;">
+                        <button type="submit" class="cambiar" class="input-mp">Guardar cambios</button>
+                    </div>                                  
+                </form>  
+
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <section  style="margin-left: 3%; height:48vh;" class="container-card-usu" id="target_campo_servicio">
+        <div class="container-columnas">
+            <div class="col3"> 
+                <h2 class="titulo">Servicios</h2>
+                <hr class="featurette-divider-mp"> 
+                <div  style="margin:0px">
+                    <div class="col-md-4">
+                        <div class="flex-item">
+                                <form action="{{ url('/actualizar-s', $infoLinea->id)}}" method="POST">
+                                    @csrf
+                                    @method('PATCH') 
+                                    <input type="hidden" name='operador' value="{{$operador['id']}}" required>
+                                    <div class="flex-item">
+                                        <label class="label-p" for="name">Tu servicio</label>
+                                        <input class="pys" name='calle' type="text" value="{{ $contratoServicio != '' ? $contratoServicio->servicios->nombre : ''}}" style="padding-left:10px; padding-right: 10px;" >
+                                        </div>
+                                    <label class="label-p" for="plan">Servicio</label>
+                                    <select name="servicio" id="pago" style="padding-left:10px; padding-right: 10px; width: 250px;">
+                                        @foreach($servicio as $data)
+                                            @if ($data['estado']==1)
+                                                <option @if($data['nombre']==$dat['nombre_plan']) selected @endif value="{{$data['id']}}"> {{$data['nombre']}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                        </div>
+                    </div>
+                    
+                    <div class="cont-botton" style="align-items: center; justify-content: center;">
+                        <button type="submit" class="cambiar" class="input-mp">Guardar cambios</button>
+                    </div>
+                </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</section>
+    <br>
+    <br><br> 
+
 <script src="{{ asset('js/app.js')}}"></script>
+
 <script>
-    document.getElementById("boton").addEventListener("click", function(event) {
-        event.preventDefault();
-        var servicioExtra = document.getElementById("servicioExtra");
-        if (servicioExtra.style.display === "none") {
-            servicioExtra.style.display = "block";
+    const tipoPagoSelect = document.getElementById('tipo_pago');
+    const targetCampoPlan = document.getElementById('target_campo_plan');
+    const targetCampoServicio = document.getElementById('target_campo_servicio'); 
+    const targetCard = document.getElementById('target_campo_card');
+
+    tipoPagoSelect.addEventListener('change', function() {
+        if (tipoPagoSelect.value === 'postpago') {
+            targetCampoPlan.style.visibility = 'hidden';
+            targetCampoServicio.style.visibility = 'hidden';
+            document.getElementById('target_campo_card').style.display = 'none';
+         
         } else {
-            servicioExtra.style.display = "none";
+            targetCampoPlan.style.visibility = 'visible';
+            targetCampoServicio.style.visibility = 'visible';
+            document.getElementById('target_campo_card').style.display = 'block';
         }
     });
 </script>
+
+
+                            
 @endsection

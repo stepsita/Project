@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger('operador');
             $table->unsignedBigInteger('plan');
             $table->unsignedBigInteger('linea');
-            $table->string('estado_plan');
             $table->timestamps();
             $table->foreign('operador')->references('id')->on('operadores');
             $table->foreign('plan')->references('id')->on('planes');
